@@ -1,0 +1,63 @@
+body { 
+    background-color: #1eaae6;
+        font-family: "Courier New", Courier, monospace;
+    } 
+
+p {
+    color: white;
+    font-size: 200%;
+    }
+
+div {
+    border-style: groove;
+    border-color: black;
+    border-radius: 10px;
+}    
+
+#title {
+    margin: auto;
+
+}
+
+#main {
+    background-color: #200730;
+    text-align: center;
+    font-size: small;
+    width: 50%;
+    margin: auto;
+
+}
+
+#smiley {
+    background-color: #071233;
+}
+#footer {
+    background-color: #d97e29;
+    width: 25%;
+    text-align: center;
+    font-size: x-small;
+float: right;
+}
+#container {
+    width: 75%;
+    margin: auto;
+
+}
+
+#scoretitle {
+    background-color:#071233;
+    color: white;
+    margin: auto;
+    width: 20%;
+    text-align: center;
+    float: right
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+
+  }
+  
