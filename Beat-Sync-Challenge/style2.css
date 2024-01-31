@@ -56,12 +56,14 @@ div {
 #container {
     width: 75%;
     margin: auto;
+    border-color: transparent;
 
 }
 
 .game-container {
     display:flex;
     position: relative;
+    border-color: transparent;
 }
 
 #scoretitle {
@@ -72,6 +74,7 @@ div {
     text-align: center;
     position: absolute;
     left: 75%;
+    height: 518px;
 
 }
 
@@ -84,12 +87,18 @@ div {
   }
   
   #socials {
+    color: blue;
+    background-color: #1E1D30;
     text-align: center;
-    display: block;
     margin-left: auto;
     margin-right: auto;
     clear: both;
     border-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: small;
   }
 
  
