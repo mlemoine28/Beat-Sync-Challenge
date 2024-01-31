@@ -26,7 +26,7 @@ div {
     font-size: small;
     width: 50%;
     margin: auto;
-    border-color: transparent;
+    
 
 }
 
@@ -96,13 +96,9 @@ div {
   }
   
   #socials {
-    color: blue;
     background-color: #1E1D30;
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    clear: both;
-    border-color: transparent;
     position: absolute;
     bottom: 0;
     left: 50%;
