@@ -29,15 +29,28 @@ div {
 
 }
 
-#smiley {
+.smileyimage {
+    position: relative;
+    transform: scale(0.8);
+    
+}
+
+#smileydiv {
     background-color: #071233;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    
+    
 }
 #footer {
     background-color: #d97e29;
     width: 25%;
     text-align: center;
     font-size: x-small;
-    float: right;
+    right: 0;
+    bottom: 0;
+    position: absolute;
     
 }
 #container {
@@ -46,13 +59,20 @@ div {
 
 }
 
+.game-container {
+    display:flex;
+    position: relative;
+}
+
 #scoretitle {
     background-color:#071233;
     color: white;
     margin: auto;
     width: 20%;
     text-align: center;
-    float: right
+    position: absolute;
+    left: 75%;
+
 }
 
 .center {
@@ -71,3 +91,5 @@ div {
     clear: both;
     border-color: transparent;
   }
+
+ 
