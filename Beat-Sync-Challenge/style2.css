@@ -17,6 +17,7 @@ div {
 #title {
     margin: auto;
     border-color: transparent;
+    transform: skew(-25deg);
 }
 
 #main {
