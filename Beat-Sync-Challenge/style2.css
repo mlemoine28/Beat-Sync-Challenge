@@ -7,6 +7,10 @@ p {
     color: white;
     font-size: 200%;
     }
+p:hover {
+    color:red
+}
+
 
 div {
     border-style: groove;
@@ -85,6 +89,10 @@ div {
     left: 75%;
     height: 518px;
 
+}
+
+#scoretitle:hover {
+    color:red
 }
 
 .center {
