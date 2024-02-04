@@ -53,13 +53,29 @@ div {
 
 }
 
+
+
+
+
 @keyframes smileybounce {
     0% {transform: scale(0.8)}
     50% {transform: scale(1.0)}
 }
 
 
-    
+    #wholegame {
+        border-color: transparent;
+        display:none;
+       
+    }
+
+    #intropage {
+        font-size: xx-large;
+        transform: translateX(300px);
+        transform: translateY(100px);
+        text-align: center;
+    }
+
 
 #smileydiv {
     background-color: #071233;
