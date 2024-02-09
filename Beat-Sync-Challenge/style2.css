@@ -166,9 +166,43 @@ div {
     padding: 40px, 30px;
     position: relative;
     transform: translateY(-35px);
+    background-color: #f2c12e;
+    font-size: xx-large;
+    color: #071233;
+    transform: skew(-25deg);
+    
+
+
   }
 
   #highscores {
     display:none;
+    text-align: center;
+    width: 40%;
+    position:absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    font-size:x-large;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    
   }
- 
+  
+  .smileyimage2 {
+    position: relative;
+    animation: smileyrotate 3s ease-in infinite;
+   transform: rotate(0deg) scale(10%);
+    
+    
+    
+
+}
+
+
+@keyframes smileyrotate {
+   
+    100%  {transform: rotate(360deg) scale(80%);}
+   
+}
