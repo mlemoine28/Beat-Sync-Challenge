@@ -147,7 +147,13 @@ div {
   }
 
   #leaderboards {
-    
+    position:absolute;
+    height: 518px;
+    width: 20%;
+    text-align: center;
+    right: 75%;
+    background-color:#071233;
+
   }
 
  
