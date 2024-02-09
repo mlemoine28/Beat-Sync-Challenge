@@ -148,20 +148,27 @@ div {
 
   #leaderboards {
     position:absolute;
-    height: 518px;
+    height: 175px;
     width: 20%;
     text-align: center;
-    right: 75%;
+    left: 96%;
     background-color:#071233;
+    transform:translateY(80%);
+    padding: 40px, 30px;
+    cursor: pointer;
 
   }
 
   #playnow {
     height: 50px;
+
     width: 20%;
     padding: 40px, 30px;
     position: relative;
     transform: translateY(-35px);
   }
 
+  #highscores {
+    display:none;
+  }
  
