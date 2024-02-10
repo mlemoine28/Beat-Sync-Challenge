@@ -192,7 +192,7 @@ div {
   
   .smileyimage2 {
     position: relative;
-    animation: smileyrotate 3s ease-in infinite;
+    animation: smileyrotate 3s ease-in-out alternate infinite;
    transform: rotate(0deg) scale(10%);
     
     
