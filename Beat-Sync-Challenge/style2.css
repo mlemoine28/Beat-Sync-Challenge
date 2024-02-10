@@ -14,7 +14,7 @@ p:hover {
 
 div {
     border-style: groove;
-    border-color: black;
+    border-color: transparent;
     border-radius: 10px;
 }    
 
@@ -42,6 +42,7 @@ div {
     font-size: small;
     width: 50%;
     margin: auto;
+    border-color: black;
     
 
 }
@@ -75,6 +76,7 @@ div {
         transform: translateX(300px);
         transform: translateY(100px);
         text-align: center;
+        border-color: transparent;
         
         
     }
@@ -85,6 +87,8 @@ div {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    border-color: black;
+
     
     
 }
@@ -120,6 +124,7 @@ div {
     position: absolute;
     left: 75%;
     height: 518px;
+    border-color: black;
 
 }
 
@@ -144,6 +149,7 @@ div {
     left: 50%;
     transform: translate(-50%);
     font-size: small;
+    border-color: black;
   }
 
   #leaderboards {
@@ -156,6 +162,7 @@ div {
     transform:translateY(80%);
     padding: 40px, 30px;
     cursor: pointer;
+    border-color: black;
 
   }
 
@@ -192,14 +199,14 @@ div {
   
   .smileyimage2 {
     position: relative;
-    animation: smileyrotate 3s ease-in-out alternate infinite;
+    animation: smileyrotate 2s ease-in-out alternate infinite;
    transform: rotate(0deg) scale(10%);
-    
-    
-    
-
+   border-color: transparent;
 }
+    .beat-image {
+    border-color: transparent;
 
+  }
 
 @keyframes smileyrotate {
    
