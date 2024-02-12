@@ -272,3 +272,32 @@ div {
     50% {transform:scale(120%)}
     100% {transform:scale(100%)}
   }
+
+  #howtoplaypage {
+    display:none;
+  
+  }
+
+  #howtoplayheading {
+font-size: 60px;
+text-align: center;
+  }
+
+  #howtoplayinfo {
+    font-size: x-small;
+    text-align: center;
+    border-color: black;
+    background-color: #071233;
+  }
+  
+  .howtoplayimages {
+    display: flex
+  }
+
+  .scorephotos {
+    max-width: 10%; 
+    padding: 0 10px; 
+    height: 100px;
+    position: absolute;
+    scale: 75%;
+  }
