@@ -167,6 +167,20 @@ div {
     border-radius: 500px;
 }    
     
+#howtoplay2 {
+  height: 150px;
+    width: 20%;
+    position: absolute;
+    background-color: #f2c12e;
+    font-size: xx-large;
+    color: #071233;
+    right: 75%;
+    transform:translateY(400%);
+    cursor:pointer;
+    border-style: groove;
+    border-color: black;
+    border-radius: 500px;
+}
   
 
   #playnowbutton {

@@ -45,3 +45,12 @@ function onClick5() {
     document.querySelector('#howtoplaypage').style.display="none";
     document.querySelector('#wholegame').style.display="block";
 }
+
+let howtoplay2 = document.querySelector('#howtoplay2')
+
+howtoplay2.addEventListener('click', onClick6)
+
+function onClick6() {
+    document.querySelector('#wholegame').style.display="none";
+    document.querySelector('#howtoplaypage').style.display="block";
+}
