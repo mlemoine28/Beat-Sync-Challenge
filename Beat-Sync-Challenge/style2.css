@@ -49,8 +49,8 @@ div {
 
 .smileyimage {
     position: relative;
+    animation: smileybounce 1s ease-in infinite;
     transform: scale(0.8);
-    animation: smileybounce 1s ease-in forwards infinite;
 
 }
 
@@ -61,6 +61,7 @@ div {
 @keyframes smileybounce {
     0% {transform: scale(0.8)}
     50% {transform: scale(1.0)}
+    
 }
 
 
@@ -225,17 +226,28 @@ div {
   
   .smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
     position: absolute;
-    animation: smileyrotate 2s ease-in-out forwards;
-   transform: rotate(0deg) scale(0%) translateY(0%);
-   border-color: transparent;
-   animation-delay: 2s;
+    animation: smileyrotate 3s ease-in-out, smileybounce2 1s ease-in forwards infinite;
+    border-color: transparent;
+    animation-delay: 0s, 3s;
+    transform: scale(0.8)translateY(50%);
+    width: 400px;
+    top: 50px;
+    /* Why can't i do left: 1px without messing up the whole thing???!!! */
+   
 
 }
 
 @keyframes smileyrotate {
+   0% {transform: scale(0%)rotate(270deg);}
+   50% {transform: scale(10%)rotate(180deg);}
+    75%  {transform: rotate(360deg) scale(70%) translateY(50%);}
+    100% {transform: scale(80%)translateY(50%);}
    
-    100%  {transform: rotate(360deg) scale(70%) translateY(50%);}
-   
+}
+
+@keyframes smileybounce2 {
+  0% {transform: scale(0.8)translateY(50%)}
+  50% {transform: scale(1.0)translateY(50%)}
 }
 
 #smileyimage2 {
