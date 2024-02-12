@@ -153,20 +153,23 @@ div {
   }
 
   #leaderboards {
-    position:absolute;
-    height: 175px;
+    height: 150px;
     width: 20%;
-    text-align: center;
-    left: 96%;
-    background-color:#071233;
-    transform:translateY(80%);
-    padding: 40px, 30px;
-    cursor: pointer;
+    position: absolute;
+    background-color: #f2c12e;
+    font-size: xx-large;
+    color: #071233;
+    left: 75%;
+    transform:translateY(400%);
+    cursor:pointer;
+    border-style: groove;
     border-color: black;
+    border-radius: 500px;
+}    
+    
+  
 
-  }
-
-  #playnow {
+  #playnowbutton {
     height: 50px;
     width: 20%;
     position: absolute;
@@ -174,12 +177,12 @@ div {
     font-size: xx-large;
     color: #071233;
     left: 50%;
-    transform:translate(-100%, 1450%)skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    transform:translate(-100%, 1450%)skew(-10deg); 
     cursor:pointer;
     
   }
 
-  #howtoplay {
+  #howtoplaybutton {
     height: 50px;
     width: 20%;
     position: absolute;
@@ -187,7 +190,7 @@ div {
     font-size: xx-large;
     color: #071233;
     left: 50%;
-    transform:translate(25%, 1450%)skew(-10deg);      /*Not sure why I have to use very different percent values here compared to above*/
+    transform:translate(25%, 1450%)skew(-10deg);     
     cursor:pointer;
   }
 
@@ -291,13 +294,48 @@ text-align: center;
   }
   
   .howtoplayimages {
-    display: flex
+    display: flex; 
+    margin: auto;
+    padding: 3px; 
+    left: 50%;
+    transform: translate(10%);
+    
   }
 
   .scorephotos {
+    max-width: 5%; 
+    padding: 100px; 
+    position: relative;
+    scale: 70%;
+  }
+
+  .scoreperfect {
     max-width: 10%; 
-    padding: 0 10px; 
-    height: 100px;
+    padding: 100px; 
+    scale: 40%;
+    position:relative;
+  }
+
+  #back2 {
+    height: 50px;
+    width: 20%;
     position: absolute;
-    scale: 75%;
+    background-color: #f2c12e;
+    font-size: xx-large;
+    color: #071233;
+    left: 50%;
+    transform:translate(-50%, 1450%)skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    cursor:pointer;
+  }
+
+  #back {
+    height: 50px;
+    width: 20%;
+    position: absolute;
+    background-color: #f2c12e;
+    font-size: xx-large;
+    color: #071233;
+    left: 50%;
+    transform:translate(-50%, 1250%)skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    cursor:pointer;
   }

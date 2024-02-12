@@ -1,4 +1,4 @@
-let playnow = document.querySelector('#playnow')
+let playnow = document.querySelector('#playnowbutton')
 
 playnow.addEventListener('click', onClick)
 
@@ -19,11 +19,29 @@ function onClick2() {
     document.querySelector('#highscores').style.display = "block";
 }
 
-let howtoplay = document.querySelector('#howtoplay')
+let howtoplay = document.querySelector('#howtoplaybutton')
 
 howtoplay.addEventListener('click', onClick3)
 
 function onClick3() {
     document.querySelector('#intropage').style.display = "none";
     document.querySelector('#howtoplaypage').style.display = "block";
+}
+
+let back = document.querySelector('#back')
+
+back.addEventListener('click', onClick4)
+
+function onClick4() {
+    document.querySelector('#highscores').style.display="none";
+    document.querySelector('#wholegame').style.display="block";
+}
+
+let back2 = document.querySelector('#back2')
+
+back2.addEventListener('click',onClick5)
+
+function onClick5() {
+    document.querySelector('#howtoplaypage').style.display="none";
+    document.querySelector('#wholegame').style.display="block";
 }
