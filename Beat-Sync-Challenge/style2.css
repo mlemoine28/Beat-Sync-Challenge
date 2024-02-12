@@ -173,11 +173,22 @@ div {
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
-    transform: skew(-25deg);
     left: 50%;
-    transform:translate(-50%, 1450%);
+    transform:translate(-100%, 1450%)skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
     cursor:pointer;
     
+  }
+
+  #howtoplay {
+    height: 50px;
+    width: 20%;
+    position: absolute;
+    background-color: #f2c12e;
+    font-size: xx-large;
+    color: #071233;
+    left: 50%;
+    transform:translate(25%, 1450%)skew(-10deg);      /*Not sure why I have to use very different percent values here compared to above*/
+    cursor:pointer;
   }
 
   #highscores {
@@ -195,7 +206,7 @@ div {
     
   }
   
-  .smileyimage2 {
+  .smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
     position: absolute;
     animation: smileyrotate 2s ease-in-out forwards;
    transform: rotate(0deg) scale(0%) translateY(0%);
