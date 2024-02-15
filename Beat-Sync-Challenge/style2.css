@@ -74,12 +74,9 @@ div {
 
     #intropage {
         font-size: xx-large;
-        transform: translateX(300px);
-        transform: translateY(-60px);
         text-align: center;
         border-color: transparent;
-        
-        
+              
     }
 
 
@@ -87,7 +84,6 @@ div {
     background-color: #071233;
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
     border-color: black;
 
     
@@ -147,8 +143,6 @@ div {
     margin-right: auto;
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
     font-size: small;
     border-color: black;
   }
@@ -160,8 +154,6 @@ div {
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
-    left: 75%;
-    transform:translateY(400%);
     cursor:pointer;
     border-style: groove;
     border-color: black;
@@ -175,8 +167,6 @@ div {
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
-    right: 75%;
-    transform:translateY(400%);
     cursor:pointer;
     border-style: groove;
     border-color: black;
@@ -192,7 +182,7 @@ div {
     font-size: xx-large;
     color: #071233;
     left: 50%;
-    transform:translate(-100%, 1450%)skew(-10deg); 
+    transform:skew(-10deg); 
     cursor:pointer;
     
   }
@@ -205,7 +195,7 @@ div {
     font-size: xx-large;
     color: #071233;
     left: 50%;
-    transform:translate(25%, 1450%)skew(-10deg);     
+    transform:skew(-10deg);     
     cursor:pointer;
   }
 
@@ -214,8 +204,6 @@ div {
     text-align: center;
     width: 40%;
     position:absolute;
-    left: 50%;
-    transform:translateX(-50%);
     font-size:x-large;
     padding-bottom: 5%;
     padding-left: 5%;
@@ -324,7 +312,6 @@ text-align: center;
     margin: auto;
     padding: 3px; 
     left: 50%;
-    transform: translate(10%);
     
   }
 
@@ -350,7 +337,7 @@ text-align: center;
     font-size: xx-large;
     color: #071233;
     left: 50%;
-    transform:translate(-50%, 1450%)skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    transform:skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
     cursor:pointer;
   }
 
@@ -362,6 +349,6 @@ text-align: center;
     font-size: xx-large;
     color: #071233;
     left: 50%;
-    transform:translate(-50%, 1250%)skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    transform:skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
     cursor:pointer;
   }
