@@ -67,7 +67,7 @@ div {
 
     #wholegame {
         border-color: transparent;
-        display:none;
+        display:block;
         
        
     }
@@ -76,6 +76,7 @@ div {
         font-size: xx-large;
         border-color: transparent;
         text-align: center;
+        display:none;
         
               
     }
@@ -84,15 +85,16 @@ div {
       display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
     }
 
 
 #smileydiv {
     background-color: #071233;
-    position: absolute;
-    left: 50%;
+    position: relative;
     border-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    
 
     
     
@@ -102,9 +104,9 @@ div {
     width: 25%;
     text-align: center;
     font-size: x-small;
-    right: 0;
-    bottom: 0;
     position: absolute;
+    left: 0;
+    bottom: 0;
     
 }
 #container {
@@ -144,9 +146,17 @@ div {
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    bottom: 0;
-    font-size: small;
+    font-size: xx-small;
     border-color: black;
+    width: 500px;
+    padding: 5px;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    height: 100px;
+    max-width: 100%;
+    padding-bottom: 15px;
+    
   }
 
   #leaderboards {

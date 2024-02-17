@@ -3,8 +3,8 @@ let playnow = document.querySelector('#playnowbutton')
 playnow.addEventListener('click', onClick)
 
 function onClick() {
-    document.querySelector('#intropage').style.display = "none";
-    document.querySelector('#wholegame').style.display = "block";
+    document.querySelector('#intropage').style.display='none';
+    document.querySelector('#wholegame').style.display='block';
     console.log('hello')    
 }
 
