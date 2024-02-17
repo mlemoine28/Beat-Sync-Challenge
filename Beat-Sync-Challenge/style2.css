@@ -72,11 +72,19 @@ div {
        
     }
 
-    #intropage {
+    .intropage {
         font-size: xx-large;
-        text-align: center;
         border-color: transparent;
+        text-align: center;
+        
               
+    }
+
+    .center {
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
     }
 
 
@@ -129,13 +137,7 @@ div {
     color:red
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    clear: both;
 
-  }
   
   #socials {
     background-color: #1E1D30;
@@ -181,9 +183,10 @@ div {
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
-    left: 50%;
     transform:skew(-10deg); 
     cursor:pointer;
+    top: 85%;
+    right: 52%;
     
   }
 
@@ -194,9 +197,9 @@ div {
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
-    left: 50%;
     transform:skew(-10deg);     
     cursor:pointer;
+    top: 85%;
   }
 
   #highscores {
@@ -213,43 +216,39 @@ div {
   }
   
   .smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
-    position: absolute;
+    position: relative;
     animation: smileyrotate 3s ease-in-out, smileybounce2 1s ease-in forwards infinite;
     border-color: transparent;
     animation-delay: 0s, 3s;
-    transform: scale(0.8)translateY(50%);
-    width: 400px;
-    top: 50px;
-    /* Why can't i do left: 1px without messing up the whole thing???!!! */
+    transform: scale(0.8);
+    top: 220px;
+        /* Why can't i do left: 1px without messing up the whole thing???!!! */
    
 
 }
 
 @keyframes smileyrotate {
-   0% {transform: scale(0%)rotate(270deg);}
-   50% {transform: scale(10%)rotate(180deg);}
-    75%  {transform: rotate(360deg) scale(70%) translateY(50%);}
-    100% {transform: scale(80%)translateY(50%);}
+   0% {transform: scale(0%)rotate(270deg)}
+   50% {transform: scale(10%)rotate(180deg)}
+    75%  {transform: rotate(360deg) scale(70%)}
+    100% {transform: scale(80%)}
    
 }
 
 @keyframes smileybounce2 {
-  0% {transform: scale(0.8)translateY(50%)}
-  50% {transform: scale(1.0)translateY(50%)}
+  0% {transform: scale(0.8)}
+  50% {transform: scale(1.0)}
 }
 
-#smileyimage2 {
-    transform: translate(-10%, 0%);
-    
-    
-}
+
 
     .beat-image {
     border-color: transparent;
-    transform:translate(250%);
     animation: slidein 1s ease-in-out forwards;
     animation-timing-function: linear(0 0%, 0.95 13.27%, 1 100%);
     position: relative;
+    bottom: 550px;
+    
     
 
   }
@@ -260,28 +259,29 @@ div {
   }
   .sync-image {
     border-color: transparent;
-    transform:translate(1000%);
-    right: 50%;
-    animation: slidein2 1s forwards;
+    animation: slidein2 1s ease-in-out forwards;
     animation-delay: .80s;
     animation-timing-function: linear(0 0%, 0.95 13.27%, 1 100%);
+    position: relative;
+    bottom: 665px;
+    
+   
 
   }
 
   @keyframes slidein2 {
     0% {transform:translate(1000%)}
-    100%{transform:translate(50%,-110%)}
+    100%{transform:translate(50%);}
   }
 
   .challenge-image {
     border-color: transparent;
-    transform: scale(0%);
+    position: relative;
     animation: warpin 1s forwards;
     animation-delay: 1.75s;
-  }
-
-  #challengeimage {
-    transform:translateY(-100%);
+    bottom: 675px;
+    width:30%;
+    
   }
 
   @keyframes warpin {
