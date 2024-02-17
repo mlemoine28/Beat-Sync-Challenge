@@ -178,28 +178,31 @@ div {
 
   #playnowbutton {
     height: 50px;
-    width: 20%;
-    position: absolute;
+    width: 12%;
+    position: relative;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
     transform:skew(-10deg); 
     cursor:pointer;
-    top: 85%;
-    right: 52%;
+    top: 830px;
+    right: 50px;
+    
+
     
   }
 
   #howtoplaybutton {
     height: 50px;
-    width: 20%;
-    position: absolute;
+    width: 12%;
+    position: relative;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
     transform:skew(-10deg);     
     cursor:pointer;
-    top: 85%;
+    top: 830px;
+    left: 50px;
   }
 
   #highscores {
@@ -217,11 +220,11 @@ div {
   
   .smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
     position: relative;
-    animation: smileyrotate 3s ease-in-out, smileybounce2 1s ease-in forwards infinite;
+    animation: smileyrotate 3s ease-in-out, smileybounce2 1s ease-in-out alternate infinite;
     border-color: transparent;
-    animation-delay: 0s, 3s;
-    transform: scale(0.8);
-    top: 220px;
+    animation-delay: 0s, 3s;  
+    top: 190px;
+    transform: scale(25%);
         /* Why can't i do left: 1px without messing up the whole thing???!!! */
    
 
@@ -229,15 +232,16 @@ div {
 
 @keyframes smileyrotate {
    0% {transform: scale(0%)rotate(270deg)}
-   50% {transform: scale(10%)rotate(180deg)}
-    75%  {transform: rotate(360deg) scale(70%)}
-    100% {transform: scale(80%)}
+   50% {transform: scale(20%)rotate(180deg)}
+    75%  {transform: rotate(360deg) scale(100%)}
+    100% {transform: scale(50%)}
    
 }
 
 @keyframes smileybounce2 {
-  0% {transform: scale(0.8)}
-  50% {transform: scale(1.0)}
+  0% {transform: scale(0.5)}
+  50% {transform: scale(0.75)}
+  100%{transform: scale(0.5)}
 }
 
 
@@ -264,6 +268,7 @@ div {
     animation-timing-function: linear(0 0%, 0.95 13.27%, 1 100%);
     position: relative;
     bottom: 665px;
+    transform: scale(0%);
     
    
 
@@ -280,7 +285,7 @@ div {
     animation: warpin 1s forwards;
     animation-delay: 1.75s;
     bottom: 675px;
-    width:30%;
+    transform: scale(0%);
     
   }
 
