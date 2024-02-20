@@ -77,6 +77,7 @@ div {
         border-color: transparent;
         text-align: center;
         display:block;
+        background-color: #1eaae6;
         
               
     }
@@ -314,10 +315,18 @@ div {
     100% {transform:scale(100%)}
   }
 
-  #howtoplaypage {
-  display: none;  
+  .howtoplaymodal {
+   width: 600px;
+   max-width: 100%;
+   background-color: red;
+   position: absolute;
+   
   
   }
+
+.howtoplaymodal::backdrop {
+  background: purple;
+}
 
   #howtoplayheading {
 font-size: 60px;
@@ -344,8 +353,8 @@ text-align: center;
     scale: 70%;
   }
 
-  #back2 {
-    height: 50px;
+  #got-it-button {
+    height: 120px;
     width: 20%;
     position: relative;
     background-color: #f2c12e;
@@ -355,7 +364,8 @@ text-align: center;
     cursor:pointer;
     margin-left: auto;
     margin-right: auto;
-    top:100px;
+    bottom:500px;
+    left:500px;
     
   }
 

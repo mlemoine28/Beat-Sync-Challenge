@@ -1,8 +1,8 @@
 let playnow = document.querySelector('#playnowbutton');
 
-playnow.addEventListener('click', onClick);
+playnow.addEventListener('click', onPlayNowClick);
 
-function onClick() {
+function onPlayNowClick() {
     document.querySelector('.intropage').style.display = "none";
     document.querySelector('#wholegame').style.display = 'block';
     console.log('hello');    
@@ -12,45 +12,42 @@ function onClick() {
 
 let leaderboards = document.querySelector('#leaderboards')
 
-leaderboards.addEventListener('click',onClick2)
+leaderboards.addEventListener('click',onLeaderboardsClick)
 
-function onClick2() {
+function onLeaderboardsClick() {
     document.querySelector('#wholegame').style.display = "none";
     document.querySelector('#highscores').style.display = "block";
 }
 
 let howtoplay = document.querySelector('#howtoplaybutton')
 
-howtoplay.addEventListener('click', onClick3)
+howtoplay.addEventListener('click', onHowToPlayClick)
 
-function onClick3() {
-    document.querySelector('.intropage').style.display = "none";
-    document.querySelector('#howtoplaypage').style.display = "block";
+function onHowToPlayClick() {
+    document.querySelector('.howtoplaymodal').show();
 }
 
 let back = document.querySelector('#back')
 
-back.addEventListener('click', onClick4)
+back.addEventListener('click', onBackClick)
 
-function onClick4() {
+function onBackClick() {
     document.querySelector('#highscores').style.display="none";
     document.querySelector('#wholegame').style.display="block";
 }
 
-let back2 = document.querySelector('#back2')
+let gotIt = document.querySelector('#got-it-button')
 
-back2.addEventListener('click',onClick5)
+gotIt.addEventListener('click',gotItClick)
 
-function onClick5() {
-    document.querySelector('#howtoplaypage').style.display="none";
-    document.querySelector('#wholegame').style.display="block";
+function gotItClick() {
+    document.querySelector('.howtoplaymodal').close();
 }
 
 let howtoplay2 = document.querySelector('#howtoplay2')
 
-howtoplay2.addEventListener('click', onClick6)
+howtoplay2.addEventListener('click', onHowToPlay2Click)
 
-function onClick6() {
-    document.querySelector('#wholegame').style.display="none";
-    document.querySelector('#howtoplaypage').style.display="block";
+function onHowToPlay2Click() {
+    document.querySelector('.howtoplaymodal').show();
 }
