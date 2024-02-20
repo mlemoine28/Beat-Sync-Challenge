@@ -51,3 +51,11 @@ howtoplay2.addEventListener('click', onHowToPlayClick2)
 function onHowToPlayClick2() {
     document.querySelector('.howtoplaymodal').show();
 }
+
+let mouseClickSmiley = document.querySelector('#smileydiv')
+
+mouseClickSmiley.addEventListener('click', expandSmiley)
+
+function expandSmiley() {
+    document.querySelector('#smileydiv').style.transform = 'scale(1.5)';
+}
