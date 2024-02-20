@@ -11,6 +11,9 @@ p:hover {
     color:red
 }
 
+h1 {
+  color: white;
+}
 
 div {
     border-style: groove;
@@ -316,18 +319,26 @@ div {
   }
 
   .howtoplaymodal {
-   width: 600px;
+   width: 1000px;
+   height: 1500px;
    max-width: 100%;
-   background-color: red;
+   max-height: 100%;
+   background-color: darkblue; 
    position: absolute;
+   z-index:99999;
+   right: 50%;
+   top: 0;
+   transform:scale(80%);
+
    
   
   }
-
-.howtoplaymodal::backdrop {
-  background: purple;
-}
-
+  
+ 
+    
+   
+   
+ 
   #howtoplayheading {
 font-size: 60px;
 text-align: center;

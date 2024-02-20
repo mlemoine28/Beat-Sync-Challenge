@@ -46,8 +46,8 @@ function gotItClick() {
 
 let howtoplay2 = document.querySelector('#howtoplay2')
 
-howtoplay2.addEventListener('click', onHowToPlay2Click)
+howtoplay2.addEventListener('click', onHowToPlayClick2)
 
-function onHowToPlay2Click() {
+function onHowToPlayClick2() {
     document.querySelector('.howtoplaymodal').show();
 }
