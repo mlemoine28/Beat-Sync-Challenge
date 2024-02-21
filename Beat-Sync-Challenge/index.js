@@ -59,7 +59,6 @@ let mouseClickSmiley = document.querySelector('#smileydiv')
 mouseClickSmiley.addEventListener('click', expandSmiley)
 
 function expandSmiley() {
-    let expand = document.querySelector('#smileydiv')
-    expand.style.animation="smileybounce 1s ease-in";
-    
+    let expand = document.querySelector('#smileydiv');
+    expand.style.animation= "smileybounce 1s ease-in forwards";
 }

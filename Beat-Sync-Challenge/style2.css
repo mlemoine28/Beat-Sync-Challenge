@@ -52,8 +52,9 @@ div {
 
 .smileyimage {
     position: relative;
-    animation: smileybounce 1s ease-in;
+    animation: smileybounce 1s ease-in forwards;
     transform: scale(0.8);
+    animation-iteration-count: revert;
 
 }
 
