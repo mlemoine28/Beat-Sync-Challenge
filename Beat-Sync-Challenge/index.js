@@ -24,7 +24,10 @@ let howtoplay = document.querySelector('#howtoplaybutton')
 howtoplay.addEventListener('click', onHowToPlayClick)
 
 function onHowToPlayClick() {
-    document.querySelector('.howtoplaymodal').show();
+    let modal = document.querySelector('.howtoplaymodal')
+    modal.show();
+    modal.style.display = "flex";
+    
 }
 
 let back = document.querySelector('#back')
@@ -41,21 +44,22 @@ let gotIt = document.querySelector('#got-it-button')
 gotIt.addEventListener('click',gotItClick)
 
 function gotItClick() {
-    document.querySelector('.howtoplaymodal').close();
+    let modal = document.querySelector('.howtoplaymodal')
+    modal.close();
+    modal.style.display = "none";
+
 }
 
 let howtoplay2 = document.querySelector('#howtoplay2')
 
-howtoplay2.addEventListener('click', onHowToPlayClick2)
-
-function onHowToPlayClick2() {
-    document.querySelector('.howtoplaymodal').show();
-}
+howtoplay2.addEventListener('click', onHowToPlayClick)
 
 let mouseClickSmiley = document.querySelector('#smileydiv')
 
 mouseClickSmiley.addEventListener('click', expandSmiley)
 
 function expandSmiley() {
-    document.querySelector('#smileydiv').style.transform = 'scale(1.5)';
+    let expand = document.querySelector('#smileydiv')
+    expand.style.animation="smileybounce 1s ease-in";
+    
 }

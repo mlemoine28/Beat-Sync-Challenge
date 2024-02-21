@@ -52,7 +52,7 @@ div {
 
 .smileyimage {
     position: relative;
-    animation: smileybounce 1s ease-in infinite;
+    animation: smileybounce 1s ease-in;
     transform: scale(0.8);
 
 }
@@ -64,6 +64,7 @@ div {
 @keyframes smileybounce {
     0% {transform: scale(0.8)}
     50% {transform: scale(1.0)}
+    100% {transform: scale(0.8)}
     
 }
 
@@ -320,7 +321,9 @@ div {
 
   .howtoplaymodal {
    width: 1000px;
-   height: 1500px;
+   /* height: 1500px; */
+   height: 80vh;
+
    max-width: 100%;
    max-height: 100%;
    background-color: #6E2843ff; 
@@ -328,10 +331,10 @@ div {
    z-index:99999;
    right: 50%;
    top: 0;
-   transform:scale(80%);
+   display: none;
+   flex-direction: column;
+   /*transform:scale(80%);*/
 
-   
-  
   }
   
  
@@ -340,28 +343,35 @@ div {
    
  
   #howtoplayheading {
-font-size: 60px;
+font-size: 5vh;
 text-align: center;
   }
 
   #howtoplayinfo {
-    font-size: x-small;
+    font-size: 1vh;
     text-align: center;
     border-color: black;
     background-color: #071233;
   }
   
+.scoreperfect {
+  height: 2vh;
+}
+
   .howtoplayimages {
-       margin: auto;
+    display: flex;
+    margin: auto;
     left: 50%;
+    flex-wrap: wrap;
     
   }
 
+  .beat-image
+
   .scorephotos {
-    max-width: 5%;
     padding: 20px;
     position: relative;
-    scale: 70%;
+    height: 2vh;
   }
 
   #got-it-button {
@@ -374,10 +384,7 @@ text-align: center;
     transform:skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
     cursor:pointer;
     margin-left: auto;
-    margin-right: auto;
-    bottom:500px;
-    left:500px;
-    
+    margin-right: auto;   
   }
 
   #back {
