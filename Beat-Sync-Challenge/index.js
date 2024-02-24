@@ -60,5 +60,14 @@ mouseClickSmiley.addEventListener('click', expandSmiley)
 
 function expandSmiley() {
     let expand = document.querySelector('#smileydiv');
-    expand.style.animation= "smileybounce 1s ease-in forwards";
+    expand.classList.add('smileyimage');
+}
+function stopImageAnimation() {
+    let expand = document.querySelector('#smileydiv');
+    let animations = expand.getAnimations();
+    animations.forEach(animation=> {
+        animation.pause();
+    });
+    setTimeout(stopImageAnimation, 1000);
+    
 }
