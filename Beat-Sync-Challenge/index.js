@@ -54,20 +54,19 @@ let howtoplay2 = document.querySelector('#howtoplay2')
 
 howtoplay2.addEventListener('click', onHowToPlayClick)
 
-let mouseClickSmiley = document.querySelector('#smileydiv')
+let smileyfacemain = document.querySelector('#smileydiv')
 
-mouseClickSmiley.addEventListener('click', expandSmiley)
+smileyfacemain.addEventListener('click', expandSmiley)
 
 function expandSmiley() {
     let expand = document.querySelector('#smileydiv');
     expand.classList.add('smileyimage');
 }
 function stopImageAnimation() {
-    let expand = document.querySelector('#smileydiv');
-    let animations = expand.getAnimations();
-    animations.forEach(animation=> {
-        animation.pause();
+    let stoppulse = document.querySelector('#smileydiv');
+    let animations = stoppulse.getAnimations();
+    animations.forEach(smileybounce => {
+        smileybounce.pause();
     });
     setTimeout(stopImageAnimation, 1000);
-    
 }
