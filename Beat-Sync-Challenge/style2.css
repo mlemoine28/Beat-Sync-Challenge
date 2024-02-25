@@ -52,9 +52,7 @@ div {
 
 .smileyimage {
     position: relative;
-    animation: smileybounce .25s infinite alternate;
-    
-
+    animation: smileybounce .50s;
 }
 
 
@@ -62,11 +60,14 @@ div {
 
 
 @keyframes smileybounce {
-  from {
+  0% {
     transform: scale(1);
   }
-  to {
-    transform: scale(1.1);
+ 50% {
+  transform: scale(1.1);
+ }
+100% {
+  transform: scale(1);
   }
 }
 
