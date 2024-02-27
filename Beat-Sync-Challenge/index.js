@@ -4,8 +4,7 @@ playnow.addEventListener('click', onPlayNowClick);
 
 function onPlayNowClick() {
     document.querySelector('.intropage').style.display = "none";
-    document.querySelector('#wholegame').style.display = 'block';
-    console.log('hello');    
+    document.querySelector('#wholegame').style.display = 'block';  
 }
 
 
@@ -54,12 +53,12 @@ let howtoplay2 = document.querySelector('#howtoplay2')
 
 howtoplay2.addEventListener('click', onHowToPlayClick)
 
-let smileyfacemain = document.querySelector('#smileydiv');
+let smileyfacemain = document.querySelector('#smileyface');
 smileyfacemain.addEventListener('click', (e) => {
 e.target.classList.add('smileyimage');
 let animations = e.target.getAnimations();
 for (let animation of animations) {
-    animation.currentTime = 0;
+ animation.currentTime = 0;
 }
 });
 smileyfacemain.addEventListener('animationend', (e) => {
