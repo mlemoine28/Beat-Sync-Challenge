@@ -76,20 +76,28 @@ function kickDrum(){
     } else {
         kickDrumSound.currentTime = 0;
     }
+    kickDrumSound.loop = true;
 }
+
 
 
 
 let lastTimestamp = 0;
 
 function animate(timestamp) {
+    if (!lastTimestamp) { //This is for the purpose of making sure that lastFrameTime only starts after rendering the second frame. Needed for accurately calculating deltaTime.
+        lastTimestamp = timestamp;
+    } else {
 
-    const deltaTime = timestamp - lastTimestamp;
+    const deltaTime = timestamp - lastTimestamp; //the CURRENT time minus the time since the last frame. Basically, the amount of times between frames.
 
-    lastTimestamp = timestamp;
-
+    lastTimestamp = timestamp; //this updates lastFrameTime for the next frame, otherwise the times won't be consistent
+    console.log(deltaTime);
+    
+}
     requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
 
-console.log(animate);
+
+console.log(lastTimestamp);
