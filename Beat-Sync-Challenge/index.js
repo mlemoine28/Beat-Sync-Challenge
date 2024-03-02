@@ -76,7 +76,6 @@ function kickDrum(){
     } else {
         kickDrumSound.currentTime = 0;
     }
-    console.log(kickDrum);
 }
 
 
