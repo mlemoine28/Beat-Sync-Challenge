@@ -64,3 +64,33 @@ for (let animation of animations) {
 smileyfacemain.addEventListener('animationend', (e) => {
     e.target.classList.remove('smileyimage');
 });
+
+let kickButton = document.querySelector('#kickButton')
+kickButton.addEventListener('click', kickDrum)
+
+
+function kickDrum(){
+    let kickDrumSound = document.querySelector('#kickdrumsound')
+    if (kickDrumSound.paused) {
+        kickDrumSound.play();
+    } else {
+        kickDrumSound.currentTime = 0;
+    }
+    console.log(kickDrum);
+}
+
+
+
+let lastTimestamp = 0;
+
+function animate(timestamp) {
+
+    const deltaTime = timestamp - lastTimestamp;
+
+    lastTimestamp = timestamp;
+
+    requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+
+console.log(animate);
