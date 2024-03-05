@@ -65,7 +65,7 @@ smileyfacemain.addEventListener('animationend', (e) => {
     e.target.classList.remove('smileyimage');
 });
 
-let kickButton = document.querySelector('#kickButton')
+/*let kickButton = document.querySelector('#kickButton')
 kickButton.addEventListener('click', kickDrum)
 
 
@@ -85,13 +85,13 @@ function kickDrum(){
 let lastTimestamp = 0;
 
 function animate(timestamp) {
-    if (!lastTimestamp) { //This is for the purpose of making sure that lastFrameTime only starts after rendering the second frame. Needed for accurately calculating deltaTime.
+    if (!lastTimestamp) { //This is for the purpose of making sure that lastTimestamp only starts after rendering the second frame. Needed for accurately calculating deltaTime.
         lastTimestamp = timestamp;
     } else {
 
     const deltaTime = timestamp - lastTimestamp; //the CURRENT time minus the time since the last frame. Basically, the amount of times between frames.
 
-    lastTimestamp = timestamp; //this updates lastFrameTime for the next frame, otherwise the times won't be consistent
+    lastTimestamp = timestamp; //this updates lastTimestamp for the next frame, otherwise the times won't be consistent
     console.log(deltaTime);
     
 }
@@ -101,3 +101,31 @@ requestAnimationFrame(animate);
 
 
 console.log(lastTimestamp);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const bpm = 126;
+    const beatInterval = 60000 / bpm;
+    let lastBeatTime = 0;
+})
+
+function checkBeat(timestamp) {
+    const currentTime = kickDrumSound.currentTime * 1000;
+    if (currentTime - lastBeatTime >= beatInterval) {
+      lastBeatTime += beatInterval;
+    }
+
+    requestAnimationFrame(checkBeat);
+  }
+  requestAnimationFrame(checkBeat);
+
+  console.log(checkBeat);
+  */
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('song');
+    const feedbackElement = document.getElementById('feedback');
+    audio.play();
+
+    const keyBeat = [476, 952, 1428, 1904, 2380, 2856, 3332, 3808, 4284, 4760, 5236, 5712, 6188, 6664, 7140, 7616, 8092, 8568, 9044, 9520, 9996, 10472, 10948, 11424, 11900, 12376, 12852, 13328, 13804, 14280, 14756, 15232, 15708, 16184, 16660]
+  }
