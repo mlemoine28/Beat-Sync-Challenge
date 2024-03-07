@@ -28,10 +28,9 @@ function onLeaderboardsClick() {
 howtoplay.addEventListener('click', onHowToPlayClick)
 
 function onHowToPlayClick() {
-    let modal = document.querySelector('.howtoplaymodal')
+
     modal.show();
     modal.style.display = "flex";
-    
 }
 
 back.addEventListener('click', onBackClick)
@@ -61,15 +60,7 @@ smileyfacemain.addEventListener('animationend', (e) => {
     e.target.classList.remove('smileyimage');
 });
 
-kickButton.addEventListener('click', () => {
-    
-    if (kickDrumSound.paused) {
-        kickDrumSound.play();
-    } else {
-        kickDrumSound.currentTime = 0;
-    }
-    kickDrumSound.loop = true;
-})
+
 
 songButton.addEventListener('click', () => {
     if (song.paused) {
@@ -79,9 +70,39 @@ songButton.addEventListener('click', () => {
     }
 })
 
-let lastTimestamp = 0;
 
-function animate(timestamp) {
+
+const bpm = 126;
+const beatInterval = 60000 / bpm;
+
+function clickTiming (clickTimestamp) {
+  for (let keyBeat = beatInterval; keyBeat <= 40000; keyBeat += beatInterval){
+    const timeDifference = Math.abs(clickTimestamp - keyBeat);
+
+    if (timeDifference <= 100) {
+        console.log("Clicked close to beat at " + keyBeat + " milliseconds");
+     
+  }}}
+
+  smileyfacemain.addEventListener('click', function() {
+    const clickTime = Date.now();
+    clickTiming(clickTime); 
+    console.log(clickTime);
+  });
+
+
+
+
+  /*kickButton.addEventListener('click', () => {
+    
+    if (kickDrumSound.paused) {
+        kickDrumSound.play();
+    } else {
+        kickDrumSound.currentTime = 0;
+    }
+    kickDrumSound.loop = true;
+})
+  /*function animate(timestamp) {
     if (!lastTimestamp) { //This is for the purpose of making sure that lastTimestamp only starts after rendering the second frame. Needed for accurately calculating deltaTime.
         lastTimestamp = timestamp;
     } else {
@@ -101,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastBeatTime = 0;
 })
 
-/*function checkBeat(timestamp) {
+function checkBeat(timestamp) {
     const currentTime = kickDrumSound.currentTime * 1000;
     if (currentTime - lastBeatTime >= beatInterval) {
       lastBeatTime += beatInterval;
@@ -120,5 +141,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const keyBeat = [476, 952, 1428, 1904, 2380, 2856, 3332, 3808, 4284, 4760, 5236, 5712, 6188, 6664, 7140, 7616, 8092, 8568, 9044, 9520, 9996, 10472, 10948, 11424, 11900, 12376, 12852, 13328, 13804, 14280, 14756, 15232, 15708, 16184, 16660]
   })
 */
-  for (let keyBeat = 476; keyBeat <= 40000; keyBeat += 476)
-  console.log(keyBeat);
