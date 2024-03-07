@@ -1,4 +1,6 @@
 let playnow = document.querySelector('#playnowbutton');
+let song = document.querySelector('#song');
+let leaderboards = document.querySelector('#leaderboards')
 
 playnow.addEventListener('click', onPlayNowClick);
 
@@ -9,7 +11,7 @@ function onPlayNowClick() {
 
 
 
-let leaderboards = document.querySelector('#leaderboards')
+
 
 leaderboards.addEventListener('click',onLeaderboardsClick)
 
@@ -40,14 +42,11 @@ function onBackClick() {
 
 let gotIt = document.querySelector('#got-it-button')
 
-gotIt.addEventListener('click',gotItClick)
-
-function gotItClick() {
+gotIt.addEventListener('click', () => {
     let modal = document.querySelector('.howtoplaymodal')
     modal.close();
     modal.style.display = "none";
-
-}
+})
 
 let howtoplay2 = document.querySelector('#howtoplay2')
 
@@ -55,21 +54,18 @@ howtoplay2.addEventListener('click', onHowToPlayClick)
 
 let smileyfacemain = document.querySelector('#smileyface');
 smileyfacemain.addEventListener('click', (e) => {
-e.target.classList.add('smileyimage');
-let animations = e.target.getAnimations();
-for (let animation of animations) {
- animation.currentTime = 0;
-}
+    e.target.classList.add('smileyimage');
+    let animations = e.target.getAnimations();
+    for (let animation of animations) {
+        animation.currentTime = 0;
+    }
 });
 smileyfacemain.addEventListener('animationend', (e) => {
     e.target.classList.remove('smileyimage');
 });
 
-/*let kickButton = document.querySelector('#kickButton')
-kickButton.addEventListener('click', kickDrum)
-
-
-function kickDrum(){
+let kickButton = document.querySelector('#kickButton')
+kickButton.addEventListener('click', () => {
     let kickDrumSound = document.querySelector('#kickdrumsound')
     if (kickDrumSound.paused) {
         kickDrumSound.play();
@@ -77,7 +73,16 @@ function kickDrum(){
         kickDrumSound.currentTime = 0;
     }
     kickDrumSound.loop = true;
-}
+})
+
+let songButton = document.querySelector('#songButton')
+songButton.addEventListener('click', () => {
+    if (song.paused) {
+        song.play();
+    } else {
+        song.currentTime = 0;
+    }
+})
 
 
 
@@ -119,13 +124,15 @@ function checkBeat(timestamp) {
   requestAnimationFrame(checkBeat);
 
   console.log(checkBeat);
-  */
+ 
 
 
-  document.addEventListener('DOMContentLoaded', () => {
+   document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('song');
     const feedbackElement = document.getElementById('feedback');
     audio.play();
 
     const keyBeat = [476, 952, 1428, 1904, 2380, 2856, 3332, 3808, 4284, 4760, 5236, 5712, 6188, 6664, 7140, 7616, 8092, 8568, 9044, 9520, 9996, 10472, 10948, 11424, 11900, 12376, 12852, 13328, 13804, 14280, 14756, 15232, 15708, 16184, 16660]
-  }
+  })
+
+  
