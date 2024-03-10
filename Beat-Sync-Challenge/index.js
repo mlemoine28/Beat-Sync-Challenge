@@ -41,7 +41,6 @@ function onBackClick() {
 }
 
 gotIt.addEventListener('click', () => {
-    
     modal.close();
     modal.style.display = "none";
 })
@@ -64,7 +63,7 @@ smileyfacemain.addEventListener('animationend', (e) => {
 
 songButton.addEventListener('click', () => {
     if (song.paused) {
-        song.play();
+            song.play();
     } else {
         song.currentTime = 0;
     }
@@ -76,12 +75,10 @@ const bpm = 126;
 const beatInterval = 60000 / bpm;
 
 function clickTiming (clickTimestamp) {
-  for (let keyBeat = beatInterval; keyBeat <= 40000; keyBeat += beatInterval){
-    const timeDifference = Math.abs(clickTimestamp - keyBeat);
-
-    if (timeDifference <= 100) {
-        console.log("Clicked close to beat at " + keyBeat + " milliseconds");
-     
+    for (let keyBeat = beatInterval; keyBeat <= 40000; keyBeat += beatInterval) {
+        const timeDifference = Math.abs(clickTimestamp - keyBeat);
+        if (timeDifference <= 100) {
+            console.log("Clicked close to beat at " + keyBeat + " milliseconds");
   }}}
 
   smileyfacemain.addEventListener('click', function() {
