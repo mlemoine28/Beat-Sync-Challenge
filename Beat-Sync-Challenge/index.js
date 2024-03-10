@@ -64,6 +64,7 @@ smileyfacemain.addEventListener('animationend', (e) => {
 songButton.addEventListener('click', () => {
     if (song.paused) {
             song.play();
+            song.currentTime = 0;
     } else {
         song.currentTime = 0;
     }
@@ -82,7 +83,7 @@ function clickTiming (clickTimestamp) {
   }}}
 
   smileyfacemain.addEventListener('click', function() {
-    const clickTime = Date.now();
+    const clickTime = song.currentTime;
     clickTiming(clickTime); 
     console.log(clickTime);
   });
