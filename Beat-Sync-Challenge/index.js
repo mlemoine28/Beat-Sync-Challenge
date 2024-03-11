@@ -75,15 +75,26 @@ songButton.addEventListener('click', () => {
 const bpm = 126;
 const beatInterval = 60000 / bpm;
 
-function clickTiming (clickTimestamp) {
+function clickTiming(clickTimestamp) {
+    let wasCloseToBeat = false;
     for (let keyBeat = beatInterval; keyBeat <= 40000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 100) {
-            console.log("Clicked close to beat at " + keyBeat + " milliseconds");
-  }}}
+         if (timeDifference <= 100) {
+         console.log("Clicked close to beat at " + clickTimestamp + " milliseconds");
+         wasCloseToBeat = true;
+         break;
+        } 
+    }
+    if (!wasCloseToBeat) {
+            console.log("Oh no!");
+        }
+    }
+
+    
+
 
   smileyfacemain.addEventListener('click', function() {
-    const clickTime = song.currentTime;
+    const clickTime = song.currentTime * 1000;
     clickTiming(clickTime); 
     console.log(clickTime);
   });
