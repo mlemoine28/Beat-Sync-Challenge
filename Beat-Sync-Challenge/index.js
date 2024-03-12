@@ -77,14 +77,22 @@ const beatInterval = 60000 / bpm;
 
 function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
-    for (let keyBeat = beatInterval; keyBeat <= 40000; keyBeat += beatInterval) {
+    for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-         if (timeDifference <= 100) {
-         console.log("Clicked close to beat at " + clickTimestamp + " milliseconds");
+         if (timeDifference <= 50) {
+         console.log("Perfect!");
          wasCloseToBeat = true;
          break;
-        } 
+        } else if (timeDifference <= 75) {
+            console.log("Great!");
+            wasCloseToBeat = true;
+            break;
+        } else if (timeDifference <= 100) {
+        console.log("Good");
+        wasCloseToBeat = true;
+            break;
     }
+}
     if (!wasCloseToBeat) {
             console.log("Oh no!");
         }
