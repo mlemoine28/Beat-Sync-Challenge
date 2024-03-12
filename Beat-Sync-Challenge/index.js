@@ -79,15 +79,15 @@ function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
     for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-         if (timeDifference <= 50) {
+         if (timeDifference <= 100) {
          console.log("Perfect!");
          wasCloseToBeat = true;
          break;
-        } else if (timeDifference <= 75) {
+        } else if (timeDifference <= 125) {
             console.log("Great!");
             wasCloseToBeat = true;
             break;
-        } else if (timeDifference <= 100) {
+        } else if (timeDifference <= 150) {
         console.log("Good");
         wasCloseToBeat = true;
             break;
