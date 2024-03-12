@@ -74,6 +74,8 @@ songButton.addEventListener('click', () => {
 
 const bpm = 126;
 const beatInterval = 60000 / bpm;
+const score = undefined
+// also add keydown function somewhere!!
 
 function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
