@@ -77,33 +77,36 @@ const beatInterval = 60000 / bpm;
 
 function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
+    let judgement = "Oh no!";
     for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-         if (timeDifference <= 100) {
-         console.log("Perfect!");
-         wasCloseToBeat = true;
-         break;
+        if (timeDifference <= 85) {
+            console.log("Perfect!");
+            judgement = "Perfect";
+            wasCloseToBeat = true;
+            break;
         } else if (timeDifference <= 125) {
             console.log("Great!");
+            judgement = "Great";
             wasCloseToBeat = true;
             break;
         } else if (timeDifference <= 150) {
-        console.log("Good");
-        wasCloseToBeat = true;
+            console.log("Good");
+            judgement = "Good";
+            wasCloseToBeat = true;
             break;
-    }
-}
-    if (!wasCloseToBeat) {
-            console.log("Oh no!");
         }
     }
-
-    
-
+    if (!wasCloseToBeat) {
+        console.log("Oh no!");
+    }
+    return judgement;
+}
 
   smileyfacemain.addEventListener('click', function() {
     const clickTime = song.currentTime * 1000;
-    clickTiming(clickTime); 
+    let judgement = clickTiming(clickTime); 
+    console.log(judgement);
     console.log(clickTime);
   });
 
