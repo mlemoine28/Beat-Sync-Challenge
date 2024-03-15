@@ -28,7 +28,6 @@ function onLeaderboardsClick() {
 howtoplay.addEventListener('click', onHowToPlayClick)
 
 function onHowToPlayClick() {
-
     modal.show();
     modal.style.display = "flex";
 }
@@ -47,24 +46,33 @@ gotIt.addEventListener('click', () => {
 
 howtoplay2.addEventListener('click', onHowToPlayClick)
 
-smileyfacemain.addEventListener('click', (e) => {
-    e.target.classList.add('smileyimage');
+smileyfacemain.addEventListener('click', animationEvent);
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        animationEvent(e);
+    }
+});   //I'm getting there. The space bar makes the animation react, but it completes the whole animation. I need it to respond identically to how the mouseclick works!
+    
+
+
+function animationEvent(e) {
+    smileyfacemain.classList.add('smileyimage');
     let animations = e.target.getAnimations();
     for (let animation of animations) {
         animation.currentTime = 0;
     }
-});
+}
 
 smileyfacemain.addEventListener('animationend', (e) => {
-    e.target.classList.remove('smileyimage');
+    smileyfacemain.classList.remove('smileyimage');
 });
 
 
 
 songButton.addEventListener('click', () => {
     if (song.paused) {
-            song.play();
-            song.currentTime = 0;
+        song.play();
+        song.currentTime = 0;
     } else {
         song.currentTime = 0;
     }
@@ -74,44 +82,69 @@ songButton.addEventListener('click', () => {
 
 const bpm = 126;
 const beatInterval = 60000 / bpm;
-const score = undefined
+let score = 0;
+
+
 // also add keydown function somewhere!!
 
 function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
-    let judgement = "Oh no!";
+    let judgment = "Oh no!";
+    
     for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 85) {
-            console.log("Perfect!");
-            judgement = "Perfect";
+        if (timeDifference <= 75) {
+            console.log("Perfect");
+            judgment = "Perfect +100";
+            score += 100;
+            wasCloseToBeat = true;
+            break;
+        } else if (timeDifference <= 100) {
+            console.log("Great");
+            judgment = "Great +50";
+            score += 50;
             wasCloseToBeat = true;
             break;
         } else if (timeDifference <= 125) {
-            console.log("Great!");
-            judgement = "Great";
-            wasCloseToBeat = true;
-            break;
-        } else if (timeDifference <= 150) {
             console.log("Good");
-            judgement = "Good";
+            judgment = "Good +25";
+            score += 25;
             wasCloseToBeat = true;
             break;
         }
+       
     }
     if (!wasCloseToBeat) {
-        console.log("Oh no!");
+        console.log("Poor");
+        judgment = "Poor -20";
+        score -= 20;
     }
-    return judgement;
+    return judgment;
+    
 }
 
-  smileyfacemain.addEventListener('click', function() {
-    const clickTime = song.currentTime * 1000;
-    let judgement = clickTiming(clickTime); 
-    console.log(judgement);
-    console.log(clickTime);
-  });
+smileyfacemain.addEventListener('click', buttonPress);
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        buttonPress();
+    }
+}); 
 
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'ArrowDown') {
+        buttonPress();
+    }
+}); 
+  
+
+function buttonPress() {
+    const clickTime = song.currentTime * 1000;
+    let judgment = clickTiming(clickTime); 
+    document.querySelector('#judgmentdiv').innerText = judgment;
+    document.querySelector('#scoretitle').innerText = "Score: " + score;
+    console.log(judgment);
+    console.log(clickTime);
+  }
 
 
 
