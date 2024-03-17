@@ -50,6 +50,8 @@ smileyfacemain.addEventListener('click', animationEvent);
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         animationEvent(e);
+    } else if (e.code === 'ArrowDown') {
+        animationEvent(e);
     }
 });   //I'm getting there. The space bar makes the animation react, but it completes the whole animation. I need it to respond identically to how the mouseclick works!
     
@@ -141,15 +143,10 @@ smileyfacemain.addEventListener('click', buttonPress);
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         buttonPress();
-    }
-}); 
-
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'ArrowDown') {
+    } else if (e.code === 'ArrowDown') {
         buttonPress();
     }
 }); 
-  
 
 function buttonPress() {
     const clickTime = song.currentTime * 1000;
