@@ -93,32 +93,46 @@ function clickTiming(clickTimestamp) {
     
     for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 75) {
+        
+        if (timeDifference <= 55) {
+            const showperfectimage = document.querySelector('#perfect_image')
             console.log("Perfect");
             judgment = "Perfect +100";
             score += 100;
+            showperfectimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
         } else if (timeDifference <= 100) {
+            const showgreatimage = document.querySelector('#great_image')
             console.log("Great");
             judgment = "Great +50";
             score += 50;
+            showgreatimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
-        } else if (timeDifference <= 125) {
+        } else if (timeDifference <= 150) {
+            const showgoodimage = document.querySelector('#good_image')
             console.log("Good");
             judgment = "Good +25";
             score += 25;
+            showgoodimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
         }
-       
     }
     if (!wasCloseToBeat) {
+        const showpoorimage = document.querySelector('#poor_image')
         console.log("Poor");
         judgment = "Poor -20";
         score -= 20;
+        showpoorimage.style.display = 'block';
     }
+    setTimeout(function() {
+        document.getElementById('perfect_image').style.display = 'none';
+        document.getElementById('great_image').style.display = 'none';
+        document.getElementById('good_image').style.display = 'none';
+        document.getElementById('poor_image').style.display = 'none';
+    }, 800);
     return judgment;
     
 }
@@ -140,7 +154,6 @@ document.addEventListener('keydown', (e) => {
 function buttonPress() {
     const clickTime = song.currentTime * 1000;
     let judgment = clickTiming(clickTime); 
-    document.querySelector('#judgmentdiv').innerText = judgment;
     document.querySelector('#scoretitle').innerText = "Score: " + score;
     console.log(judgment);
     console.log(clickTime);
