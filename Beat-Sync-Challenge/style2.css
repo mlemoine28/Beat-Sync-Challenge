@@ -1,12 +1,13 @@
 body { 
     background-color: #1eaae6;
         font-family: "Courier New", Courier, monospace;
-    } 
+} 
 
 p {
     color: white;
     font-size: 200%;
-    }
+}
+
 p:hover {
     color:red
 }
@@ -37,8 +38,6 @@ div {
     to {right:0px; top:0px;}
 }
 
-
-
 #main {
     background-color: #200730;
     text-align: center;
@@ -46,8 +45,6 @@ div {
     width: 50%;
     margin: auto;
     border-color: black;
-    
-
 }
 
 .smileyimage {
@@ -55,56 +52,43 @@ div {
     animation: smileybounce .50s;
 }
 
-
-
-
-
 @keyframes smileybounce {
   0% {
     transform: scale(1);
   }
-
   25% {
     transform: scale(1.15);
   }
-
  50% {
   transform: scale(0.95);
- }
-
+  }
  75% {
   transform: scale (1.1);
- }
+  }
 100% {
   transform: scale(1);
   }
 }
 
-
-    #wholegame {
+#wholegame {
         border-color: transparent;
-        display:none;
-        
-       
-    }
+        display:none;   
+}
 
-    .intropage {
+.intropage {
         font-size: xx-large;
         border-color: transparent;
         text-align: center;
         display:block;
         background-color: #1eaae6;
-        
-              
-    }
+}
 
-    .center {
+.center {
       display: block;
       margin-left: auto;
       margin-right: auto;
       
-    }
-
+}
 
 #smileydiv {
     background-color: #071233;
@@ -115,7 +99,8 @@ div {
     background: transparent;
     border-color: transparent;
 }
-  #judgmentdiv {
+
+#judgmentdiv {
     position: relative;
     border-color: transparent;        /* figure out how to center this!!! */ 
     text-align: center;
@@ -131,14 +116,8 @@ div {
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
-    
-
-  }
-
- 
-
-    
-    
+    pointer-events: none;
+}
 
 #footer {
     background-color: #d97e29;
@@ -148,13 +127,12 @@ div {
     position: absolute;
     left: 0;
     bottom: 0;
-    
 }
+
 #container {
     width: 75%;
     margin: auto;
     border-color: transparent;
-
 }
 
 .game-container {
@@ -177,16 +155,13 @@ div {
     bottom: 50%;
     font-size: x-large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 #scoretitle:hover {
     color:red
 }
 
-
-  
-  #socials {
+#socials {
     background-color: #1E1D30;
     margin-left: auto;
     margin-right: auto;
@@ -201,10 +176,9 @@ div {
     height: 100px;
     max-width: 100%;
     padding-bottom: 15px;
-    
-  }
+}
 
-  #leaderboards {
+#leaderboards {
     height: 70px;
     width: 20%;
     position: relative;
@@ -231,9 +205,8 @@ div {
     border-radius: 500px;
     padding: 15px;
 }
-  
 
-  #playnowbutton {
+#playnowbutton {
     height: 50px;
     width: 12%;
     position: relative;
@@ -243,13 +216,10 @@ div {
     transform:skew(-10deg); 
     cursor:pointer;
     top: 830px;
-    right: 50px;
-    
+    right: 50px;  
+}
 
-    
-  }
-
-  #howtoplaybutton {
+#howtoplaybutton {
     height: 50px;
     width: 12%;
     position: relative;
@@ -260,42 +230,38 @@ div {
     cursor:pointer;
     top: 830px;
     left: 50px;
-  }
+}
 
-  #highscores {
+#highscores {
     display:none;
     text-align: center;
     width: 40%;
     position:relative;
     font-size:x-large;
     margin-left: auto;
-    margin-right: auto;
-    
-  }
+    margin-right: auto;  
+}
 
-  #back_2 {
+#back_2 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    position:relative;
-  }
+    position: relative;
+}
   
-  .smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
+.smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
     position: relative;
     animation: smileyrotate 4s ease-in-out, smileybounce2 1s ease-in-out alternate infinite;
     border-color: transparent;
     animation-delay: 0s, 3s;  
     top: 190px;
             /* Why can't i do left: 1px without messing up the whole thing???!!! */
-   
-
 }
 
 @keyframes smileyrotate {
-   0% {transform: scale(0%)rotate(180deg)}
-   33% {transform: scale(0.10)rotate(-740deg)}
-    66%  {transform:  scale(0.60);}
-   
+  0% {transform: scale(0%)rotate(180deg)}
+  33% {transform: scale(0.10)rotate(-740deg)}
+  66%  {transform:  scale(0.60);} 
 }
 
 @keyframes smileybounce2 {
@@ -304,24 +270,20 @@ div {
   100%{transform: scale(0.75)}
 }
 
-
-
-    .beat-image {
+.beat-image {
     border-color: transparent;
     animation: slidein 1s ease-in-out forwards;
     animation-timing-function: linear(0 0%, 0.95 13.27%, 1 100%);
     position: relative;
     bottom: 550px;
-    
-    
+}
 
-  }
-
-  @keyframes slidein {
+@keyframes slidein {
     0% {transform:translate(-1000%)}
     100%{transform:translate(-50%);}
-  }
-  .sync-image {
+}
+
+.sync-image {
     border-color: transparent;
     animation: slidein2 1s ease-in-out forwards;
     animation-delay: .80s;
@@ -329,33 +291,29 @@ div {
     position: relative;
     bottom: 665px;
     transform: scale(0%);
-    
-   
+}
 
-  }
-
-  @keyframes slidein2 {
+@keyframes slidein2 {
     0% {transform:translate(1000%)}
     100%{transform:translate(50%);}
-  }
+}
 
-  .challenge-image {
+.challenge-image {
     border-color: transparent;
     position: relative;
     animation: warpin 1s forwards;
     animation-delay: 1.75s;
     bottom: 675px;
     transform: scale(0%);
-    
-  }
+}
 
-  @keyframes warpin {
+@keyframes warpin {
     0% {transform:scale(0%)}
     50% {transform:scale(120%)}
     100% {transform:scale(100%)}
-  }
+}
 
-  .howtoplaymodal {
+.howtoplaymodal {
    width: 1000px;
    /* height: 1500px; */
    height: 80vh;
@@ -370,41 +328,35 @@ div {
    display: none;
    flex-direction: column;
    /*transform:scale(80%);*/
-
-  }
+}
   
- 
-    
-   
-   
- 
-  #howtoplayheading {
-font-size: 5vh;
-text-align: center;
-  }
+#howtoplayheading {
+  font-size: 5vh;
+  text-align: center;
+}
 
-  #howtoplayinfo {
-    font-size: 1vh;
-    text-align: center;
-    border-color: black;
-    background-color: #071233;
-  }
+#howtoplayinfo {
+  font-size: 1vh;
+  text-align: center;
+  border-color: black;
+  background-color: #071233;
+}
   
 .scoreperfect {
   height: 2vh;
 }
 
-  .howtoplayimages {
+.howtoplayimages {
     display: flex;
     margin: auto;
     left: 50%;
     flex-wrap: wrap;
     
-  }
+}
 
-  .beat-image
+.beat-image
 
-  .scorephotos {
+.scorephotos {
     padding: 20px;
     height: 2vh;
     text-align: center;
@@ -414,9 +366,9 @@ text-align: center;
     flex-direction: column;
     top: 0;
     left: 0;
-  }
+}
 
-  #got-it-button {
+#got-it-button {
     height: 120px;
     width: 20%;
     position: relative;
@@ -427,9 +379,9 @@ text-align: center;
     cursor:pointer;
     margin-left: auto;
     margin-right: auto;   
-  }
+}
 
-  #back {
+#back {
     height: 50px;
     width: 20%;
     position: relative;
@@ -441,4 +393,4 @@ text-align: center;
     margin-left: auto;
     margin-right: auto;
     top:100px;
-  }
+}

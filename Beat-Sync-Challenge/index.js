@@ -47,16 +47,15 @@ gotIt.addEventListener('click', () => {
 howtoplay2.addEventListener('click', onHowToPlayClick)
 
 smileyfacemain.addEventListener('click', animationEvent);
+
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-        animationEvent(e);
+        animationEvent({target: smileyfacemain}); //I need to put target: smileyfacemain here because otherwise, the target (e) will be referring to the animations of the document, not to the smileyfacemain, which is why the animation was not resetting after future clicks or presses!
     } else if (e.code === 'ArrowDown') {
-        animationEvent(e);
+        animationEvent({target: smileyfacemain});
     }
-});   //I'm getting there. The space bar makes the animation react, but it completes the whole animation. I need it to respond identically to how the mouseclick works!
+});   
     
-
-
 function animationEvent(e) {
     smileyfacemain.classList.add('smileyimage');
     let animations = e.target.getAnimations();
@@ -69,8 +68,6 @@ smileyfacemain.addEventListener('animationend', (e) => {
     smileyfacemain.classList.remove('smileyimage');
 });
 
-
-
 songButton.addEventListener('click', () => {
     if (song.paused) {
         song.play();
@@ -80,22 +77,15 @@ songButton.addEventListener('click', () => {
     }
 })
 
-
-
 const bpm = 126;
 const beatInterval = 60000 / bpm;
 let score = 0;
 
-
-// also add keydown function somewhere!!
-
 function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
     let judgment = "Oh no!";
-    
     for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        
         if (timeDifference <= 55) {
             const showperfectimage = document.querySelector('#perfect_image')
             console.log("Perfect");
@@ -135,8 +125,7 @@ function clickTiming(clickTimestamp) {
         document.getElementById('good_image').style.display = 'none';
         document.getElementById('poor_image').style.display = 'none';
     }, 800);
-    return judgment;
-    
+    return judgment;   
 }
 
 smileyfacemain.addEventListener('click', buttonPress);
@@ -155,8 +144,6 @@ function buttonPress() {
     console.log(judgment);
     console.log(clickTime);
   }
-
-
 
   /*kickButton.addEventListener('click', () => {
     
