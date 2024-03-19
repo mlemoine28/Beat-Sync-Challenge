@@ -138,12 +138,14 @@ document.addEventListener('keydown', (e) => {
 }); 
 
 function buttonPress() {
-    const clickTime = song.currentTime * 1000;
-    let judgment = clickTiming(clickTime); 
-    document.querySelector('#scoretitle').innerText = "Score: " + score;
-    console.log(judgment);
-    console.log(clickTime);
-  }
+    if (!song.paused) {
+        const clickTime = song.currentTime * 1000;
+        let judgment = clickTiming(clickTime); 
+        document.querySelector('#scoretitle').innerText = "Score: " + score;
+        console.log(judgment);
+        console.log(clickTime);
+    }    
+}
 
   /*kickButton.addEventListener('click', () => {
     
