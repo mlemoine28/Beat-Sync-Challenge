@@ -1,5 +1,5 @@
-let playnow = document.querySelector('#playnowbutton');
-let song = document.querySelector('#song');
+let playnow = document.querySelector('#playnowbutton')
+let song = document.querySelector('#song')
 let leaderboards = document.querySelector('#leaderboards')
 let kickButton = document.querySelector('#kickButton')
 let howtoplay = document.querySelector('#howtoplaybutton')
@@ -9,7 +9,9 @@ let modal = document.querySelector('.howtoplaymodal')
 let howtoplay2 = document.querySelector('#howtoplay2')
 let kickDrumSound = document.querySelector('#kickdrumsound')
 let songButton = document.querySelector('#songButton')
-let smileyfacemain = document.querySelector('#smileyface');
+let songButton2 = document.querySelector('#songButton2')
+let songButton3 = document.querySelector('#songButton3')
+let smileyfacemain = document.querySelector('#smileyface')
 
 playnow.addEventListener('click', onPlayNowClick);
 
@@ -77,9 +79,35 @@ songButton.addEventListener('click', () => {
     }
 })
 
+songButton2.addEventListener('click', () => {
+    if (song2.paused) {
+        song2.play();
+        song2.currentTime = 0;
+    } else {
+        song2.currentTime = 0;
+    }
+})
+
+songButton3.addEventListener('click', () => {
+    if (song3.paused) {
+        song3.play();
+        song3.currentTime = 0;
+    } else {
+        song3.currentTime = 0;
+    }
+})
+
 const bpm = 126;
 const beatInterval = 60000 / bpm;
 let score = 0;
+let score2 = 0;
+let score3 = 0;
+
+const bpm2 = 85;
+const beatInterval2 = 60000 / bpm2;
+
+const bpm3 = 125;
+const beatInterval3 = 60000 / bpm3;
 
 function clickTiming(clickTimestamp) {
     let wasCloseToBeat = false;
@@ -128,12 +156,124 @@ function clickTiming(clickTimestamp) {
     return judgment;   
 }
 
+function clickTiming2(clickTimestamp) {
+    let wasCloseToBeat = false;
+    let judgment = "Oh no!";
+    for (let keyBeat = beatInterval2; keyBeat <= 50000; keyBeat += beatInterval2) {
+        const timeDifference = Math.abs(clickTimestamp - keyBeat);
+        if (timeDifference <= 55) {
+            const showperfectimage = document.querySelector('#perfect_image')
+            console.log("Perfect");
+            judgment = "Perfect +100";
+            score2 += 100;
+            showperfectimage.style.display = 'block';
+            wasCloseToBeat = true;
+            break;
+        } else if (timeDifference <= 100) {
+            const showgreatimage = document.querySelector('#great_image')
+            console.log("Great");
+            judgment = "Great +50";
+            score2 += 50;
+            showgreatimage.style.display = 'block';
+            wasCloseToBeat = true;
+            break;
+        } else if (timeDifference <= 150) {
+            const showgoodimage = document.querySelector('#good_image')
+            console.log("Good");
+            judgment = "Good +25";
+            score2 += 25;
+            showgoodimage.style.display = 'block';
+            wasCloseToBeat = true;
+            break;
+        }
+    }
+    if (!wasCloseToBeat) {
+        const showpoorimage = document.querySelector('#poor_image')
+        console.log("Poor");
+        judgment = "Poor -20";
+        score2 -= 20;
+        showpoorimage.style.display = 'block';
+    }
+    setTimeout(function() {
+        document.getElementById('perfect_image').style.display = 'none';
+        document.getElementById('great_image').style.display = 'none';
+        document.getElementById('good_image').style.display = 'none';
+        document.getElementById('poor_image').style.display = 'none';
+    }, 800);
+    return judgment;   
+}
+
+function clickTiming3(clickTimestamp) {
+    let wasCloseToBeat = false;
+    let judgment = "Oh no!";
+    for (let keyBeat = beatInterval3; keyBeat <= 94000; keyBeat += beatInterval3) {
+        const timeDifference = Math.abs(clickTimestamp - keyBeat);
+        if (timeDifference <= 55) {
+            const showperfectimage = document.querySelector('#perfect_image')
+            console.log("Perfect");
+            judgment = "Perfect +100";
+            score3 += 100;
+            showperfectimage.style.display = 'block';
+            wasCloseToBeat = true;
+            break;
+        } else if (timeDifference <= 100) {
+            const showgreatimage = document.querySelector('#great_image')
+            console.log("Great");
+            judgment = "Great +50";
+            score3 += 50;
+            showgreatimage.style.display = 'block';
+            wasCloseToBeat = true;
+            break;
+        } else if (timeDifference <= 150) {
+            const showgoodimage = document.querySelector('#good_image')
+            console.log("Good");
+            judgment = "Good +25";
+            score3 += 25;
+            showgoodimage.style.display = 'block';
+            wasCloseToBeat = true;
+            break;
+        }
+    }
+    if (!wasCloseToBeat) {
+        const showpoorimage = document.querySelector('#poor_image')
+        console.log("Poor");
+        judgment = "Poor -20";
+        score3 -= 20;
+        showpoorimage.style.display = 'block';
+    }
+    setTimeout(function() {
+        document.getElementById('perfect_image').style.display = 'none';
+        document.getElementById('great_image').style.display = 'none';
+        document.getElementById('good_image').style.display = 'none';
+        document.getElementById('poor_image').style.display = 'none';
+    }, 800);
+    return judgment;   
+}
+
 smileyfacemain.addEventListener('click', buttonPress);
+smileyfacemain.addEventListener('click', buttonPress2);
+smileyfacemain.addEventListener('click', buttonPress3);
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         buttonPress();
     } else if (e.code === 'ArrowDown') {
         buttonPress();
+    }
+}); 
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        buttonPress2();
+    } else if (e.code === 'ArrowDown') {
+        buttonPress2();
+    }
+}); 
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        buttonPress3();
+    } else if (e.code === 'ArrowDown') {
+        buttonPress3();
     }
 }); 
 
@@ -146,6 +286,28 @@ function buttonPress() {
         console.log(clickTime);
     }    
 }
+
+function buttonPress2() {
+    if (!song2.paused) {
+        const clickTime = song2.currentTime * 1000;
+        let judgment = clickTiming2(clickTime); 
+        document.querySelector('#scoretitle').innerText = "Score: " + score2;
+        console.log(judgment);
+        console.log(clickTime);
+    }    
+}
+
+function buttonPress3() {
+    if (!song3.paused) {
+        const clickTime = song3.currentTime * 1000;
+        let judgment = clickTiming3(clickTime); 
+        document.querySelector('#scoretitle').innerText = "Score: " + score3;
+        console.log(judgment);
+        console.log(clickTime);
+    }    
+}
+
+
 
   /*kickButton.addEventListener('click', () => {
     

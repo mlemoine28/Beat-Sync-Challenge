@@ -249,6 +249,39 @@ div {
   right: 250px;
 }
 
+#songButton2 {
+    height: 70px;
+    width: 20%;
+    position: relative;
+    background-color: green;
+    font-size: xx-large;
+    color: #071233;
+    cursor:pointer;
+    border-style: groove;
+    border-color: black;
+    border-radius: 500px;
+    padding: 15px;
+    top: 50px;
+    
+  }
+
+  #songButton3 {
+    height: 70px;
+    width: 20%;
+    position: relative;
+    background-color: green;
+    font-size: xx-large;
+    color: #071233;
+    cursor:pointer;
+    border-style: groove;
+    border-color: black;
+    border-radius: 500px;
+    padding: 15px;
+    top: 50px;
+    left: 250px;
+    
+  }
+
 #highscores {
     display:none;
     text-align: center;
