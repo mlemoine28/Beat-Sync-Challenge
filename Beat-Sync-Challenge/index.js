@@ -1,5 +1,7 @@
 let playnow = document.querySelector('#playnowbutton')
 let song = document.querySelector('#song')
+let song2 = document.querySelector('#song2')
+let song3 = document.querySelector('#song3')
 let leaderboards = document.querySelector('#leaderboards')
 let kickButton = document.querySelector('#kickButton')
 let howtoplay = document.querySelector('#howtoplaybutton')
@@ -100,8 +102,6 @@ songButton3.addEventListener('click', () => {
 const bpm = 126;
 const beatInterval = 60000 / bpm;
 let score = 0;
-let score2 = 0;
-let score3 = 0;
 
 const bpm2 = 85;
 const beatInterval2 = 60000 / bpm2;
@@ -109,10 +109,11 @@ const beatInterval2 = 60000 / bpm2;
 const bpm3 = 125;
 const beatInterval3 = 60000 / bpm3;
 
-function clickTiming(clickTimestamp) {
+// 55000
+function clickTiming(clickTimestamp, interval, maximum) {
     let wasCloseToBeat = false;
     let judgment = "Oh no!";
-    for (let keyBeat = beatInterval; keyBeat <= 55000; keyBeat += beatInterval) {
+    for (let keyBeat = interval; keyBeat <= maximum; keyBeat += interval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
         if (timeDifference <= 55) {
             const showperfectimage = document.querySelector('#perfect_image')
@@ -156,204 +157,40 @@ function clickTiming(clickTimestamp) {
     return judgment;   
 }
 
-function clickTiming2(clickTimestamp) {
-    let wasCloseToBeat = false;
-    let judgment = "Oh no!";
-    for (let keyBeat = beatInterval2; keyBeat <= 50000; keyBeat += beatInterval2) {
-        const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 55) {
-            const showperfectimage = document.querySelector('#perfect_image')
-            console.log("Perfect");
-            judgment = "Perfect +100";
-            score2 += 100;
-            showperfectimage.style.display = 'block';
-            wasCloseToBeat = true;
-            break;
-        } else if (timeDifference <= 100) {
-            const showgreatimage = document.querySelector('#great_image')
-            console.log("Great");
-            judgment = "Great +50";
-            score2 += 50;
-            showgreatimage.style.display = 'block';
-            wasCloseToBeat = true;
-            break;
-        } else if (timeDifference <= 150) {
-            const showgoodimage = document.querySelector('#good_image')
-            console.log("Good");
-            judgment = "Good +25";
-            score2 += 25;
-            showgoodimage.style.display = 'block';
-            wasCloseToBeat = true;
-            break;
-        }
-    }
-    if (!wasCloseToBeat) {
-        const showpoorimage = document.querySelector('#poor_image')
-        console.log("Poor");
-        judgment = "Poor -20";
-        score2 -= 20;
-        showpoorimage.style.display = 'block';
-    }
-    setTimeout(function() {
-        document.getElementById('perfect_image').style.display = 'none';
-        document.getElementById('great_image').style.display = 'none';
-        document.getElementById('good_image').style.display = 'none';
-        document.getElementById('poor_image').style.display = 'none';
-    }, 800);
-    return judgment;   
-}
+smileyfacemain.addEventListener('click', () => buttonPress(song, beatInterval, 55000));
+smileyfacemain.addEventListener('click', () => buttonPress(song2, beatInterval2, 50000));
+smileyfacemain.addEventListener('click', () => buttonPress(song3, beatInterval3, 94000));
 
-function clickTiming3(clickTimestamp) {
-    let wasCloseToBeat = false;
-    let judgment = "Oh no!";
-    for (let keyBeat = beatInterval3; keyBeat <= 94000; keyBeat += beatInterval3) {
-        const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 55) {
-            const showperfectimage = document.querySelector('#perfect_image')
-            console.log("Perfect");
-            judgment = "Perfect +100";
-            score3 += 100;
-            showperfectimage.style.display = 'block';
-            wasCloseToBeat = true;
-            break;
-        } else if (timeDifference <= 100) {
-            const showgreatimage = document.querySelector('#great_image')
-            console.log("Great");
-            judgment = "Great +50";
-            score3 += 50;
-            showgreatimage.style.display = 'block';
-            wasCloseToBeat = true;
-            break;
-        } else if (timeDifference <= 150) {
-            const showgoodimage = document.querySelector('#good_image')
-            console.log("Good");
-            judgment = "Good +25";
-            score3 += 25;
-            showgoodimage.style.display = 'block';
-            wasCloseToBeat = true;
-            break;
-        }
-    }
-    if (!wasCloseToBeat) {
-        const showpoorimage = document.querySelector('#poor_image')
-        console.log("Poor");
-        judgment = "Poor -20";
-        score3 -= 20;
-        showpoorimage.style.display = 'block';
-    }
-    setTimeout(function() {
-        document.getElementById('perfect_image').style.display = 'none';
-        document.getElementById('great_image').style.display = 'none';
-        document.getElementById('good_image').style.display = 'none';
-        document.getElementById('poor_image').style.display = 'none';
-    }, 800);
-    return judgment;   
-}
-
-smileyfacemain.addEventListener('click', buttonPress);
-smileyfacemain.addEventListener('click', buttonPress2);
-smileyfacemain.addEventListener('click', buttonPress3);
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-        buttonPress();
+        buttonPress(song, beatInterval, 55000);
     } else if (e.code === 'ArrowDown') {
-        buttonPress();
+        buttonPress(song, beatInterval, 55000);
     }
 }); 
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-        buttonPress2();
+        buttonPress(song2, beatInterval2, 50000);
     } else if (e.code === 'ArrowDown') {
-        buttonPress2();
+        buttonPress(song2, beatInterval2, 50000);
     }
 }); 
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-        buttonPress3();
+        buttonPress(song3, beatInterval3, 94000);
     } else if (e.code === 'ArrowDown') {
-        buttonPress3();
+        buttonPress(song3, beatInterval3, 94000);
     }
 }); 
 
-function buttonPress() {
+function buttonPress(song, interval, maximum) {
     if (!song.paused) {
         const clickTime = song.currentTime * 1000;
-        let judgment = clickTiming(clickTime); 
+        let judgment = clickTiming(clickTime, interval, maximum); 
         document.querySelector('#scoretitle').innerText = "Score: " + score;
         console.log(judgment);
         console.log(clickTime);
     }    
 }
-
-function buttonPress2() {
-    if (!song2.paused) {
-        const clickTime = song2.currentTime * 1000;
-        let judgment = clickTiming2(clickTime); 
-        document.querySelector('#scoretitle').innerText = "Score: " + score2;
-        console.log(judgment);
-        console.log(clickTime);
-    }    
-}
-
-function buttonPress3() {
-    if (!song3.paused) {
-        const clickTime = song3.currentTime * 1000;
-        let judgment = clickTiming3(clickTime); 
-        document.querySelector('#scoretitle').innerText = "Score: " + score3;
-        console.log(judgment);
-        console.log(clickTime);
-    }    
-}
-
-
-
-  /*kickButton.addEventListener('click', () => {
-    
-    if (kickDrumSound.paused) {
-        kickDrumSound.play();
-    } else {
-        kickDrumSound.currentTime = 0;
-    }
-    kickDrumSound.loop = true;
-})
-  /*function animate(timestamp) {
-    if (!lastTimestamp) { //This is for the purpose of making sure that lastTimestamp only starts after rendering the second frame. Needed for accurately calculating deltaTime.
-        lastTimestamp = timestamp;
-    } else {
-    const deltaTime = timestamp - lastTimestamp; //the CURRENT time minus the time since the last frame. Basically, the amount of times between frames.
-    lastTimestamp = timestamp; //this updates lastTimestamp for the next frame, otherwise the times won't be consistent
-    console.log(deltaTime);
-}
-    requestAnimationFrame(animate);
-}
-    requestAnimationFrame(animate);
-
-console.log(lastTimestamp);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const bpm = 126;
-    const beatInterval = 60000 / bpm;
-    let lastBeatTime = 0;
-})
-
-function checkBeat(timestamp) {
-    const currentTime = kickDrumSound.currentTime * 1000;
-    if (currentTime - lastBeatTime >= beatInterval) {
-      lastBeatTime += beatInterval;
-    }
-    requestAnimationFrame(checkBeat);
-  }
-  requestAnimationFrame(checkBeat);
-
-  console.log(checkBeat);
- 
-   document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('song');
-    const feedbackElement = document.getElementById('feedback');
-    audio.play();
-
-    const keyBeat = [476, 952, 1428, 1904, 2380, 2856, 3332, 3808, 4284, 4760, 5236, 5712, 6188, 6664, 7140, 7616, 8092, 8568, 9044, 9520, 9996, 10472, 10948, 11424, 11900, 12376, 12852, 13328, 13804, 14280, 14756, 15232, 15708, 16184, 16660]
-  })
-*/
