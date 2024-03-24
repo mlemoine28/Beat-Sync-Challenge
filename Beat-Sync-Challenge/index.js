@@ -194,3 +194,13 @@ function buttonPress(song, interval, maximum) {
         console.log(clickTime);
     }    
 }
+
+let topscores = ["score1", "score2", "score3", "score4", "score5", "score6", "score7", "score8", "score9", "score10"];
+let scorelength = topscores.length;
+console.log(topscores);
+let text = "<ul>";
+for (let i = 0; i < scorelength; i++) {
+    text += "<li>" + topscores[i] + "</li>";
+}
+text += "</ul>";
+document.getElementById("topscorelist").innerHTML = text;
