@@ -195,12 +195,18 @@ function buttonPress(song, interval, maximum) {
     }    
 }
 
-let topscores = [username:"Bill", score: 10000, username: "Joey", score: 25000, username: "George", score: 4502 ];
+let topscores = [
+    {username: "Bill", score: 10000},
+    {username: "Joey", score: 25000},
+    {username: "George", score: 4502}
+];
+
+topscores.push({username: "Bobby", score: 22350});
 let scorelength = topscores.length;
 console.log(topscores);
 let text = "<ul>";
 for (let i = 0; i < scorelength; i++) {
-    text += "<li>" + topscores[i] + "</li>";
+    text += "<li>" + topscores[i].username + " " + topscores[i].score + "</li>";
 }
 text += "</ul>";
 document.getElementById("topscorelist").innerHTML = text;
