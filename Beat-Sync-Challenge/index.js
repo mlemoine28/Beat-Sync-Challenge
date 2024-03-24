@@ -195,7 +195,7 @@ function buttonPress(song, interval, maximum) {
     }    
 }
 
-let topscores = ["score1", "score2", "score3", "score4", "score5", "score6", "score7", "score8", "score9", "score10"];
+let topscores = [username:"Bill", score: 10000, username: "Joey", score: 25000, username: "George", score: 4502 ];
 let scorelength = topscores.length;
 console.log(topscores);
 let text = "<ul>";
