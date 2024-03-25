@@ -158,6 +158,11 @@ div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#highscorediv {
+    bottom: 500px;
+ 
+}
+
 #scoretitle:hover {
     color:red
 }

@@ -201,7 +201,7 @@ let topscores = [
     {username: "George", score: 4502}
 ];
 topscores.push({username: "Bobby", score: 22350});
-topscores.sort((a, b) => b.score - a.score)
+topscores.sort((a, b) => b.score - a.score) //still don't fully understand this?
 
 let scorelength = topscores.length;
 console.log(topscores);
@@ -211,3 +211,16 @@ for (let i = 0; i < scorelength; i++) {
 }
 text += "</ul>";
 document.getElementById("topscorelist").innerHTML = text;
+
+song.addEventListener("ended", (e) => {
+
+});
+
+song2.addEventListener("ended", (e) => {
+
+});
+
+song3.addEventListener("ended", (e) => {
+
+});
+
