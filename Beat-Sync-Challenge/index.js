@@ -197,27 +197,37 @@ function buttonPress(song, interval, maximum) {
 }
 
 let topscores = [
-    {username: "Bill", score: 1000},
-    {username: "Joey", score: 2000},
-    {username: "George", score: 3000}
+    {username: "Bill", score: 10000},
+    {username: "Joey", score: 9000},
+    {username: "Bob", score: 8000},
+    {username: "George", score: 7000},
+    {username: "Mark", score: 6000},
+    {username: "Reginald", score: 5000},
+    {username: "Fernando", score: 4000},
+    {username: "Rafiki", score: 3000},
+    {username: "Simba", score: 2000},
+    {username: "Scar", score: 1000}, //Add 7 more scores to have just 10 scores total.
 ];
 topscores.push({username: "Bobby", score: 22350});
-topscores.sort((a, b) => b.score - a.score) //still don't fully understand this?
+topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
 
 let scorelength = topscores.length;
 console.log(topscores);
-let text = "<ul>";
+
+let list = document.createElement("ul");
 for (let i = 0; i < scorelength; i++) {
-    text += "<li>" + topscores[i].username + " " + topscores[i].score + "</li>";
+    let li = document.createElement("li");
+    li.innerText = topscores[i].username + " " + topscores[i].score;
+    list.appendChild(li); //appendChild actually populates the list in this case. This is the same operation as "push".
 }
-text += "</ul>";
-document.getElementById("topscorelist").innerHTML = text;
+document.getElementById("topscorelist").replaceChildren(list); //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
 
-
-//Should be able to do an if statement. Like, at the end of the song, if the score was greater than 1000, open high score div to add high score or something
+//Need to implement so that when the song ends, I enter a username and the score automatically gets uploaded to the array.
 song.addEventListener("ended", (e) => {
-    if (score > 1000) {
+    if (score > 1000) { //Use if statement so that if score is higher than the 9th object in the array, then perform the function of adding a new high score. Username will be inputted from the user, score will automatically be added into the array. (submit button, use onClick event with the submit to update the array and put the new list on the page)
         document.querySelector('#highscorediv').style.display = 'block';
+        topscores.findIndex();
+        topscores.push({username: undefined, score: undefined});
 }   else {
         alert("Aw, no high score. Try again!")
     };
