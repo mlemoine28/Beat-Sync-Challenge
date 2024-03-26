@@ -197,9 +197,9 @@ function buttonPress(song, interval, maximum) {
 }
 
 let topscores = [
-    {username: "Bill", score: 10000},
-    {username: "Joey", score: 25000},
-    {username: "George", score: 4502}
+    {username: "Bill", score: 1000},
+    {username: "Joey", score: 2000},
+    {username: "George", score: 3000}
 ];
 topscores.push({username: "Bobby", score: 22350});
 topscores.sort((a, b) => b.score - a.score) //still don't fully understand this?
@@ -213,11 +213,14 @@ for (let i = 0; i < scorelength; i++) {
 text += "</ul>";
 document.getElementById("topscorelist").innerHTML = text;
 
+
+//Should be able to do an if statement. Like, at the end of the song, if the score was greater than 1000, open high score div to add high score or something
 song.addEventListener("ended", (e) => {
-    document.querySelector('#highscorediv').style.display = 'block';
-    console.log(
-        "Audio stopped either because it has finished playing or no further data is available.",
-      ); 
+    if (score > 1000) {
+        document.querySelector('#highscorediv').style.display = 'block';
+}   else {
+        alert("Aw, no high score. Try again!")
+    };
 });
 
 song2.addEventListener("ended", (e) => {
