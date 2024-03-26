@@ -159,7 +159,8 @@ div {
 }
 
 #highscorediv {
-    bottom: 500px;
+    bottom: 200px;
+    position: relative;
  
 }
 

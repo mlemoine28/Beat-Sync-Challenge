@@ -14,6 +14,7 @@ let songButton = document.querySelector('#songButton')
 let songButton2 = document.querySelector('#songButton2')
 let songButton3 = document.querySelector('#songButton3')
 let smileyfacemain = document.querySelector('#smileyface')
+let enterhighscore = document.querySelector('#enterhighscore')
 
 playnow.addEventListener('click', onPlayNowClick);
 
@@ -213,7 +214,10 @@ text += "</ul>";
 document.getElementById("topscorelist").innerHTML = text;
 
 song.addEventListener("ended", (e) => {
-
+    document.querySelector('#highscorediv').style.display = 'block';
+    console.log(
+        "Audio stopped either because it has finished playing or no further data is available.",
+      ); 
 });
 
 song2.addEventListener("ended", (e) => {
