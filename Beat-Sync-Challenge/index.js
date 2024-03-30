@@ -219,24 +219,44 @@ for (let i = 0; i < scorelength; i++) {
     li.innerText = topscores[i].username + " " + topscores[i].score;
     list.appendChild(li); //appendChild actually populates the list in this case. This is the same operation as "push".
 }
-document.getElementById("topscorelist").replaceChildren(list); //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
+document.getElementById("topscorelist").replaceChildren(list);
+ //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
 
-//Need to implement so that when the song ends, I enter a username and the score automatically gets uploaded to the array.
-song.addEventListener("ended", (e) => {
-    if (score > 1000) { //Use if statement so that if score is higher than the 9th object in the array, then perform the function of adding a new high score. Username will be inputted from the user, score will automatically be added into the array. (submit button, use onClick event with the submit to update the array and put the new list on the page)
+
+
+function submitScore() {
+
+ document.querySelector("#scoreForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    let usernameInput = document.querySelector('#username');
+    let username = usernameInput.value;
+    if (username !== "") { 
+        let newScore = score; 
+        if (newScore > topscores[9].score) {
+            topscores.push({username: username, score: newScore});
+            topscores.sort((a, b) => b.score - a.score);
+        }
+    }        
+
+          
+})}
+ console.log(username);
+song.addEventListener("ended", (e) => {         //Use if statement so that if score is higher than the 9th object in the array, then perform the function of adding a new high score. Username will be inputted from the user, score will automatically be added into the array. (submit button, use onClick event with the submit to update the array and put the new list on the page)
+    let newScore = score;
+    if (newScore > topscores[9].score) {
         document.querySelector('#highscorediv').style.display = 'block';
-        topscores.findIndex();
-        topscores.push({username: undefined, score: undefined});
-}   else {
-        alert("Aw, no high score. Try again!")
+       submitScore();           
+    } else {
+    alert("Aw, no high score. Try again!")
     };
 });
 
-let newScore = score;
-if (newScore > topscores[9].score) {
-    let usernameInput = document.querySelector('#username').ariaValueMax;
 
-}
+
+
+
+
+
 song2.addEventListener("ended", (e) => {
 
 });
