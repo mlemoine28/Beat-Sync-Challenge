@@ -208,7 +208,6 @@ let topscores = [
     {username: "Simba", score: 2000},
     {username: "Scar", score: 1000}, //Add 7 more scores to have just 10 scores total.
 ];
-topscores.push({username: "Bobby", score: 22350});
 topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
 
 let scorelength = topscores.length;
@@ -233,6 +232,11 @@ song.addEventListener("ended", (e) => {
     };
 });
 
+let newScore = score;
+if (newScore > topscores[9].score) {
+    let usernameInput = document.querySelector('#username').ariaValueMax;
+
+}
 song2.addEventListener("ended", (e) => {
 
 });
