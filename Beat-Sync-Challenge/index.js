@@ -145,8 +145,8 @@ function clickTiming(clickTimestamp, interval, maximum) {
     if (!wasCloseToBeat) {
         const showpoorimage = document.querySelector('#poor_image')
         console.log("Poor");
-        judgment = "Poor -20";
-        score -= 20;
+        judgment = "Poor -80";
+        score -= 80;
         showpoorimage.style.display = 'block';
     }
     setTimeout(function() {
@@ -233,11 +233,11 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
         if (newScore > topscores[9].score) {
                 topscores.push({username: username, score: newScore});
                 topscores.sort((a, b) => b.score - a.score);
-                updateLeaderboard();
+                updateLeaderboard();   
+                document.querySelector('#highscorediv').style.display = 'none';     
         }
-    }
-}
-);   
+    }  
+});   
 
 song.addEventListener("ended", (e) => {         //Use if statement so that if score is higher than the 9th object in the array, then perform the function of adding a new high score. Username will be inputted from the user, score will automatically be added into the array. (submit button, use onClick event with the submit to update the array and put the new list on the page)
     let newScore = score;
