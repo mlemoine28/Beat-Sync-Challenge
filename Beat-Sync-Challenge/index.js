@@ -234,7 +234,8 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
                 topscores.push({username: username, score: newScore});
                 topscores.sort((a, b) => b.score - a.score);
                 updateLeaderboard();   
-                document.querySelector('#highscorediv').style.display = 'none';     
+                document.querySelector('#highscorediv').style.display = 'none';   
+                score = 0;  
         }
     }  
 });   
@@ -245,6 +246,7 @@ song.addEventListener("ended", (e) => {         //Use if statement so that if sc
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
+    score = 0;
     };
 });
 
@@ -254,6 +256,7 @@ song2.addEventListener("ended", (e) => {
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
+    score = 0;
     };
 });
 
@@ -263,6 +266,7 @@ song3.addEventListener("ended", (e) => {
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
+    score = 0;
     };
 });
 
