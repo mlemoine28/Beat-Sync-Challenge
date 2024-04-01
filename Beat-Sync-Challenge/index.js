@@ -74,31 +74,25 @@ smileyfacemain.addEventListener('animationend', (e) => {
 });
 
 songButton.addEventListener('click', () => {
-    if (song.paused) {
-        song.play();
-        song.currentTime = 0;
-    } else {
-        song.currentTime = 0;
-    }
-})
+    stopAllSongs();
+    song.play();
+    song.currentTime = 0;
+    score = 0;
+});
 
 songButton2.addEventListener('click', () => {
-    if (song2.paused) {
-        song2.play();
-        song2.currentTime = 0;
-    } else {
-        song2.currentTime = 0;
-    }
-})
+    stopAllSongs();
+    song2.play();
+    song2.currentTime = 0;
+    score = 0;
+});
 
 songButton3.addEventListener('click', () => {
-    if (song3.paused) {
-        song3.play();
-        song3.currentTime = 0;
-    } else {
-        song3.currentTime = 0;
-    }
-})
+    stopAllSongs();
+    song3.play();
+    song3.currentTime = 0;
+    score = 0;
+});
 
 const bpm = 126;
 const beatInterval = 60000 / bpm;
@@ -269,6 +263,13 @@ song3.addEventListener("ended", (e) => {
     score = 0;
     };
 });
+
+function stopAllSongs() {
+    document.querySelectorAll('audio').forEach(audiofile => {
+        audiofile.pause();
+        audiofile.currentTime = 0;
+    }
+)}
 
 document.addEventListener('DOMContentLoaded', function() {
     updateLeaderboard();
