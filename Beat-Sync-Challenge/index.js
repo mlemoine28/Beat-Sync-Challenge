@@ -248,12 +248,6 @@ song.addEventListener("ended", (e) => {         //Use if statement so that if sc
     };
 });
 
-
-
-
-
-
-
 song2.addEventListener("ended", (e) => {
     let newScore = score;
     if (newScore > topscores[9].score) {
