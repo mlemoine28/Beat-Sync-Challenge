@@ -81,7 +81,7 @@
                     </div>
                     <button id="leaderboards"><strong>Leaderboards</strong></button>
                     <button id="howtoplay2"><strong>How To Play</strong></button>
-                    <div id="highscorediv">
+                    <div id="highscorediv" style="display: none">
                     <form id="scoreForm">
                         <label for="username">Enter your username to add to the Leaderboard!</label>
                         <input type="text" id="username" name="username"> <!-- So "name" is essentially the name of the box of data being sent to the server (through the form).-->
@@ -103,7 +103,9 @@
         </div>
         <div id="highscores">
             <h1>Top 10 Leaderboard</h1>
-            <p id="topscorelist">Hi</p>
+            <ul id="topscorelist">
+                <li>Hi</li>
+            </ul>
             <button id="back">Back</button>
         </div>
         <script src="index.js"> </script>

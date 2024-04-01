@@ -206,46 +206,43 @@ let topscores = [
     {username: "Fernando", score: 4000},
     {username: "Rafiki", score: 3000},
     {username: "Simba", score: 2000},
-    {username: "Scar", score: 1000}, //Add 7 more scores to have just 10 scores total.
+    {username: "Scar", score: 1000},
 ];
 topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
 
 let scorelength = topscores.length;
 console.log(topscores);
 
-let list = document.createElement("ul");
-for (let i = 0; i < scorelength; i++) {
-    let li = document.createElement("li");
-    li.innerText = topscores[i].username + " " + topscores[i].score;
-    list.appendChild(li); //appendChild actually populates the list in this case. This is the same operation as "push".
+
+function updateLeaderboard() {
+    let list = document.createElement("ul");
+    for (let i = 0; i < scorelength; i++) {
+        let li = document.createElement("li");
+        li.innerText = topscores[i].username + " " + topscores[i].score;
+        list.appendChild(li); //appendChild actually populates the list in this case. This is the same operation as "push".
+    }
+    document.getElementById("topscorelist").replaceChildren(list); //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
 }
-document.getElementById("topscorelist").replaceChildren(list);
- //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
 
-
-
-function submitScore() {
-
- document.querySelector("#scoreForm").addEventListener("submit", function(event) {
+document.querySelector("#scoreForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
     let usernameInput = document.querySelector('#username');
     let username = usernameInput.value;
-    if (username !== "") { 
-        let newScore = score; 
+    if (username !== "") {
+        let newScore = score;
         if (newScore > topscores[9].score) {
-            topscores.push({username: username, score: newScore});
-            topscores.sort((a, b) => b.score - a.score);
+                topscores.push({username: username, score: newScore});
+                topscores.sort((a, b) => b.score - a.score);
+                updateLeaderboard();
         }
-    }        
+    }
+}
+);   
 
-          
-})}
- console.log(username);
 song.addEventListener("ended", (e) => {         //Use if statement so that if score is higher than the 9th object in the array, then perform the function of adding a new high score. Username will be inputted from the user, score will automatically be added into the array. (submit button, use onClick event with the submit to update the array and put the new list on the page)
     let newScore = score;
     if (newScore > topscores[9].score) {
-        document.querySelector('#highscorediv').style.display = 'block';
-       submitScore();           
+        document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
     };
@@ -258,10 +255,23 @@ song.addEventListener("ended", (e) => {         //Use if statement so that if sc
 
 
 song2.addEventListener("ended", (e) => {
-
+    let newScore = score;
+    if (newScore > topscores[9].score) {
+        document.querySelector('#highscorediv').style.display = 'block';       
+    } else {
+    alert("Aw, no high score. Try again!")
+    };
 });
 
 song3.addEventListener("ended", (e) => {
-
+    let newScore = score;
+    if (newScore > topscores[9].score) {
+        document.querySelector('#highscorediv').style.display = 'block';       
+    } else {
+    alert("Aw, no high score. Try again!")
+    };
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    updateLeaderboard();
+});
