@@ -154,29 +154,13 @@ smileyfacemain.addEventListener('click', () => buttonPress(song, beatInterval, 5
 smileyfacemain.addEventListener('click', () => buttonPress(song2, beatInterval2, 50000));
 smileyfacemain.addEventListener('click', () => buttonPress(song3, beatInterval3, 94000));
 
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && !spacebarDown) {
-        spacebarDown = true;
-        buttonPress(song, beatInterval, 55000);
-}}); 
-
 let spacebarDown = false;
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' && !spacebarDown) {
         spacebarDown = true;
+        buttonPress(song, beatInterval, 55000);
         buttonPress(song2, beatInterval2, 50000);
-}}); 
-
-document.addEventListener ('keyup', (e) => {
-    if (e.code ==='Space') {
-        spacebarDown = false;
-    }
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && !spacebarDown) {
-        spacebarDown = true;
         buttonPress(song3, beatInterval3, 94000);
 }}); 
 
@@ -189,6 +173,11 @@ function buttonPress(song, interval, maximum) {
         console.log(clickTime);
     }    
 }
+document.addEventListener ('keyup', (e) => {
+    if (e.code ==='Space') {
+        spacebarDown = false;
+    }
+});
 
 let topscores = [
     {username: "Bill", score: 10000},
