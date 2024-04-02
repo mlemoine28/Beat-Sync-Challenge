@@ -57,10 +57,7 @@ smileyfacemain.addEventListener('click', animationEvent);
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         animationEvent({target: smileyfacemain}); //I need to put target: smileyfacemain here because otherwise, the target (e) will be referring to the animations of the document, not to the smileyfacemain, which is why the animation was not resetting after future clicks or presses!
-    } else if (e.code === 'ArrowDown') {
-        animationEvent({target: smileyfacemain});
-    }
-});   
+}});   
     
 function animationEvent(e) {
     smileyfacemain.classList.add('smileyimage');
@@ -158,28 +155,30 @@ smileyfacemain.addEventListener('click', () => buttonPress(song2, beatInterval2,
 smileyfacemain.addEventListener('click', () => buttonPress(song3, beatInterval3, 94000));
 
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' && !spacebarDown) {
+        spacebarDown = true;
         buttonPress(song, beatInterval, 55000);
-    } else if (e.code === 'ArrowDown') {
-        buttonPress(song, beatInterval, 55000);
-    }
-}); 
+}}); 
+
+let spacebarDown = false;
 
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' && !spacebarDown) {
+        spacebarDown = true;
         buttonPress(song2, beatInterval2, 50000);
-    } else if (e.code === 'ArrowDown') {
-        buttonPress(song2, beatInterval2, 50000);
+}}); 
+
+document.addEventListener ('keyup', (e) => {
+    if (e.code ==='Space') {
+        spacebarDown = false;
     }
-}); 
+});
 
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' && !spacebarDown) {
+        spacebarDown = true;
         buttonPress(song3, beatInterval3, 94000);
-    } else if (e.code === 'ArrowDown') {
-        buttonPress(song3, beatInterval3, 94000);
-    }
-}); 
+}}); 
 
 function buttonPress(song, interval, maximum) {
     if (!song.paused) {
