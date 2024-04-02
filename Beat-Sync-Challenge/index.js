@@ -16,6 +16,7 @@ let songButton3 = document.querySelector('#songButton3')
 let smileyfacemain = document.querySelector('#smileyface')
 let enterhighscore = document.querySelector('#enterhighscore')
 
+
 playnow.addEventListener('click', onPlayNowClick);
 
 function onPlayNowClick() {
@@ -205,8 +206,6 @@ let topscores = [
 topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
 
 let scorelength = topscores.length;
-console.log(topscores);
-
 
 function updateLeaderboard() {
     let list = document.createElement("ul");

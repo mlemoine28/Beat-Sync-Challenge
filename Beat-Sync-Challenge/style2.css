@@ -159,11 +159,40 @@ div {
 }
 
 #highscorediv {
-    bottom: 200px;
+    bottom: 500px;
     position: relative;
- 
+    font-size: x-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 65px;
+    width: 50%;
+    border-color: black;
+    border-radius: 500px;
+    border-style: groove;
+    background-color: green;
+    color: antiquewhite;
+    left: 25%;
+
 }
 
+#enterhighscore {
+    height: 50px;
+    width: 15%;
+    position: relative;
+    background-color: #f2c12e;
+    font-size: large;
+    color: #071233;
+    cursor:pointer;
+    border-style: groove;
+    border-color: black;
+    border-radius: 500px;
+    padding: 15px;
+}
+
+#username {
+    height: 20px;
+    width: 200px;
+    text-align: center;
+}
 #scoretitle:hover {
     color:red
 }
@@ -245,7 +274,7 @@ div {
   position: relative;
   background-color: green;
   font-size: xx-large;
-  color: #071233;
+  color: antiquewhite;
   cursor:pointer;
   border-style: groove;
   border-color: black;
@@ -261,7 +290,7 @@ div {
     position: relative;
     background-color: green;
     font-size: xx-large;
-    color: #071233;
+    color: antiquewhite;
     cursor:pointer;
     border-style: groove;
     border-color: black;
@@ -277,7 +306,7 @@ div {
     position: relative;
     background-color: green;
     font-size: xx-large;
-    color: #071233;
+    color: antiquewhite;
     cursor:pointer;
     border-style: groove;
     border-color: black;
