@@ -157,6 +157,9 @@ smileyfacemain.addEventListener('click', () => buttonPress(song3, beatInterval3,
 let spacebarDown = false;
 
 document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        e.preventDefault();
+    }
     if (e.code === 'Space' && !spacebarDown) {
         spacebarDown = true;
         buttonPress(song, beatInterval, 55000);
