@@ -314,7 +314,6 @@ div {
     padding: 15px;
     top: 50px;
     left: 250px;
-    
   }
 
 #highscores {
@@ -324,7 +323,15 @@ div {
     position:relative;
     font-size:x-large;
     margin-left: auto;
-    margin-right: auto;  
+    margin-right: auto; 
+}
+
+#topscorelist {
+    font-size: xx-large;
+    width: 500px;
+    text-align: center;
+    position: relative;
+    left: 20%;
 }
 
 #back_2 {

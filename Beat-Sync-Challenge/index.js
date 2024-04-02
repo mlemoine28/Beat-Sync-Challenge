@@ -199,7 +199,7 @@ topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, rep
 let scorelength = topscores.length;
 
 function updateLeaderboard() {
-    let list = document.createElement("ul");
+    let list = document.createElement("ol");
     for (let i = 0; i < scorelength; i++) {
         let li = document.createElement("li");
         li.innerText = topscores[i].username + " " + topscores[i].score;
