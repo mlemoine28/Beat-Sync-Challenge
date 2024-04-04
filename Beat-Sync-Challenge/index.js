@@ -83,7 +83,7 @@ songButton.addEventListener('click', () => {
     song.play();
     song.currentTime = 0;
     setScore(0);
-    countdown = 13;
+    countdown = 16;
     let id = setInterval(() => {  //Get images for the countdown!! 3, 2, 1, GO!
         countdown--;
         if (countdown === 0) {
