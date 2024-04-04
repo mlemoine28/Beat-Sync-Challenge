@@ -71,36 +71,60 @@ smileyfacemain.addEventListener('animationend', (e) => {
     smileyfacemain.classList.remove('smileyimage');
 });
 
+function setScore(newScore) {
+    score = newScore;
+    document.querySelector('#scoretitle').innerText = "Score: " + score;
+}
+
+let countdown = 7
+
 songButton.addEventListener('click', () => {
     stopAllSongs();
     song.play();
     song.currentTime = 0;
-    score = 0;
+    setScore(0);
+    countdown = 13;
+    let id = setInterval(() => {  //Get images for the countdown!! 3, 2, 1, GO!
+        countdown--;
+        if (countdown === 0) {
+            clearInterval(id);
+            console.log("Go!");    
+        } else if (countdown === 3) {
+            console.log("3");
+        } else if (countdown === 2) {
+            console.log("2");
+        } else if (countdown === 1) {
+            console.log("1");
+        }    
+    }, beatInterval)
 });
 
 songButton2.addEventListener('click', () => {
     stopAllSongs();
     song2.play();
     song2.currentTime = 0;
-    score = 0;
+    setScore(0);
 });
 
 songButton3.addEventListener('click', () => {
     stopAllSongs();
     song3.play();
     song3.currentTime = 0;
-    score = 0;
+    setScore(0);
 });
 
 const bpm = 126;
 const beatInterval = 60000 / bpm;
-let score = 0;
+let score = null;
+setScore(0);
 
 const bpm2 = 85;
 const beatInterval2 = 60000 / bpm2;
 
 const bpm3 = 125;
 const beatInterval3 = 60000 / bpm3;
+
+
 
 // 55000
 function clickTiming(clickTimestamp, interval, maximum) {
@@ -112,7 +136,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             const showperfectimage = document.querySelector('#perfect_image')
             console.log("Perfect");
             judgment = "Perfect +100";
-            score += 100;
+            setScore(score + 100);
             showperfectimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
@@ -120,7 +144,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             const showgreatimage = document.querySelector('#great_image')
             console.log("Great");
             judgment = "Great +50";
-            score += 50;
+            setScore(score + 50);
             showgreatimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
@@ -128,7 +152,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             const showgoodimage = document.querySelector('#good_image')
             console.log("Good");
             judgment = "Good +25";
-            score += 25;
+            setScore(score + 25);
             showgoodimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
@@ -138,7 +162,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
         const showpoorimage = document.querySelector('#poor_image')
         console.log("Poor");
         judgment = "Poor -80";
-        score -= 80;
+        setScore(score - 80);
         showpoorimage.style.display = 'block';
     }
     setTimeout(function() {
@@ -154,7 +178,7 @@ smileyfacemain.addEventListener('click', () => buttonPress(song, beatInterval, 5
 smileyfacemain.addEventListener('click', () => buttonPress(song2, beatInterval2, 50000));
 smileyfacemain.addEventListener('click', () => buttonPress(song3, beatInterval3, 94000));
 
-let spacebarDown = false;
+let spacebarDown = false; //Change this to inputDown and use this also in the mouseclick function. Use 'mousedown' and 'mouseup', specifically, INSTEAD of 'click'.
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
@@ -165,10 +189,10 @@ document.addEventListener('keydown', (e) => {
         buttonPress(song, beatInterval, 55000);
         buttonPress(song2, beatInterval2, 50000);
         buttonPress(song3, beatInterval3, 94000);
-}}); 
+}});
 
 function buttonPress(song, interval, maximum) {
-    if (!song.paused) {
+    if (!song.paused && countdown === 0) {
         const clickTime = song.currentTime * 1000;
         let judgment = clickTiming(clickTime, interval, maximum); 
         document.querySelector('#scoretitle').innerText = "Score: " + score;
@@ -219,7 +243,7 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
                 topscores.sort((a, b) => b.score - a.score);
                 updateLeaderboard();   
                 document.querySelector('#highscorediv').style.display = 'none';   
-                score = 0;  
+                setScore(0); 
         }
     }  
 });   
@@ -230,17 +254,17 @@ song.addEventListener("ended", (e) => {         //Use if statement so that if sc
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
-    score = 0;
+    setScore(0);
     };
 });
 
 song2.addEventListener("ended", (e) => {
     let newScore = score;
-    if (newScore > topscores[9].score) {
+    if (newScore > topscores[9].score) { //CONSOLIDATE THESE THREE EVENT LISTENERS INTO ONE EVENT LISTENER
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
-    score = 0;
+    setScore(0);
     };
 });
 
@@ -250,7 +274,7 @@ song3.addEventListener("ended", (e) => {
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
-    score = 0;
+    setScore(0);
     };
 });
 
