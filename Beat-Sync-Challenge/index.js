@@ -78,39 +78,54 @@ function setScore(newScore) {
 
 let countdown = 7
 
-songButton.addEventListener('click', () => {
+function handleCountDown(song, countdownDuration, beatInterval) {
     stopAllSongs();
     song.play();
     song.currentTime = 0;
     setScore(0);
-    countdown = 16;
+    countdown = countdownDuration
     let id = setInterval(() => {  //Get images for the countdown!! 3, 2, 1, GO!
         countdown--;
         if (countdown === 0) {
             clearInterval(id);
+            document.querySelector('#go_image').style.display='block';
+            setTimeout(() => {
+            document.querySelector('#go_image').style.display='none';
+        }, beatInterval);
             console.log("Go!");    
         } else if (countdown === 3) {
+            document.querySelector('#three_image').style.display='block';
+            setTimeout(() => {
+                document.querySelector('#three_image').style.display='none';
+            }, beatInterval);
             console.log("3");
         } else if (countdown === 2) {
+            document.querySelector('#two_image').style.display='block';
+            setTimeout(() => {
+                document.querySelector('#two_image').style.display='none';
+            }, beatInterval);
             console.log("2");
         } else if (countdown === 1) {
+            document.querySelector('#one_image').style.display='block';
+            setTimeout(() => {
+                document.querySelector('#one_image').style.display='none';
+            }, beatInterval);
             console.log("1");
         }    
     }, beatInterval)
+}
+
+
+songButton.addEventListener('click', () => {
+    handleCountDown(song, 15, beatInterval);    
 });
 
 songButton2.addEventListener('click', () => {
-    stopAllSongs();
-    song2.play();
-    song2.currentTime = 0;
-    setScore(0);
+   handleCountDown(song2, 7, beatInterval2);
 });
 
 songButton3.addEventListener('click', () => {
-    stopAllSongs();
-    song3.play();
-    song3.currentTime = 0;
-    setScore(0);
+    handleCountDown(song3, 15, beatInterval3);
 });
 
 const bpm = 126;
@@ -192,7 +207,7 @@ document.addEventListener('keydown', (e) => {
 }});
 
 function buttonPress(song, interval, maximum) {
-    if (!song.paused && countdown === 0) {
+    if (!song.paused && countdown === 0) { //This is what makes it so that the score isn't calculated until the countdown is over
         const clickTime = song.currentTime * 1000;
         let judgment = clickTiming(clickTime, interval, maximum); 
         document.querySelector('#scoretitle').innerText = "Score: " + score;
