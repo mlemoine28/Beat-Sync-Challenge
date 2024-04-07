@@ -15,6 +15,7 @@ let songButton2 = document.querySelector('#songButton2')
 let songButton3 = document.querySelector('#songButton3')
 let smileyfacemain = document.querySelector('#smileyface')
 let enterhighscore = document.querySelector('#enterhighscore')
+let progressBar = document.querySelector('#progress-bar')
 
 
 playnow.addEventListener('click', onPlayNowClick);
@@ -263,7 +264,7 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
     }  
 });   
 
-song.addEventListener("ended", (e) => {         //Use if statement so that if score is higher than the 9th object in the array, then perform the function of adding a new high score. Username will be inputted from the user, score will automatically be added into the array. (submit button, use onClick event with the submit to update the array and put the new list on the page)
+function updateScores() {
     let newScore = score;
     if (newScore > topscores[9].score) {
         document.querySelector('#highscorediv').style.display = 'block';       
@@ -271,27 +272,21 @@ song.addEventListener("ended", (e) => {         //Use if statement so that if sc
     alert("Aw, no high score. Try again!")
     setScore(0);
     };
+}
+
+song.addEventListener("ended", (e) => {         
+    updateScores();
 });
 
 song2.addEventListener("ended", (e) => {
-    let newScore = score;
-    if (newScore > topscores[9].score) { //CONSOLIDATE THESE THREE EVENT LISTENERS INTO ONE EVENT LISTENER
-        document.querySelector('#highscorediv').style.display = 'block';       
-    } else {
-    alert("Aw, no high score. Try again!")
-    setScore(0);
-    };
+    updateScores();
 });
 
 song3.addEventListener("ended", (e) => {
-    let newScore = score;
-    if (newScore > topscores[9].score) {
-        document.querySelector('#highscorediv').style.display = 'block';       
-    } else {
-    alert("Aw, no high score. Try again!")
-    setScore(0);
-    };
+    updateScores();
 });
+
+
 
 function stopAllSongs() {
     document.querySelectorAll('audio').forEach(audiofile => {
@@ -302,4 +297,24 @@ function stopAllSongs() {
 
 document.addEventListener('DOMContentLoaded', function() {
     updateLeaderboard();
+});
+
+function timeline (audio) {
+    const currentTime = audio.currentTime;
+    const duration = audio.duration;
+    const progress = (currentTime / duration) * 100;
+    progressBar.style.width = `${progress}%`;
+    console.log(progress);
+}
+
+song.addEventListener('timeupdate', () => {
+    timeline(song);
+});
+
+song2.addEventListener('timeupdate', () => {
+    timeline(song2);
+});
+
+song3.addEventListener('timeupdate', () => {
+    timeline(song3);
 });

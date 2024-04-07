@@ -486,3 +486,18 @@ div {
     margin-right: auto;
     top:100px;
 }
+
+#progress-bar-container {
+    width: 100%;
+    background-color: #071233;
+    bottom: 150px;
+    position: absolute;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 20px;
+    background-color: #f2c12e;
+    bottom: 400px;
+    
+}
