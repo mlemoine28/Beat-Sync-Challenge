@@ -118,7 +118,8 @@ function handleCountDown(song, countdownDuration, beatInterval) {
 
 
 songButton.addEventListener('click', () => {
-    handleCountDown(song, 15, beatInterval);    
+    handleCountDown(song, 15, beatInterval);  
+    animateCircle(); //Need to get this working properly. See full function below.  
 });
 
 songButton2.addEventListener('click', () => {
@@ -318,3 +319,18 @@ song2.addEventListener('timeupdate', () => {
 song3.addEventListener('timeupdate', () => {
     timeline(song3);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const beatCircle = document.querySelector('#beatCircle');
+
+    function animateCircle() {
+        beatCircle.classList.add('smileyimage');
+        setTimeout(() => {
+            beatCircle.classList.remove('smileyimage');
+        }, 200);
+    }    
+    setInterval(animateCircle, beatInterval);
+});
+
+
+
