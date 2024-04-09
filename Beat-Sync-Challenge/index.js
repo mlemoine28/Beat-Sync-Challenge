@@ -144,6 +144,7 @@ function handleCountDown(song, countdownDuration, beatInterval) {
 songButton.addEventListener('click', () => {
     handleCountDown(song, 15, beatInterval);  
     document.querySelector('#beatCircle').style.display='block';
+    document.querySelector('#warm_up_image').style.display='block'; //set Timeout to make it go after certain # of beats!!!
 });
 
 songButton2.addEventListener('click', () => {

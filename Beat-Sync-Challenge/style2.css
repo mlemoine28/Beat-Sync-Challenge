@@ -537,3 +537,7 @@ div {
 #beatCircle3 {
     animation: smileybounce 480ms infinite;
 }
+
+#warm_up_image {
+    right: 120%;
+}
