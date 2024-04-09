@@ -53,24 +53,48 @@ gotIt.addEventListener('click', () => {
 
 howtoplay2.addEventListener('click', onHowToPlayClick)
 
-smileyfacemain.addEventListener('click', animationEvent);
+
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-        animationEvent({target: smileyfacemain}); //I need to put target: smileyfacemain here because otherwise, the target (e) will be referring to the animations of the document, not to the smileyfacemain, which is why the animation was not resetting after future clicks or presses!
-}});   
-    
-function animationEvent(e) {
-    smileyfacemain.classList.add('smileyimage');
-    let animations = e.target.getAnimations();
-    for (let animation of animations) {
-        animation.currentTime = 0;
+        if (song && !song.paused) {
+            smileyfacemain.classList.add('smileyimage');
+            resetAnimation(smileyfacemain);
+       } else if (song2 && !song2.paused) {
+        smileyfacemain.classList.add('smileyimage2');
+        resetAnimation(smileyfacemain);
+       } else if (song3 && !song3.paused) {
+        smileyfacemain.classList.add('smileyimage3');
+        resetAnimation(smileyfacemain);
+       }
+    }
+});
+
+function resetAnimation(e) {
+    let animations = e.getAnimations();
+        for (let animation of animations) {
+            animation.currentTime = 0;
     }
 }
 
-smileyfacemain.addEventListener('animationend', (e) => {
-    smileyfacemain.classList.remove('smileyimage');
+smileyfacemain.addEventListener('click', () => {
+    if (song && !song.paused) {
+        smileyfacemain.classList.add('smileyimage');
+        resetAnimation(smileyfacemain);
+    } else if (song2 && !song2.paused) {
+        smileyfacemain.classList.add('smileyimage2');
+        resetAnimation(smileyfacemain);
+    } else if (song3 && !song3.paused) {
+        smileyfacemain.classList.add('smileyimage3');
+        resetAnimation(smileyfacemain);
+    }
 });
+
+
+smileyfacemain.addEventListener('animationend', (e) => {
+    smileyfacemain.classList.remove('smileyimage', 'smileyimage2', 'smileyimage3');
+});
+
 
 function setScore(newScore) {
     score = newScore;
@@ -85,7 +109,7 @@ function handleCountDown(song, countdownDuration, beatInterval) {
     song.currentTime = 0;
     setScore(0);
     countdown = countdownDuration
-    let id = setInterval(() => {  //Get images for the countdown!! 3, 2, 1, GO!
+    let id = setInterval(() => {
         countdown--;
         if (countdown === 0) {
             clearInterval(id);
@@ -298,8 +322,12 @@ function stopAllSongs() {
     document.querySelectorAll('audio').forEach(audiofile => {
         audiofile.pause();
         audiofile.currentTime = 0;
-    }
-)}
+    });
+
+    document.querySelectorAll('#beatCircle, #beatCircle2, #beatCircle3').forEach(circle => {
+        circle.style.display='none';
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     updateLeaderboard();

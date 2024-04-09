@@ -49,7 +49,17 @@ div {
 
 .smileyimage {
     position: relative;
-    animation: smileybounce .30s;
+    animation: smileybounce 476.19047619047619047619047619048ms;
+}
+
+.smileyimage2 {
+    position: relative;
+    animation: smileybounce 705.88235294117647058823529411765ms;
+}
+
+.smileyimage3 {
+    position: relative;
+    animation: smileybounce 480ms;
 }
 
 @keyframes smileybounce {
@@ -341,7 +351,7 @@ div {
     position: relative;
 }
   
-.smileyimage2 { /* I want to make it so this image pulsates after the initial warp-in animation*/
+.introsmiley { /* I want to make it so this image pulsates after the initial warp-in animation*/
     position: relative;
     animation: smileyrotate 4s ease-in-out, smileybounce2 1s ease-in-out alternate infinite;
     border-color: transparent;
@@ -502,7 +512,7 @@ div {
     
 }
 
-#beatCircle {
+#beatCircle, #beatCircle2, #beatCircle3 {
     position: absolute;
     border-radius: 50%;
     width: 700px;
@@ -512,37 +522,18 @@ div {
     border: 2px solid red;
     line-height: 100px;
     left: 540px;
-    bottom: 170px;
+    bottom: 220px;
     pointer-events: none;
+}
+
+#beatCircle {
     animation: smileybounce 476.19047619047619047619047619048ms infinite;
 }
 
 #beatCircle2 {
-    position: absolute;
-    border-radius: 50%;
-    width: 700px;
-    height: 700px;
-    color: red;
-    background-color: transparent;
-    border: 2px solid red;
-    line-height: 100px;
-    left: 540px;
-    bottom: 170px;
-    pointer-events: none;
     animation: smileybounce 705.88235294117647058823529411765ms infinite;
 }
 
 #beatCircle3 {
-    position: absolute;
-    border-radius: 50%;
-    width: 700px;
-    height: 700px;
-    color: red;
-    background-color: transparent;
-    border: 2px solid red;
-    line-height: 100px;
-    left: 540px;
-    bottom: 170px;
-    pointer-events: none;
     animation: smileybounce 480ms infinite;
 }
