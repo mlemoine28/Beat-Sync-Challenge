@@ -522,7 +522,7 @@ div {
     border: 5px solid navy;
     line-height: 600px;
     left: 630px;
-    bottom: 320px;
+    bottom: 318px;
     pointer-events: none;
 }
 
@@ -539,5 +539,6 @@ div {
 }
 
 #warm_up_image {
-    right: 120%;
+    position: relative;
+
 }

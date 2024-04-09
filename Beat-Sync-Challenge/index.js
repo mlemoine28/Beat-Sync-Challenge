@@ -108,6 +108,7 @@ function handleCountDown(song, countdownDuration, beatInterval) {
     song.play();
     song.currentTime = 0;
     setScore(0);
+    document.querySelector('#warm_up_image').style.display='block';
     countdown = countdownDuration
     let id = setInterval(() => {
         countdown--;
@@ -119,6 +120,7 @@ function handleCountDown(song, countdownDuration, beatInterval) {
         }, beatInterval);
             console.log("Go!");    
         } else if (countdown === 3) {
+            document.querySelector('#warm_up_image').style.display='none';
             document.querySelector('#three_image').style.display='block';
             setTimeout(() => {
                 document.querySelector('#three_image').style.display='none';
@@ -144,7 +146,6 @@ function handleCountDown(song, countdownDuration, beatInterval) {
 songButton.addEventListener('click', () => {
     handleCountDown(song, 15, beatInterval);  
     document.querySelector('#beatCircle').style.display='block';
-    document.querySelector('#warm_up_image').style.display='block'; //set Timeout to make it go after certain # of beats!!!
 });
 
 songButton2.addEventListener('click', () => {
