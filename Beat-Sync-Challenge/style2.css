@@ -326,14 +326,16 @@ div {
     left: 250px;
   }
 
-#highscores {
-    display:none;
+#leaderboardlist {
+    display: flex;
+}
+
+#highscoreseasy, #highscoresmedium, #highscoreshard {
     text-align: center;
     width: 40%;
     position:relative;
     font-size:x-large;
-    margin-left: auto;
-    margin-right: auto; 
+    
 }
 
 #topscorelist {

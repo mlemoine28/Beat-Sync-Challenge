@@ -29,7 +29,7 @@ leaderboards.addEventListener('click',onLeaderboardsClick)
 
 function onLeaderboardsClick() {
     document.querySelector('#wholegame').style.display = "none";
-    document.querySelector('#highscores').style.display = "block";
+    document.querySelector('#leaderboardlist').style.display = "block";
 }
 
 howtoplay.addEventListener('click', onHowToPlayClick)
@@ -42,7 +42,7 @@ function onHowToPlayClick() {
 back.addEventListener('click', onBackClick)
 
 function onBackClick() {
-    document.querySelector('#highscores').style.display="none";
+    document.querySelector('#leaderboardlist').style.display="none";
     document.querySelector('#wholegame').style.display="block";
 }
 
@@ -266,6 +266,10 @@ let topscores = [
 topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
 
 let scorelength = topscores.length;
+
+
+//So I need to make three total leaderboard. But I don't want a ton of code repeated. Need to combine similarly to how I did before. Need to change all the topscores. Need a topscoreseasy array, topscoresmedium array, and topscoreshard array.
+//Then I need to have updateLeaderboard with parameters like updateLeaderboard(topscore) and have the argument be for one of the three leaderboards.
 
 function updateLeaderboard() {
     let list = document.createElement("ol");
