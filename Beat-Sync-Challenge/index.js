@@ -16,7 +16,9 @@ let songButton3 = document.querySelector('#songButton3')
 let smileyfacemain = document.querySelector('#smileyface')
 let enterhighscore = document.querySelector('#enterhighscore')
 let progressBar = document.querySelector('#progress-bar')
-
+let topscorelisteasy = document.querySelector("#topscorelisteasy")
+let topscorelistmedium = document.querySelector("#topscorelistmedium")
+let topscorelisthard = document.querySelector("#topscorelisthard")
 
 playnow.addEventListener('click', onPlayNowClick);
 
@@ -251,7 +253,7 @@ document.addEventListener ('keyup', (e) => {
     }
 });
 
-let topscores = [
+let topscoreseasy = [
     {username: "Bill", score: 10000},
     {username: "Joey", score: 9000},
     {username: "Bob", score: 8000},
@@ -263,23 +265,58 @@ let topscores = [
     {username: "Simba", score: 2000},
     {username: "Scar", score: 1000},
 ];
-topscores.sort((a, b) => b.score - a.score) // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
 
-let scorelength = topscores.length;
+let topscoresmedium = [
+    {username: "Bill", score: 10000},
+    {username: "Joey", score: 9000},
+    {username: "Bob", score: 8000},
+    {username: "George", score: 7000},
+    {username: "Mark", score: 6000},
+    {username: "Reginald", score: 5000},
+    {username: "Fernando", score: 4000},
+    {username: "Rafiki", score: 3000},
+    {username: "Simba", score: 2000},
+    {username: "Scar", score: 1000},
+];
 
+let topscoreshard = [
+    {username: "Bill", score: 10000},
+    {username: "Joey", score: 9000},
+    {username: "Zelda", score: 8000},
+    {username: "George", score: 7000},
+    {username: "Mark", score: 6000},
+    {username: "Reginald", score: 5000},
+    {username: "Fernando", score: 4000},
+    {username: "Rafiki", score: 3000},
+    {username: "Simba", score: 2000},
+    {username: "Scar", score: 1000},
+];
+
+
+topscoreseasy.sort((a, b) => b.score - a.score);
+topscoresmedium.sort((a, b) => b.score - a.score);   
+topscoreshard.sort((a, b) => b.score - a.score);        
+                              // ANY two objects in the array, represents two different objects being compared in the array at that time; goes through ALL the elements to do the sort.
+updateLeaderboard(topscoreseasy, topscorelisteasy);
+updateLeaderboard(topscoresmedium, topscorelistmedium);
+updateLeaderboard(topscoreshard, topscorelisthard);
 
 //So I need to make three total leaderboard. But I don't want a ton of code repeated. Need to combine similarly to how I did before. Need to change all the topscores. Need a topscoreseasy array, topscoresmedium array, and topscoreshard array.
 //Then I need to have updateLeaderboard with parameters like updateLeaderboard(topscore) and have the argument be for one of the three leaderboards.
 
-function updateLeaderboard() {
-    let list = document.createElement("ol");
-    for (let i = 0; i < scorelength; i++) {
+function updateLeaderboard(topscores, list) {
+    let items = [];
+    for (let i = 0; i < topscores.length; i++) {
         let li = document.createElement("li");
         li.innerText = topscores[i].username + " " + topscores[i].score;
-        list.appendChild(li); //appendChild actually populates the list in this case. This is the same operation as "push".
+        items.push(li); //appendChild actually populates the list in this case. This is the same operation as "push".
     }
-    document.getElementById("topscorelist").replaceChildren(list); //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
+    list.replaceChildren(...items); //This is how the scores get updated with a NEW list. Without this, the scores would stay the same; no new list. Allows you to see the new list on the page.
 }
+
+
+let currentLeaderboard = null;
+let currentLeaderboardEl = null;
 
 document.querySelector("#scoreForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
@@ -287,19 +324,21 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
     let username = usernameInput.value;
     if (username !== "") {
         let newScore = score;
-        if (newScore > topscores[9].score) {
-                topscores.push({username: username, score: newScore});
-                topscores.sort((a, b) => b.score - a.score);
-                updateLeaderboard();   
+        if (newScore > currentLeaderboard[9].score) {
+                currentLeaderboard.push({username: username, score: newScore});
+                currentLeaderboard.sort((a, b) => b.score - a.score);
+                updateLeaderboard(currentLeaderboard, currentLeaderboardEl);   
                 document.querySelector('#highscorediv').style.display = 'none';   
                 setScore(0); 
         }
     }  
 });   
 
-function updateScores() {
+function updateScores(leaderboard, leaderboardEl) {
     let newScore = score;
-    if (newScore > topscores[9].score) {
+    if (newScore > leaderboard[9].score) {
+        currentLeaderboard = leaderboard;
+        currentLeaderboardEl = leaderboardEl;
         document.querySelector('#highscorediv').style.display = 'block';       
     } else {
     alert("Aw, no high score. Try again!")
@@ -308,17 +347,17 @@ function updateScores() {
 }
 
 song.addEventListener("ended", (e) => {         
-    updateScores();
+    updateScores(topscoreseasy, topscorelisteasy);
     document.querySelector('#beatCircle').style.display='none';
 });
 
 song2.addEventListener("ended", (e) => {
-    updateScores();
+    updateScores(topscoresmedium, topscorelistmedium);
     document.querySelector('#beatCircle2').style.display='none';
 });
 
 song3.addEventListener("ended", (e) => {
-    updateScores();
+    updateScores(topscoreshard, topscorelisthard);
     document.querySelector('#beatCircle3').style.display='none';
 });
 

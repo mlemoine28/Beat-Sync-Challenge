@@ -515,7 +515,7 @@ div {
 }
 
 #beatCircle, #beatCircle2, #beatCircle3 {
-    position: absolute;
+    
     border-radius: 50%;
     width: 525px;
     height: 525px;
