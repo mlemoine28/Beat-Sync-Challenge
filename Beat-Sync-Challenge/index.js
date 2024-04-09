@@ -119,15 +119,17 @@ function handleCountDown(song, countdownDuration, beatInterval) {
 
 songButton.addEventListener('click', () => {
     handleCountDown(song, 15, beatInterval);  
-    animateCircle(); //Need to get this working properly. See full function below.  
+    document.querySelector('#beatCircle').style.display='block';
 });
 
 songButton2.addEventListener('click', () => {
    handleCountDown(song2, 7, beatInterval2);
+   document.querySelector('#beatCircle2').style.display='block';
 });
 
 songButton3.addEventListener('click', () => {
     handleCountDown(song3, 15, beatInterval3);
+    document.querySelector('#beatCircle3').style.display='block';
 });
 
 const bpm = 126;
@@ -277,14 +279,17 @@ function updateScores() {
 
 song.addEventListener("ended", (e) => {         
     updateScores();
+    document.querySelector('#beatCircle').style.display='none';
 });
 
 song2.addEventListener("ended", (e) => {
     updateScores();
+    document.querySelector('#beatCircle2').style.display='none';
 });
 
 song3.addEventListener("ended", (e) => {
     updateScores();
+    document.querySelector('#beatCircle3').style.display='none';
 });
 
 

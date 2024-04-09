@@ -514,5 +514,35 @@ div {
     left: 540px;
     bottom: 170px;
     pointer-events: none;
-    animation: smileybounce .30s;
+    animation: smileybounce 476.19047619047619047619047619048ms infinite;
+}
+
+#beatCircle2 {
+    position: absolute;
+    border-radius: 50%;
+    width: 700px;
+    height: 700px;
+    color: red;
+    background-color: transparent;
+    border: 2px solid red;
+    line-height: 100px;
+    left: 540px;
+    bottom: 170px;
+    pointer-events: none;
+    animation: smileybounce 705.88235294117647058823529411765ms infinite;
+}
+
+#beatCircle3 {
+    position: absolute;
+    border-radius: 50%;
+    width: 700px;
+    height: 700px;
+    color: red;
+    background-color: transparent;
+    border: 2px solid red;
+    line-height: 100px;
+    left: 540px;
+    bottom: 170px;
+    pointer-events: none;
+    animation: smileybounce 480ms infinite;
 }
