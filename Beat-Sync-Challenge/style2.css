@@ -515,14 +515,14 @@ div {
 #beatCircle, #beatCircle2, #beatCircle3 {
     position: absolute;
     border-radius: 50%;
-    width: 700px;
-    height: 700px;
+    width: 525px;
+    height: 525px;
     color: red;
     background-color: transparent;
-    border: 2px solid red;
-    line-height: 100px;
-    left: 540px;
-    bottom: 220px;
+    border: 5px solid navy;
+    line-height: 600px;
+    left: 630px;
+    bottom: 320px;
     pointer-events: none;
 }
 
