@@ -83,8 +83,8 @@ div {
 
 #wholegame {
     display:none;   
-    transform: scale(0.7);
-    bottom: 22vh;
+    transform: scale(0.65);
+    bottom: 24vh;
     position: relative;
 }
 
@@ -132,17 +132,17 @@ div {
 
 #footer {
     background-color: #d97e29;
-    width: 25%;
+    width: 15%;
     text-align: center;
-    font-size: x-small;
+    font-size: 40%;
     position: absolute;
     left: 0;
     bottom: 0;
 }
 
 #container {
-    position: relative;
-    top: 0;
+    width: 100%;
+    top: 0%;
 }
 
 .game-container {
@@ -206,19 +206,15 @@ div {
 
 #socials {
     background-color: #1E1D30;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     position: absolute;
-    font-size: xx-small;
+    font-size: 8px;
     border-color: black;
-    width: 500px;
-    padding: 5px;
+    width: 25%;
     bottom: 0;
     right: 0;
     text-align: center;
-    height: 100px;
-    max-width: 100%;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 #leaderboards {
@@ -291,13 +287,14 @@ div {
   padding: 15px;
   top: 50px;
   right: 250px;
+  color: black;
 }
 
 #songButton2 {
     height: 70px;
     width: 20%;
     position: relative;
-    background-color: green;
+    background-color: yellow;
     font-size: xx-large;
     color: antiquewhite;
     cursor:pointer;
@@ -306,6 +303,7 @@ div {
     border-radius: 500px;
     padding: 15px;
     top: 50px;
+    color: black;
     
   }
 
@@ -313,7 +311,7 @@ div {
     height: 70px;
     width: 20%;
     position: relative;
-    background-color: green;
+    background-color: red;
     font-size: xx-large;
     color: antiquewhite;
     cursor:pointer;
@@ -323,6 +321,7 @@ div {
     padding: 15px;
     top: 50px;
     left: 250px;
+    color: black;
   }
 
 #leaderboardlist {
@@ -523,27 +522,32 @@ div {
     background-color: transparent;
     border: 5px solid navy;
     line-height: 600px;
-    left: 630px;
-    bottom: 318px;
     pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: relative;
 }
 
 #beatCircle {
     animation: smileybounce 476.19047619047619047619047619048ms infinite;
-    position: relative;
+   
 }
 
 #beatCircle2 {
     animation: smileybounce 705.88235294117647058823529411765ms infinite;
-    position: relative;
+    
 }
 
 #beatCircle3 {
     animation: smileybounce 480ms infinite;
-    position: relative;
 }
 
 #warm_up_image {
     position: relative;
+
+}
+
+#smileyface {
 
 }
