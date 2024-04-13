@@ -1,6 +1,7 @@
 body { 
     background-color: #1eaae6;
-        font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
+    overflow: hidden;
 } 
 
 p {
@@ -81,8 +82,10 @@ div {
 }
 
 #wholegame {
-        border-color: transparent;
-        display:none;   
+    display:none;   
+    transform: scale(0.7);
+    bottom: 22vh;
+    position: relative;
 }
 
 .intropage {
@@ -91,6 +94,7 @@ div {
         text-align: center;
         display:block;
         background-color: #1eaae6;
+        transform: scale(0.8);
 }
 
 .center {
@@ -104,8 +108,7 @@ div {
     background-color: #071233;
     position: relative;
     border-color: black;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     background: transparent;
     border-color: transparent;
     top: 100px;
@@ -113,19 +116,16 @@ div {
 
 #judgmentdiv {
     position: relative;
-    border-color: transparent;        /* figure out how to center this!!! */ 
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 500px;
-    height: 250px;
+    height: 500px;
     bottom: 350px;
-    display: absolute;
     font-size: xx-large;
     font-family: 'Brush Script MT', cursive;
     color:#d97e29;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     flex-direction: column;
     pointer-events: none;
 }
@@ -141,14 +141,11 @@ div {
 }
 
 #container {
-    width: 75%;
-    margin: auto;
-    border-color: transparent;
+    position: relative;
+    top: 0;
 }
 
 .game-container {
-    display:absolute;
-    position: relative;
     border-color: transparent;
     text-align: center;
 }
@@ -228,6 +225,7 @@ div {
     height: 70px;
     width: 20%;
     position: relative;
+    bottom: 23vh;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
@@ -242,6 +240,7 @@ div {
   height: 70px;
     width: 20%;
     position: relative;
+    bottom: 23vh;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
@@ -359,6 +358,7 @@ div {
     border-color: transparent;
     animation-delay: 0s, 3s;  
     top: 190px;
+    width: 20%;
             /* Why can't i do left: 1px without messing up the whole thing???!!! */
 }
 
@@ -502,7 +502,7 @@ div {
 #progress-bar-container {
     width: 100%;
     background-color: #071233;
-    bottom: 90px;
+    bottom: 25vh;
     position: absolute;
 }
 
@@ -530,14 +530,17 @@ div {
 
 #beatCircle {
     animation: smileybounce 476.19047619047619047619047619048ms infinite;
+    position: relative;
 }
 
 #beatCircle2 {
     animation: smileybounce 705.88235294117647058823529411765ms infinite;
+    position: relative;
 }
 
 #beatCircle3 {
     animation: smileybounce 480ms infinite;
+    position: relative;
 }
 
 #warm_up_image {

@@ -3,6 +3,7 @@
     <head>
         <title>Beat Sync Challenge</title>
         <link rel="stylesheet" type="text/css" href="style2.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body> 
         <dialog class="howtoplaymodal" id="howtoplaymodal">
@@ -27,7 +28,7 @@
         </div>
         <button id="got-it-button">Got it!</button>
     </dialog>
-        <div class="intropage">
+        <div class="intropage" style="width: 100%; height: 100px;">
             <p>Welcome to</p>
             
             <button id="playnowbutton">Play Now</button>
@@ -72,8 +73,12 @@
                         </div>
                     </div>
                     <div id="smileydiv">
+                        <div id="beatCircle" style="display: none;"></div>
+                        <div id="beatCircle2" style="display: none;"></div>
+                        <div id="beatCircle3" style="display: none;"></div>
                         <img id="smileyface" src="images/smiley_face.png" alt="smiley face" style="border-radius: 50%;"/>      
                         <div id="judgmentdiv">
+                            
                             <img id="perfect_image" src="images/perfect_image.png" alt="perfect" style="display: none;" width="100%"/>
                             <img id="great_image" class="scorephotos" src="images/great_image.png" alt="great" style="display: none;"/>
                             <img id="good_image" class="scorephotos" src="images/good_image.png" alt="good" style="display: none;"/>
@@ -84,9 +89,7 @@
                             <img id="go_image" class="scorephotos" src="images/go_image.png" alt="Go!" style="position: absolute; display: none;"/>
                             <img id="warm_up_image" src="images/warm_up_image.png" alt="warm up" style="position: absolute; display: none;"/>
                         </div>
-                    <div id="beatCircle" style="display: none;"></div>
-                    <div id="beatCircle2" style="display: none;"></div>
-                    <div id="beatCircle3" style="display: none;"></div>
+                  
                     
                   
                     
