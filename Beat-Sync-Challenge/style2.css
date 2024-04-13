@@ -516,27 +516,26 @@ div {
 #beatCircle, #beatCircle2, #beatCircle3 {
     
     border-radius: 50%;
-    width: 525px;
-    height: 525px;
+    width: 513px;
+    height: 513px;
     color: red;
     background-color: transparent;
-    border: 5px solid navy;
+    border: 5px solid purple;
     line-height: 600px;
     pointer-events: none;
     top: 0;
     left: 0;
     right: 0;
-    position: relative;
+    position: absolute;
+    margin: auto;
 }
 
 #beatCircle {
     animation: smileybounce 476.19047619047619047619047619048ms infinite;
-   
 }
 
 #beatCircle2 {
     animation: smileybounce 705.88235294117647058823529411765ms infinite;
-    
 }
 
 #beatCircle3 {
