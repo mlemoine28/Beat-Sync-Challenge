@@ -1,5 +1,9 @@
+html {
+    height: 100%;
+}
+
 body { 
-    background-color: #1eaae6;
+    background-image: linear-gradient(#071233, #1eaae6);
     font-family: "Courier New", Courier, monospace;
     overflow: hidden;
 } 
@@ -7,10 +11,6 @@ body {
 p {
     color: white;
     font-size: 200%;
-}
-
-p:hover {
-    color:red
 }
 
 h1 {
@@ -22,6 +22,15 @@ div {
     border-color: transparent;
     border-radius: 10px;
 }    
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 
 #title {
     margin: auto;
@@ -84,7 +93,7 @@ div {
 #wholegame {
     display:none;   
     transform: scale(0.65);
-    bottom: 24vh;
+    bottom: 18vh;
     position: relative;
 }
 
@@ -93,7 +102,6 @@ div {
         border-color: transparent;
         text-align: center;
         display:block;
-        background-color: #1eaae6;
         transform: scale(0.8);
 }
 
@@ -115,19 +123,14 @@ div {
 }
 
 #judgmentdiv {
-    position: relative;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     width: 500px;
     height: 500px;
-    bottom: 350px;
     font-size: xx-large;
     font-family: 'Brush Script MT', cursive;
     color:#d97e29;
-    margin: 0 auto;
-    flex-direction: column;
+    margin: auto;
     pointer-events: none;
+    
 }
 
 #footer {
@@ -142,7 +145,7 @@ div {
 
 #container {
     width: 100%;
-    top: 0%;
+    margin: auto;
 }
 
 .game-container {
@@ -160,7 +163,7 @@ div {
     left: 70%;
     height: 50px;
     border-color: black;
-    bottom: 50%;
+    bottom: 75%;
     font-size: xx-large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -217,9 +220,9 @@ div {
     padding-bottom: 5px;
 }
 
-#leaderboards {
+#leaderboards, #howtoplay2 {
     height: 70px;
-    width: 20%;
+    width: 18%;
     position: relative;
     bottom: 23vh;
     background-color: #f2c12e;
@@ -231,45 +234,22 @@ div {
     border-radius: 500px;
     padding: 15px;
 }    
-    
-#howtoplay2 {
-  height: 70px;
-    width: 20%;
+
+#playnowbutton, #howtoplaybutton {
+    height: 70px;
+    width: 18%;
     position: relative;
-    bottom: 23vh;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
     cursor:pointer;
-    border-style: groove;
-    border-color: black;
+    top: 830px;
+    right: 50px;  
     border-radius: 500px;
     padding: 15px;
 }
 
-#playnowbutton {
-    height: 50px;
-    width: 12%;
-    position: relative;
-    background-color: #f2c12e;
-    font-size: xx-large;
-    color: #071233;
-    transform:skew(-10deg); 
-    cursor:pointer;
-    top: 830px;
-    right: 50px;  
-}
-
 #howtoplaybutton {
-    height: 50px;
-    width: 12%;
-    position: relative;
-    background-color: #f2c12e;
-    font-size: xx-large;
-    color: #071233;
-    transform:skew(-10deg);     
-    cursor:pointer;
-    top: 830px;
     left: 50px;
 }
 
@@ -326,22 +306,18 @@ div {
 
 #leaderboardlist {
     display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+    padding: 20px;
+    width: 100%;
+    height: 550px;
 }
 
-#highscoreseasy, #highscoresmedium, #highscoreshard {
+#leaderboardlist > div {
     text-align: center;
-    width: 40%;
-    position:relative;
-    font-size:x-large;
-    
-}
-
-#topscorelist {
-    font-size: xx-large;
-    width: 500px;
-    text-align: center;
-    position: relative;
-    left: 20%;
+    width: 300px;
+    font-size: x-large;  
+    flex: 1;
 }
 
 #back_2 {
@@ -356,8 +332,8 @@ div {
     animation: smileyrotate 4s ease-in-out, smileybounce2 1s ease-in-out alternate infinite;
     border-color: transparent;
     animation-delay: 0s, 3s;  
-    top: 190px;
-    width: 20%;
+    top: 220px;
+    width: 100%;
             /* Why can't i do left: 1px without messing up the whole thing???!!! */
 }
 
@@ -392,7 +368,7 @@ div {
     animation-delay: .80s;
     animation-timing-function: linear(0 0%, 0.95 13.27%, 1 100%);
     position: relative;
-    bottom: 665px;
+    bottom: 692px;
     transform: scale(0%);
 }
 
@@ -408,6 +384,7 @@ div {
     animation-delay: 1.75s;
     bottom: 675px;
     transform: scale(0%);
+    right: 15px;
 }
 
 @keyframes warpin {
@@ -417,14 +394,14 @@ div {
 }
 
 .howtoplaymodal {
-   width: 1000px;
+   width: 75%;
    /* height: 1500px; */
-   height: 80vh;
-
+   height: 90vh;
+   scale: 90%;
    max-width: 100%;
    max-height: 100%;
    background-color: #6E2843ff; 
-   position: absolute;
+   position: fixed;
    z-index:99999;
    right: 50%;
    top: 0;
@@ -443,45 +420,40 @@ div {
   text-align: center;
   border-color: black;
   background-color: #071233;
+  width: 60%;
+  margin: auto;
 }
   
-.scoreperfect {
-  height: 2vh;
-}
-
 .howtoplayimages {
-    display: flex;
-    margin: auto;
-    left: 50%;
-    flex-wrap: wrap;
+    scale: 0.55;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    align-items: flex-end;
     
 }
 
-.beat-image
-
 .scorephotos {
-    padding: 20px;
-    height: 2vh;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    top: 0;
-    left: 0;
+    margin: auto;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 30%;
+    
 }
 
+
+
 #got-it-button {
-    height: 120px;
     width: 20%;
     position: relative;
     background-color: #f2c12e;
     font-size: xx-large;
-    color: #071233;
-    transform:skew(-10deg); /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    color: #071233; /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
     cursor:pointer;
-    margin-left: auto;
-    margin-right: auto;   
+    bottom: 20%;   
+    border-radius: 500px;
 }
 
 #back {
@@ -530,7 +502,22 @@ div {
     margin: auto;
 }
 
-#beatCircle {
+#beatCircleModal {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    background-color: transparent;
+    border: 5px solid purple;
+    pointer-events: none;    
+    position: absolute;
+    margin: auto;
+    font-size: large;
+    margin-top: 30%;
+    text-align: center;
+   
+}
+
+#beatCircle, #beatCircleModal {
     animation: smileybounce 476.19047619047619047619047619048ms infinite;
 }
 
@@ -544,9 +531,5 @@ div {
 
 #warm_up_image {
     position: relative;
-
-}
-
-#smileyface {
-
+    margin: auto;
 }

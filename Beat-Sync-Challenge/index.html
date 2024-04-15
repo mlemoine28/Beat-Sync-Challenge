@@ -4,6 +4,7 @@
         <title>Beat Sync Challenge</title>
         <link rel="stylesheet" type="text/css" href="style2.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body> 
         <div id="socials">
@@ -21,23 +22,35 @@
         </div>
         <div id="howtoplayinfo">
             <p>
-                For mobile, tap the <strong><em>Smiley Face</strong></em>. <br> <!-- Using <br> is bad practice? Best way to do this?-->
-                For PC, press <strong><em>Spacebar</strong></em> or click <strong><em>Mouse Button</strong></em>. <br>
-                Choose one of three songs: <strong><em>Easy, Medium, or Hard. </strong></em> <br>
-                Start tapping after you see the <strong><em>3, 2, 1, GO prompt!</strong></em>  <br>
-                Watch the <strong><em>beat visual </strong></em> to see when to tap the beat. <br>
-                Try and match the beats. The closer your match, the higher your score!
+                <span class="material-symbols-outlined">phone_iphone</span>
+                Mobile/Tablet: Tap <strong><em>Smiley Face</strong></em>. <br><br> <!-- Using <br> is bad practice? Best way to do this?-->
+                <span class="material-symbols-outlined">computer</span>
+                PC: Press <strong><em>Spacebar</strong></em> or click <strong><em>Mouse Button</strong></em>. <br><br>
+                <span class="material-symbols-outlined">genres</span>
+                Choose a song: <strong><em>Easy, Medium, or Hard. </strong></em> <br><br>
+                <span class="material-symbols-outlined">fireplace</span>
+                Warm up first, game starts after <strong><em>3, 2, 1, GO prompt!</strong></em>  <br><br>
+                <span class="material-symbols-outlined">radio_button_unchecked</span>
+                Follow <strong><em>beat visual </strong></em> to help you. <br><br>
+                <span class="material-symbols-outlined">flaky</span>
+                Match the beats! Closer the match, higher your score!
             </p>
         </div>
         <div class="howtoplayimages">
-            <img class="scorephotos" src="images/perfect_image.png" alt="perfect"/>
-            <img class="scorephotos" src="images/great_image.png" alt="great"/>
-            <img class="scorephotos" src="images/good_image.png" alt="good"/>
-            <img class="scorephotos" src="images/poor_image.png" alt="poor"/>
+            <img class="scorephotos" src="images/perfect_image.png" alt="perfect" style="scale: 0.65"/>
+            <img class="scorephotos" src="images/great_image.png" alt="great" style="scale: 1.2"/>
+            <img class="scorephotos" src="images/good_image.png" alt="good" style="scale: 1.35"/>
+            <img class="scorephotos" src="images/poor_image.png" alt="poor" style="scale: 0.90"/>
+        </div>
+        <div id="beatCircleModal">
+            <p> Beat Visual</p>
         </div>
         <button id="got-it-button">Got it!</button>
     </dialog>
         <div class="intropage" style="width: 100%; height: 100px;">
+            <audio id="intro_song" autoplay>
+                <source src="audio-files/intro_code.mp3" type="audio/mp3">
+            </audio>
             <p>Welcome to</p>
             
             <button id="playnowbutton">Play Now</button>
@@ -63,11 +76,6 @@
                 <div id="title">
                     <img src="images/title_image.png" alt="beat sync challenge" height="50%" width="50%"class="center"/>
                 </div>
-                <div id="main">
-                    <p>Test your timing! Tap, click, or press spacebar on the beat. The better 
-                        your timing, the higher your score!
-                    </p>
-                </div>
                 <div class="game-container">
                     <button id="songButton">Play (Easy)</button> 
                     <button id="songButton2">Play (Medium)</button>
@@ -83,30 +91,28 @@
                     </div>
                     <div id="smileydiv">
                         <div id="smileybeat">
-                        <img id="smileyface" src="images/smiley_face.png" alt="smiley face" style="border-radius: 50%;"/>  
-                        <div id="beatCircle" style="display: none;"></div>
-                        <div id="beatCircle2" style="display: none;"></div>
-                        <div id="beatCircle3" style="display: none;"></div> 
-                    </div>   
+                        <img id="smileyface" src="images/smiley_face.png" alt="smiley face" style="border-radius: 50%;"/> 
                         <div id="judgmentdiv">
-                            <img id="perfect_image" src="images/perfect_image.png" alt="perfect" style="display: none;" width="100%"/>
-                            <img id="great_image" class="scorephotos" src="images/great_image.png" alt="great" style="display: none;"/>
-                            <img id="good_image" class="scorephotos" src="images/good_image.png" alt="good" style="display: none;"/>
-                            <img id="poor_image" class="scorephotos" src="images/poor_image.png" alt="poor" style="display: none;"/>
+                            <img id="perfect_image" class="judgephotos" src="images/perfect_image.png" alt="perfect" style="display: none;" width="100%"/>
+                            <img id="great_image" class="judgephotos" src="images/great_image.png" alt="great" style="display: none;"/>
+                            <img id="good_image"  class="judgephotos" src="images/good_image.png" alt="good" style="display: none;"/>
+                            <img id="poor_image" class="judgephotos" src="images/poor_image.png" alt="poor" style="display: none;"/>
                             <img id="three_image" class="scorephotos" src="images/three_image.png" alt="three" style="display: none;"/>
                             <img id="two_image" class="scorephotos" src="images/two_image.png" alt="two" style="display: none;"/>
                             <img id="one_image" class="scorephotos" src="images/one_image.png" alt="one" style="display: none;"/>
-                            <img id="go_image" class="scorephotos" src="images/go_image.png" alt="Go!" style="position: absolute; display: none;"/>
-                            <img id="warm_up_image" src="images/warm_up_image.png" alt="warm up" style="position: absolute; display: none;"/>
-                        </div>
-                  
-                    
-                  
-                    
+                            <img id="go_image" class="scorephotos" src="images/go_image.png" alt="Go!" style="display: none;"/>
+                            <img id="warm_up_image" class="scorephotos" src="images/warm_up_image.png" alt="warm up" style="display: none;"/>
+                        </div> 
+                        <div id="beatCircle" style="display: none;"></div> 
+                        <div id="beatCircle2" style="display: none;"></div>
+                        <div id="beatCircle3" style="display: none;"></div> 
+                       
+                    </div>   
+                        
                     <div id="scoretitle">
                     </div>
-                    <button id="leaderboards"><strong>Leaderboards</strong></button>
-                    <button id="howtoplay2"><strong>How To Play</strong></button>
+                    <button id="leaderboards">Leaderboards</button>
+                    <button id="howtoplay2">How To Play</button>
                     <div id="highscorediv" style="display: none;">
                     <form id="scoreForm">
                         <label for="username">Congratulations! You've earned a high score!</label>
@@ -132,7 +138,7 @@
                 <ol id="topscorelistmedium">
                     <li>Hi</li>
                 </ol>
-                </div>
+            </div>
             <div id="highscoreshard">
                 <h1>Hard Song Scores</h1>
                 <ol id="topscorelisthard">
