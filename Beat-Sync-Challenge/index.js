@@ -32,7 +32,7 @@ leaderboards.addEventListener('click',onLeaderboardsClick)
 
 function onLeaderboardsClick() {
     document.querySelector('#wholegame').style.display = "none";
-    document.querySelector('#leaderboardlist').style.display = "flex";
+    document.querySelector('#leaderboardcontainer').style.display = "flex";
 }
 
 howtoplay.addEventListener('click', onHowToPlayClick)
