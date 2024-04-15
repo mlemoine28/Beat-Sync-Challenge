@@ -25,6 +25,7 @@ playnow.addEventListener('click', onPlayNowClick);
 function onPlayNowClick() {
     document.querySelector('.intropage').style.display = "none";
     document.querySelector('#wholegame').style.display = 'block';  
+    stopAllSongs();
 }
 
 leaderboards.addEventListener('click',onLeaderboardsClick)
@@ -179,7 +180,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
     let judgment = "Oh no!";
     for (let keyBeat = interval; keyBeat <= maximum; keyBeat += interval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 55) {
+        if (timeDifference <= 50) {
             const showperfectimage = document.querySelector('#perfect_image')
             console.log("Perfect");
             judgment = "Perfect +100";
@@ -187,7 +188,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             showperfectimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
-        } else if (timeDifference <= 100) {
+        } else if (timeDifference <= 80) {
             const showgreatimage = document.querySelector('#great_image')
             console.log("Great");
             judgment = "Great +50";
@@ -195,7 +196,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             showgreatimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
-        } else if (timeDifference <= 150) {
+        } else if (timeDifference <= 120) {
             const showgoodimage = document.querySelector('#good_image')
             console.log("Good");
             judgment = "Good +25";
@@ -217,7 +218,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
         document.getElementById('great_image').style.display = 'none';
         document.getElementById('good_image').style.display = 'none';
         document.getElementById('poor_image').style.display = 'none';
-    }, 800);
+    }, beatInterval);
     return judgment;   
 }
 
