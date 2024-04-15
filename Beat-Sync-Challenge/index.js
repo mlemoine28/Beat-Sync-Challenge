@@ -268,16 +268,16 @@ let topscoreseasy = [
 ];
 
 let topscoresmedium = [
-    {username: "Bill", score: 10000},
-    {username: "Joey", score: 9000},
-    {username: "Bob", score: 8000},
-    {username: "George", score: 7000},
-    {username: "Mark", score: 6000},
-    {username: "Reginald", score: 5000},
-    {username: "Fernando", score: 4000},
-    {username: "Rafiki", score: 3000},
+    {username: "Bill", score: 6000},
+    {username: "Joey", score: 5500},
+    {username: "Bob", score: 5000},
+    {username: "George", score: 4500},
+    {username: "Mark", score: 4000},
+    {username: "Reginald", score: 3500},
+    {username: "Fernando", score: 3000},
+    {username: "Rafiki", score: 2500},
     {username: "Simba", score: 2000},
-    {username: "Scar", score: 1000},
+    {username: "Scar", score: 1500},
 ];
 
 let topscoreshard = [
