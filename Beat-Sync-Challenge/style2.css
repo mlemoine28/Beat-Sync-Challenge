@@ -582,6 +582,9 @@ div {
     .mediacontainer {
       max-width: 1024px;
     }
+    button {
+        font-size: 100px;
+    }
   }
   
   /* lg */
