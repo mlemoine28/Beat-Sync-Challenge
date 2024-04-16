@@ -562,7 +562,7 @@ div {
     margin: auto;
 }
 
-.mediacontainer {
+/* .mediacontainer {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
@@ -581,9 +581,6 @@ div {
   @media (max-width: 1280px) {
     .mediacontainer {
       max-width: 1024px;
-    }
-    button {
-        font-size: 100px;
     }
   }
   
@@ -613,4 +610,4 @@ div {
     .mediacontainer {
       width: 100%;
     }
-  }
+  } 
