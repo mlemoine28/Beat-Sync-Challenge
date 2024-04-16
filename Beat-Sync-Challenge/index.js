@@ -45,7 +45,7 @@ function onHowToPlayClick() {
 back.addEventListener('click', onBackClick)
 
 function onBackClick() {
-    document.querySelector('#leaderboardlist').style.display="none";
+    document.querySelector('#leaderboardcontainer').style.display="none";
     document.querySelector('#wholegame').style.display="block";
 }
 

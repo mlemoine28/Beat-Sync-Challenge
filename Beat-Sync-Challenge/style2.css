@@ -32,7 +32,7 @@ div {
 }
 
 
-#title {
+#title, #highscoretitle {
     margin: auto;
     border-color: transparent;
     transform: skew(-25deg);
@@ -44,14 +44,8 @@ div {
 }
 
 #highscoretitle {
-    border-color: transparent;
-    transform: skew(-25deg);
-    animation-name: titlemove;
-    position: absolute;
-    animation-duration: 1.1s;
-    animation-fill-mode: forwards;
-    animation-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    left: 570px; /* Need to ACTUALLY CENTER THIS PROPERLY! */
+   position: absolute;
+   margin: auto;
 }
 
 @keyframes titlemove {
@@ -326,6 +320,15 @@ div {
 
 #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
     padding-left: 65px;
+    color: greenyellow;
+
+}
+
+.orbitron-matrix {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -343,6 +346,8 @@ div {
 
 #leaderboardcontainer {
     width: 100%;
+   
+    
 }
 
 
@@ -556,3 +561,53 @@ div {
     position: relative;
     margin: auto;
 }
+
+.mediacontainer {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* 2xl */
+  @media (max-width: 1536px) {
+    .mediacontainer {
+      max-width: 1280px;
+    }
+  }
+  
+  /* xl */
+  @media (max-width: 1280px) {
+    .mediacontainer {
+      max-width: 1024px;
+    }
+  }
+  
+  /* lg */
+  @media (max-width: 1024px) {
+    .mediacontainer {
+      max-width: 768px;
+    }
+  }
+  
+  /* md */
+  @media (max-width: 768px) {
+    .mediacontainer {
+      max-width: 640px;
+    }
+  }
+  
+  /* sm */
+  @media (max-width: 640px) {
+    .mediacontainer {
+      max-width: 475px;
+    }
+  }
+  
+  /* xs */
+  @media (max-width: 475px) {
+    .mediacontainer {
+      width: 100%;
+    }
+  }
