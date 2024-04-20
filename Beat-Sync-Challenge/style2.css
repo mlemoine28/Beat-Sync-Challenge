@@ -455,11 +455,12 @@ div {
 }
   
 .howtoplayimages {
-    scale: 0.55;
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto;
-    align-items: flex-end;
+    scale: 0.6;
+    position: relative;
+    bottom: 9%;
+   
+    
+    
     
 }
 
@@ -468,15 +469,13 @@ div {
     position: relative;
     display: block;
     max-width: 100%;
-    max-height: 100%;
-    bottom: 30%;
-    
+    max-height: 100%;    
 }
 
 .judgephotos {
-  position: absolute;
+  position: relative;
   margin: auto; 
- 
+  
 }
 
 
@@ -566,11 +565,6 @@ div {
 
 #beatCircle3 {
     animation: smileybounce 480ms infinite;
-}
-
-#warm_up_image {
-    position: absolute;
-    margin: auto;
 }
 
  .mediacontainer {
