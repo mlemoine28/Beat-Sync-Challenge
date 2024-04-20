@@ -44,7 +44,6 @@ div {
 }
 
 #highscoretitle {
-   position: absolute;
    margin: auto;
 }
 
@@ -96,10 +95,10 @@ div {
 }
 
 #wholegame {
-    display:none;   
+    display: none;   
     transform: scale(0.65);
-    bottom: 16vh;
     position: relative;
+    
 }
 
 .intropage {
@@ -117,15 +116,9 @@ div {
       
 }
 
-#smileydiv {
-    background-color: #071233;
-    position: relative;
-    border-color: black;
-    margin: 0 auto;
-    background: transparent;
-    border-color: transparent;
-    top: 100px;
-}
+
+
+
 
 #judgmentdiv {
     width: 500px;
@@ -135,6 +128,11 @@ div {
     color:#d97e29;
     margin: auto;
     pointer-events: none;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     
 }
 
@@ -146,11 +144,6 @@ div {
     position: absolute;
     left: 0;
     bottom: 0;
-}
-
-#container {
-    width: 100%;
-    margin: auto;
 }
 
 .game-container {
@@ -229,7 +222,6 @@ div {
     height: 70px;
     width: 18%;
     position: relative;
-    bottom: 23vh;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
@@ -258,9 +250,9 @@ div {
     left: 50px;
 }
 
-#songButton {
+#songButton { /* Combine song buttons under one style */
   height: 70px;
-  width: 20%;
+  width: 245px;
   position: relative;
   background-color: green;
   font-size: xx-large;
@@ -270,14 +262,13 @@ div {
   border-color: black;
   border-radius: 500px;
   padding: 15px;
-  top: 50px;
-  right: 250px;
+  margin: auto;
   color: black;
 }
 
 #songButton2 {
     height: 70px;
-    width: 20%;
+    width: 245px;
     position: relative;
     background-color: yellow;
     font-size: xx-large;
@@ -287,14 +278,14 @@ div {
     border-color: black;
     border-radius: 500px;
     padding: 15px;
-    top: 50px;
+    margin: auto;
     color: black;
     
   }
 
   #songButton3 {
     height: 70px;
-    width: 20%;
+    width: 245px;
     position: relative;
     background-color: red;
     font-size: xx-large;
@@ -304,8 +295,7 @@ div {
     border-color: black;
     border-radius: 500px;
     padding: 15px;
-    top: 50px;
-    left: 250px;
+    margin: auto;
     color: black;
   }
 
@@ -337,7 +327,10 @@ div {
     text-align: center;
     font-size: x-large; 
     justify-content: center; 
-    margin: 150px;
+    margin-top: 0;
+    margin-bottom: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
     border-radius: 10px;
     border-style: solid;
     border-color: #071233;
@@ -346,6 +339,7 @@ div {
 
 #leaderboardcontainer {
     width: 100%;
+    flex-direction: column;
    
     
 }
@@ -501,8 +495,7 @@ div {
 #progress-bar-container {
     width: 100%;
     background-color: #071233;
-    bottom: 25vh;
-    position: absolute;
+    position: relative;
 }
 
 #progress-bar {
@@ -562,12 +555,16 @@ div {
     margin: auto;
 }
 
-/* .mediacontainer {
+ .mediacontainer {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  #buttoncontainer {
+    display: flex;
   }
   
   /* 2xl */
@@ -595,6 +592,9 @@ div {
   @media (max-width: 768px) {
     .mediacontainer {
       max-width: 640px;
+    }
+    #buttoncontainer {
+      flex-direction: column;
     }
   }
   

@@ -74,58 +74,57 @@
                 </div>
             </div>
         <div id="wholegame" class="mediacontainer">
-            <div id="container">
-                <div id="title">
-                    <img src="images/title_image.png" alt="beat sync challenge" height="50%" width="50%"class="center"/>
-                </div>
-                <div class="game-container">
+            <div id="title">
+                <img src="images/title_image.png" alt="beat sync challenge" height="50%" width="50%"class="center"/>
+            </div>
+            <div class="game-container">
+                <div id ="buttoncontainer">
                     <button id="songButton">Play (Easy)</button> 
                     <button id="songButton2">Play (Medium)</button>
                     <button id="songButton3">Play (Hard)</button>
-                    <audio id="song" source src="audio-files/Coding_Song.wav" type="audio/wav"></audio>
-                    <audio id="song2" source src="audio-files/rap_code.wav" type="audio/wav"></audio>
-                    <audio id="song3" source src="audio-files/reach_code.wav" type="audio/wav"></audio>
-                    <!--- <button id="kickButton">Start Game</button>
-                    <audio id="kickdrumsound" source src="audio-files/kick_drum.wav" type="audio/wav"></audio> -->
-                    <div id="progress-bar-container">
-                        <div id="progress-bar">
-                        </div>
-                    </div>
-                    <div id="smileydiv">
-                        <div id="smileybeat">
-                        <img id="smileyface" src="images/smiley_face.png" alt="smiley face" style="border-radius: 50%;"/> 
-                        <div id="judgmentdiv">
-                            <img id="perfect_image" class="judgephotos" src="images/perfect_image.png" alt="perfect" style="display: none;" width="100%"/>
-                            <img id="great_image" class="judgephotos" src="images/great_image.png" alt="great" style="display: none;"/>
-                            <img id="good_image"  class="judgephotos" src="images/good_image.png" alt="good" style="display: none;"/>
-                            <img id="poor_image" class="judgephotos" src="images/poor_image.png" alt="poor" style="display: none;"/>
-                            <img id="three_image" class="scorephotos" src="images/three_image.png" alt="three" style="display: none;"/>
-                            <img id="two_image" class="scorephotos" src="images/two_image.png" alt="two" style="display: none;"/>
-                            <img id="one_image" class="scorephotos" src="images/one_image.png" alt="one" style="display: none;"/>
-                            <img id="go_image" class="scorephotos" src="images/go_image.png" alt="Go!" style="display: none;"/>
-                            <img id="warm_up_image" class="scorephotos" src="images/warm_up_image.png" alt="warm up" style="display: none;"/>
-                        </div> 
-                        <div id="beatCircle" style="display: none;"></div> 
-                        <div id="beatCircle2" style="display: none;"></div>
-                        <div id="beatCircle3" style="display: none;"></div> 
-                       
-                    </div>   
-                        
-                    <div id="scoretitle">
-                    </div>
-                    <button id="leaderboards">Leaderboards</button>
-                    <button id="howtoplay2">How To Play</button>
-                    <div id="highscorediv" style="display: none;">
-                    <form id="scoreForm">
-                        <label for="username">Congratulations! You've earned a high score!</label>
-                        <input type="text" id="username" name="username" placeholder="enter username here"> <!-- So "name" is essentially the name of the box of data being sent to the server (through the form).-->
-                        <button type="submit" id="enterhighscore"><b>Submit</b></button>
-                    </form>
-                    </div>
                 </div>
+            <div id="beatCircle" style="display: none;"></div> 
+            <div id="beatCircle2" style="display: none;"></div>
+            <div id="beatCircle3" style="display: none;"></div>  
+            <div id="smileydiv">
+                <div id="judgmentdiv">
+                    <img id="smileyface" src="images/smiley_face.png" alt="smiley face" style="border-radius: 50%;"/> 
+                    <img id="perfect_image" class="judgephotos" src="images/perfect_image.png" alt="perfect" style="display: none;" width="100%"/>
+                    <img id="great_image" class="judgephotos" src="images/great_image.png" alt="great" style="display: none;"/>
+                    <img id="good_image"  class="judgephotos" src="images/good_image.png" alt="good" style="display: none;"/>
+                    <img id="poor_image" class="judgephotos" src="images/poor_image.png" alt="poor" style="display: none;"/>
+                    <img id="three_image" class="scorephotos" src="images/three_image.png" alt="three" style="display: none;"/>
+                    <img id="two_image" class="scorephotos" src="images/two_image.png" alt="two" style="display: none;"/>
+                    <img id="one_image" class="scorephotos" src="images/one_image.png" alt="one" style="display: none;"/>
+                    <img id="go_image" class="scorephotos" src="images/go_image.png" alt="Go!" style="display: none;"/>
+                    <img id="warm_up_image" class="scorephotos" src="images/warm_up_image.png" alt="warm up" style="display: none;"/>
+                </div> 
             </div>
+                <audio id="song" source src="audio-files/Coding_Song.wav" type="audio/wav"></audio>
+                <audio id="song2" source src="audio-files/rap_code.wav" type="audio/wav"></audio>
+                <audio id="song3" source src="audio-files/reach_code.wav" type="audio/wav"></audio>
+        
             
-        </div>
+                <div id="beatCircle" style="display: none;"></div> 
+                <div id="beatCircle2" style="display: none;"></div>
+                <div id="beatCircle3" style="display: none;"></div>  
+                <div id="scoretitle">
+                </div>
+                <div id="highscorediv" style="display: none;">
+                <form id="scoreForm">
+                    <label for="username">Congratulations! You've earned a high score!</label>
+                    <input type="text" id="username" name="username" placeholder="enter username here"> <!-- So "name" is essentially the name of the box of data being sent to the server (through the form).-->
+                    <button type="submit" id="enterhighscore"><b>Submit</b></button>
+                </form>
+                </div>
+            </div>         
+                <div id="progress-bar-container">
+                    <div id="progress-bar">
+                    </div>   
+                </div>
+                <button id="leaderboards">Leaderboards</button>
+                    <button id="howtoplay2">How To Play</button>
+            </div>    
         </div>
         <div id="leaderboardcontainer" class="mediacontainer" style="display: none;">
             <div id="highscoretitle">

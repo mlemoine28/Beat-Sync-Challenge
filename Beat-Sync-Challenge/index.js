@@ -218,7 +218,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
         document.getElementById('great_image').style.display = 'none';
         document.getElementById('good_image').style.display = 'none';
         document.getElementById('poor_image').style.display = 'none';
-    }, beatInterval);
+    }, 200);
     return judgment;   
 }
 
