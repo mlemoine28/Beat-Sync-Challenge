@@ -33,7 +33,7 @@ div {
 
 
 #title, #highscoretitle {
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     border-color: transparent;
     transform: skew(-25deg);
     animation-name: titlemove;
@@ -46,6 +46,7 @@ div {
 #highscoretitle {
    margin: auto;
 }
+
 
 @keyframes titlemove {
     from {right:800px; top:0px;}
@@ -96,8 +97,10 @@ div {
 
 #wholegame {
     display: none;   
-    transform: scale(0.65);
+    transform: scale(0.70);
     position: relative;
+    height: 100vh;
+    bottom: 100px;
     
 }
 
@@ -121,12 +124,12 @@ div {
     font-size: xx-large;
     font-family: 'Brush Script MT', cursive;
     color:#d97e29;
-    margin-bottom: 2%;
     align-content: center;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    pointer-events: none;
     
 }
 
@@ -149,50 +152,53 @@ div {
 #scoretitle {
     background-color:#071233;
     color: white;
-    margin: auto;
     width: 15%;
     text-align: center;
-    position: absolute;
-    left: 70%;
+    position: relative;
+   margin-left: 80%;
+   bottom: 325px;
     height: 50px;
     border-color: black;
-    bottom: 75%;
     font-size: xx-large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #highscorediv {
-    bottom: 500px;
-    position: relative;
-    font-size: x-large;
+    position: absolute;
+    font-size: xx-large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 65px;
-    width: 50%;
+    height: 100px;
+    width: 100%;
+    scale: 1.2;
     border-color: black;
     border-radius: 500px;
     border-style: groove;
     background-color: green;
     color: antiquewhite;
-    left: 25%;
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+    z-index: 1;
 
 }
 
 #enterhighscore {
-    height: 50px;
+    height: 75px;
     width: 15%;
     position: relative;
     background-color: #f2c12e;
-    font-size: large;
+    font-size: 30px;
     color: #071233;
     cursor:pointer;
     border-style: groove;
     border-color: black;
     border-radius: 500px;
     padding: 15px;
+    margin: auto;
 }
 
 #username {
-    height: 20px;
+    height: 30px;
     width: 200px;
     text-align: center;
 }
@@ -215,7 +221,7 @@ div {
 
 #leaderboards, #howtoplay2 {
     height: 90px;
-    width: 25%;
+    width: 40%;
     position: relative;
     background-color: #f2c12e;
     font-size: xx-large;
@@ -469,11 +475,11 @@ div {
 
 .judgephotos {
   position: absolute;
-  margin: auto;
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
+  margin: auto; 
+ 
 }
+
+
 
 
 
@@ -498,7 +504,7 @@ div {
     bottom: 15%;
 }
 
-#smileyface {
+#smileydiv {
   position: relative;
 }
 
@@ -532,6 +538,7 @@ div {
     right: 0;
     position: absolute;
     margin: auto;
+    z-index: -1;
 }
 
 #beatCircleModal {
@@ -574,9 +581,14 @@ div {
     padding-right: 0.5rem;
   }
 
-  #buttoncontainer, #buttoncontainer2 {
+  #buttoncontainer  {
     display: flex;
     margin-bottom: 3%;
+  }
+  #buttoncontainer2 {
+    display: flex;
+    width: 50%;
+    margin: auto;
   }
   
   /* 2xl */

@@ -74,24 +74,23 @@
                 </div>
             </div>
         <div id="wholegame" class="mediacontainer">
-            <div id="title">
-                <img src="images/title_image.png" alt="beat sync challenge" height="50%" width="50%"class="center"/>
-            </div>
+            
             <div class="game-container">
+                <div id="title">
+                    <img src="images/title_image.png" alt="beat sync challenge" height="80%" width="80%"/>
+                </div>
                 <div id ="buttoncontainer">
                     <button id="songButton">Play (Easy)</button> 
                     <button id="songButton2">Play (Medium)</button>
                     <button id="songButton3">Play (Hard)</button>
                 </div>
-                <div id="judgmentdiv">
-                    <div id="beatCircle" style="display: none;"></div> 
-                    <div id="beatCircle2" style="display: none;"></div>
-                    <div id="beatCircle3" style="display: none;"></div>
+                <div id="smileydiv">
                     <img id="smileyface" src="images/smiley_face.png" alt="smiley face" style="border-radius: 50%;"/> 
                     <div id="beatCircle" style="display: none;"></div> 
                     <div id="beatCircle2" style="display: none;"></div>
-                    <div id="beatCircle3" style="display: none;"></div>  
-                    <img id="perfect_image" class="judgephotos" src="images/perfect_image.png" alt="perfect" style="display: none;" width="100%"/>
+                    <div id="beatCircle3" style="display: none;"></div>
+                <div id="judgmentdiv">   
+                    <img id="perfect_image" class="judgephotos" src="images/perfect_image.png" alt="perfect" style="display: none;"/>
                     <img id="great_image" class="judgephotos" src="images/great_image.png" alt="great" style="display: none;"/>
                     <img id="good_image"  class="judgephotos" src="images/good_image.png" alt="good" style="display: none;"/>
                     <img id="poor_image" class="judgephotos" src="images/poor_image.png" alt="poor" style="display: none;"/>
@@ -99,23 +98,25 @@
                     <img id="two_image" class="scorephotos" src="images/two_image.png" alt="two" style="display: none;"/>
                     <img id="one_image" class="scorephotos" src="images/one_image.png" alt="one" style="display: none;"/>
                     <img id="go_image" class="scorephotos" src="images/go_image.png" alt="Go!" style="display: none;"/>
-                    <img id="warm_up_image" class="scorephotos" src="images/warm_up_image.png" alt="warm up" style="display: none;"/>
-                    <div id="scoretitle"></div>
+                    <img id="warm_up_image" class="scorephotos" src="images/warm_up_image.png" alt="warm up" style="display: none;"/> 
                 </div> 
+                <div id="highscorediv" style="display: none;">
+                    <form id="scoreForm">
+                        <label for="username">Congratulations! You've earned a high score!</label>
+                        <input type="text" id="username" name="username" placeholder="enter username here"> <!-- So "name" is essentially the name of the box of data being sent to the server (through the form).-->
+                        <button type="submit" id="enterhighscore"><b>Submit</b></button>
+                    </form>
+                    </div>
+                </div>
+                <div id="scoretitle"></div>
             </div>
-            <div id="highscorediv" style="display: none;">
-            <form id="scoreForm">
-                <label for="username">Congratulations! You've earned a high score!</label>
-                <input type="text" id="username" name="username" placeholder="enter username here"> <!-- So "name" is essentially the name of the box of data being sent to the server (through the form).-->
-                <button type="submit" id="enterhighscore"><b>Submit</b></button>
-            </form>
-            </div>
+            
             <div id="progress-bar-container">
                 <div id="progress-bar">
                 </div>   
             </div>
             <div id ="buttoncontainer2">
-                <button id="leaderboards">Leaderboards</button>
+            <button id="leaderboards">Leaderboards</button>
                 <button id="howtoplay2">How To Play</button>
             </div>
         </div>    
