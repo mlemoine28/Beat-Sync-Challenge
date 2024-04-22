@@ -268,7 +268,7 @@ let topscoreseasy = [
 ];
 
 let topscoresmedium = [
-    {username: "Bill", score: 6000},
+    {username: "Billy", score: 6000},
     {username: "Joey", score: 5500},
     {username: "Bob", score: 5000},
     {username: "George", score: 4500},

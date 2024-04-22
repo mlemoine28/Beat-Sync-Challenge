@@ -206,17 +206,17 @@ div {
     color:red
 }
 
-#socials {
+#socials { /*get dj to help with this format */
     background-color: #1E1D30;
-    margin: 0 auto;
     position: absolute;
     font-size: 8px;
     border-color: black;
-    width: 25%;
+    width: 15%;
+    height: 100px;
     bottom: 0;
     right: 0;
     text-align: center;
-    padding-bottom: 5px;
+    line-height: 50px;
 }
 
 #leaderboards, #howtoplay2 {
@@ -305,16 +305,17 @@ div {
 
 #leaderboardlist {
     display: flex;
-    padding: 5px;
-    width: 100%;
+    padding: 0px;
     justify-content: center;
-    margin: auto;
     color: black;
+    scale: 0.75;
+
 }
 
 #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
-    padding-left: 65px;
+    padding-left: 55px;
     color: greenyellow;
+    margin-bottom: 30px;
 
 }
 
@@ -325,26 +326,28 @@ div {
   font-style: normal;
 }
 
-
+#easytitle, #mediumtitle, #hardtitle {
+  margin-left: 50px;
+}
 
 #leaderboardlist > div {
     text-align: center;
-    font-size: x-large; 
     justify-content: center; 
-    margin-top: 0;
+    scale: 1.7;
     margin-bottom: 150px;
     margin-left: 150px;
     margin-right: 150px;
     border-radius: 10px;
     border-style: solid;
     border-color: #071233;
-    border-width: 10px;
+    border-width: 15px;
+    padding: 15px;
+    padding-right: 70px;
 }
 
 #leaderboardcontainer {
     width: 100%;
-    flex-direction: column;
-   
+    flex-direction: column;  
     
 }
 
@@ -497,10 +500,10 @@ div {
 }
 
 #back {
-    position: absolute;
     width: 15%;
-    margin: auto;
-    bottom: 15%;
+    bottom: 500px;
+    right: 150px;
+    scale: 0.9;
 }
 
 #smileydiv {
