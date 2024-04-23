@@ -309,6 +309,7 @@ function updateLeaderboard(topscores, list) {
     let items = [];
     for (let i = 0; i < topscores.length; i++) {
         let li = document.createElement("li");
+        li.className = "highscoreitem";
         li.innerText = topscores[i].username + " " + topscores[i].score;
         items.push(li); //appendChild actually populates the list in this case. This is the same operation as "push".
     }
@@ -328,6 +329,7 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
         if (newScore > currentLeaderboard[9].score) {
                 currentLeaderboard.push({username: username, score: newScore});
                 currentLeaderboard.sort((a, b) => b.score - a.score);
+                currentLeaderboard.splice(10, 1);
                 updateLeaderboard(currentLeaderboard, currentLeaderboardEl);   
                 document.querySelector('#highscorediv').style.display = 'none';   
                 setScore(0); 
@@ -374,10 +376,6 @@ function stopAllSongs() {
         circle.style.display='none';
     });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    updateLeaderboard();
-});
 
 function timeline (audio) {
     const currentTime = audio.currentTime;

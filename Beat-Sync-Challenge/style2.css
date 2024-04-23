@@ -484,6 +484,8 @@ div {
 
 #smileydiv {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 #progress-bar-container {
@@ -639,7 +641,7 @@ div {
     .introsmiley {
       top: 360px;
     }
-
+  }
   /*for social container */
   @media (max-width: 880px) {
     .mediacontainer {
@@ -726,6 +728,13 @@ div {
     #leaderboards, #howtoplay2 {
       font-size: 13px;
     }
+  }
 
+  .highscoreitem {
+    margin-bottom: 5px;
+  }
 
-  } 
+  .sociallink {
+    text-decoration: none;
+  }
+  
