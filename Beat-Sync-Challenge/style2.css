@@ -210,9 +210,9 @@ div {
 #socials { /*get dj to help with this format */
     background-color: #1E1D30;
     position: absolute;
-    font-size: 8px;
+    font-size: 7px;
     border-color: black;
-    width: 15%;
+    width: 20%;
     height: 100px;
     bottom: 0;
     right: 0;
@@ -233,8 +233,7 @@ div {
     border-radius: 500px;
     padding: 15px;
     margin: auto;
-
-   
+    bottom: 20px;
 }
 
 #playnowbutton, #howtoplaybutton {
@@ -570,6 +569,13 @@ div {
     .mediacontainer {
       max-width: 1280px;
     }
+    #socials {
+      font-size: 6.5px;
+      scale: 0.9;
+    }
+    #linked_image, #git_image {
+      scale: 0.8;
+    }
   }
   
   /* xl */
@@ -577,15 +583,56 @@ div {
     .mediacontainer {
       max-width: 1024px;
     }
+    #leaderboards, #howtoplay2 {
+      font-size: x-large;
   }
+  #socials {
+    font-size: 6.5px;
+  }
+  #smileyface {
+    scale: 0.85;
+  }
+  #title {
+    scale: 1.2;
+  }
+  #beat_image, #sync_image, #challenge_image {
+    scale: 0.8;
+  }
+}
   
   /* lg */
   @media (max-width: 1024px) {
     .mediacontainer {
-      max-width: 768px;
+      max-width: 880px;
+    }
+    #scoretitle {
+      left: 50px;
+      font-size: 25px;
+      height: 35px;
+    }
+
+    #leaderboards, #howtoplay2 {
+      width: 47%;
+    }
+    #smileyface {
+      scale: 0.75;
+    }
+
+    #socials {
+      font-size: 5.5px;
     }
   }
-  
+
+  /*for social container */
+  @media (max-width: 880px) {
+    .mediacontainer {
+      max-width: 768px;
+    }
+   #socials {
+    font-size: 4.8px;
+   }
+  }
+
   /* md */
   @media (max-width: 768px) {
     .mediacontainer {
@@ -594,6 +641,18 @@ div {
     #buttoncontainer {
       flex-direction: column;
     }
+    #leaderboards, #howtoplay2 {
+      font-size: 20px;
+    }
+    #smileyface {
+      scale: 0.7;
+    }
+    #socials {
+      font-size: 4.1px;
+     }
+     #footer {
+      font-size: 4.1px;
+     }
   }
   
   /* sm */
@@ -601,6 +660,35 @@ div {
     .mediacontainer {
       max-width: 475px;
     }
+    #leaderboards, #howtoplay2 {
+      font-size: 14px;
+    }
+
+    #buttoncontainer2 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 300px;
+      scale: 0.9;
+    }
+    #title {
+      scale: 1.5;
+    }
+    #scoretitle {
+      left: 80px;
+      width: 100px;
+    }
+    #socials {
+      font-size: 4.0px;
+      width: 150px;
+     }
+     #smileyface {
+      scale: 0.6;
+      margin: auto;
+    }
+    #buttoncontainer {
+      scale: 0.8;
+    }
+   
   }
   
   /* xs */
@@ -608,4 +696,9 @@ div {
     .mediacontainer {
       width: 100%;
     }
+    #leaderboards, #howtoplay2 {
+      font-size: 13px;
+    }
+
+
   } 
