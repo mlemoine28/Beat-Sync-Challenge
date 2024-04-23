@@ -45,6 +45,7 @@ div {
 
 #highscoretitle {
    margin: auto;
+   padding-bottom: 50px;
 }
 
 
@@ -254,7 +255,7 @@ div {
     left: 50px;
 }
 
-#songButton { /* Combine song buttons under one style */
+#songButton, #songButton2, #songButton3 { /* Combine song buttons under one style */
   height: 70px;
   width: 245px;
   position: relative;
@@ -271,51 +272,26 @@ div {
 }
 
 #songButton2 {
-    height: 70px;
-    width: 245px;
-    position: relative;
     background-color: yellow;
-    font-size: xx-large;
-    color: antiquewhite;
-    cursor:pointer;
-    border-style: groove;
-    border-color: black;
-    border-radius: 500px;
-    padding: 15px;
-    margin: auto;
-    color: black;
-    
   }
 
   #songButton3 {
-    height: 70px;
-    width: 245px;
-    position: relative;
     background-color: red;
-    font-size: xx-large;
-    color: antiquewhite;
-    cursor:pointer;
-    border-style: groove;
-    border-color: black;
-    border-radius: 500px;
-    padding: 15px;
-    margin: auto;
-    color: black;
   }
 
 #leaderboardlist {
     display: flex;
-    padding: 0px;
     justify-content: center;
     color: black;
-    scale: 0.75;
+    scale: 0.70;
 
 }
 
 #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
-    padding-left: 55px;
+    padding-left: 120px;
     color: greenyellow;
     margin-bottom: 30px;
+    margin-right: 50px;
 
 }
 
@@ -333,7 +309,7 @@ div {
 #leaderboardlist > div {
     text-align: center;
     justify-content: center; 
-    scale: 1.7;
+    scale: 1.6;
     margin-bottom: 150px;
     margin-left: 150px;
     margin-right: 150px;
@@ -343,6 +319,7 @@ div {
     border-width: 15px;
     padding: 15px;
     padding-right: 70px;
+    
 }
 
 #leaderboardcontainer {
