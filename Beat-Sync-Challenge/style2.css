@@ -244,7 +244,7 @@ div {
     font-size: xx-large;
     color: #071233;
     cursor:pointer;
-    top: 830px;
+    top: 930px;
     right: 50px;  
     border-radius: 500px;
     padding: 15px;
@@ -341,7 +341,7 @@ div {
     animation: smileyrotate 4s ease-in-out, smileybounce2 1s ease-in-out alternate infinite;
     border-color: transparent;
     animation-delay: 0s, 3s;  
-    top: 220px;
+    top: 280px;
     width: 100%;
             /* Why can't i do left: 1px without messing up the whole thing???!!! */
 }
@@ -595,8 +595,15 @@ div {
   #title {
     scale: 1.2;
   }
-  #beat_image, #sync_image, #challenge_image {
+  #beatsyncchallengeimages {
+    scale: 0.85;
+    
+  }
+
+  #introsmileyspin {
     scale: 0.8;
+    ;
+    
   }
 }
   
@@ -621,7 +628,17 @@ div {
     #socials {
       font-size: 5.5px;
     }
+
+    #beatsyncchallengeimages {
+      scale: 0.75;
+    }
+
+    #introsmileyspin {
+      scale: 0.75;
   }
+    .introsmiley {
+      top: 360px;
+    }
 
   /*for social container */
   @media (max-width: 880px) {
@@ -653,6 +670,12 @@ div {
      #footer {
       font-size: 4.1px;
      }
+     #beatsyncchallengeimages {
+      scale: 0.65;
+    }
+    .challenge-image {
+      right: 50px;
+    }
   }
   
   /* sm */
@@ -687,6 +710,10 @@ div {
     }
     #buttoncontainer {
       scale: 0.8;
+    }
+
+    .challenge-image {
+      right: 135px;
     }
    
   }
