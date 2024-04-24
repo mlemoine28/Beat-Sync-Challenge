@@ -218,20 +218,23 @@ div {
     padding: 15px;
     margin: auto;
     bottom: 125px;
+    font-weight: bold;
 }
 
 #playnowbutton, #howtoplaybutton {
     height: 70px;
-    width: 18%;
+    width: 40%;
     position: relative;
     background-color: #f2c12e;
     font-size: xx-large;
     color: #071233;
     cursor:pointer;
-    top: 930px;
+    top: 850px;
     right: 50px;  
     border-radius: 500px;
     padding: 15px;
+    font-weight: bold;
+    margin: auto;
 }
 
 #howtoplaybutton {
@@ -546,6 +549,12 @@ div {
     margin: auto;
     bottom: 50px;
   }
+
+  #buttoncontainer3 {
+    display: flex;
+    margin: auto;
+    width: 50%;
+  }
   
   /* 2xl */
   @media (max-width: 1536px) {
@@ -584,10 +593,13 @@ div {
     scale: 1.2;
   }
   #beatsyncchallengeimages {
-    scale: 0.85;
+    scale: 0.9;
     
   }
 
+  #playnowbutton, #howtoplaybutton {
+    font-size: 20px;
+  }
   #introsmileyspin {
     scale: 0.8;
     ;
@@ -624,15 +636,19 @@ div {
       font-size: 5.5px;
     }
 
+    #playnowbutton, #howtoplaybutton {
+      font-size: 18px;
+    }
+
     #beatsyncchallengeimages {
-      scale: 0.75;
+      scale: 0.85;
     }
 
     #introsmileyspin {
       scale: 0.75;
   }
     .introsmiley {
-      top: 360px;
+      top: 330px;
     }
 
     #progress-bar-container {
@@ -651,14 +667,21 @@ div {
    #scoretitle {
     height: 75px;
    }
-#progress-bar-container {
+
+  #progress-bar-container {
   bottom: 50px;
-}
+  }
 
 #leaderboards, #howtoplay2 {
   bottom: 70px;
-
   }
+
+#playnowbutton, #howtoplaybutton {
+  font-size: 13.5px;
+  width: 40%;
+  }
+
+  #beat
 }
 
   /* md */
@@ -673,13 +696,13 @@ div {
       font-size: 20px;
     }
     #smileyface {
-      scale: 0.7;
+      scale: 0.;
     }
     #socials {
       font-size: 4.1px;
      }
      #beatsyncchallengeimages {
-      scale: 0.65;
+      scale: 0.80;
     }
     .challenge-image {
       right: 50px;
@@ -689,7 +712,7 @@ div {
   /* sm */
   @media (max-width: 640px) {
     .mediacontainer {
-      max-width: 475px;
+      max-width: 575px;
     }
     #leaderboards, #howtoplay2 {
       font-size: 14px;
@@ -722,20 +745,34 @@ div {
     }
 
     .challenge-image {
-      right: 135px;
+      right: 85px;
     }
 
     #progress-bar-container {
       bottom: 50px;
     }
-   
+
+    #playnowbutton, #howtoplaybutton {
+  font-size: 13.5px;
+  width: 50%;
   }
+
+  #beatsyncchallengeimages {
+    scale: 0.75;
+    margin: auto;
+  }
+
+  #introsmileyspin {
+    scale: 0.65;
+  }
+}
   
   /* xs */
-  @media (max-width: 475px) {
+  @media (max-width: 575px) {
     .mediacontainer {
-      width: 100%;
+      max-width: 514px;
     }
+
     #leaderboards, #howtoplay2 {
       font-size: 13px;
     }
@@ -746,5 +783,73 @@ div {
 
   #progress-bar-container {
     bottom: 120px;
+  }
+
+  #introsmileyspin {
+    scale: 0.60;
+    
+  }
+
+  .challenge-image {
+    right: 150px;
+  }
+
+  .beat-image {
+    left: 50px;
+  }
+
+  .sync-image {
+    left: 50px;
+  }
+
+}
+
+@media (max-width: 514px) {
+  .mediacontainer {
+    max-width: 375px;
+  }
+  .challenge-image {
+    right: 60%;
+    scale: 0.85;
+  }
+
+  .beat-image {
+   left: 40%;
+    scale: 0.85;
+  }
+
+  .sync-image {
+    left: 60%;
+    scale: 0.85;
+  }
+
+  #introsmiley {
+    left: 1000px;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .mediacontainer {
+    max-width: 200px;
+  }
+
+  .challenge-image {
+    right: 60%;
+    scale: 0.85;
+  }
+
+  .beat-image {
+   left: 40%;
+    scale: 0.85;
+  }
+
+  .sync-image {
+    left: 60%;
+    scale: 0.85;
+  }
+
+  #introsmiley {
+    left: 1000px;
   }
 }
