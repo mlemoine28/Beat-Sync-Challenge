@@ -194,14 +194,19 @@ div {
     text-align: center;
 }
 
-#socials {
+#socials, #socials2 {
     position: absolute;
-    font-size: 7px;
+    font-size: 9px;
     width: 20%;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;
+    margin-bottom: 40px;
+    top: 950px;
+}
+
+#socials2 {
+  top: 1100px;
 }
 
 #leaderboards, #howtoplay2 {
@@ -561,7 +566,7 @@ div {
     .mediacontainer {
       max-width: 1280px;
     }
-    #socials {
+    #socials, #socials2 {
       font-size: 6.5px;
       scale: 0.9;
     }
@@ -583,7 +588,7 @@ div {
     #leaderboards, #howtoplay2 {
       font-size: x-large;
   }
-  #socials {
+  #socials, #socials2 {
     font-size: 6.5px;
   }
   #smileyface {
@@ -632,7 +637,7 @@ div {
       scale: 0.75;
     }
 
-    #socials {
+    #socials, #socials2 {
       font-size: 5.5px;
     }
 
@@ -647,9 +652,6 @@ div {
     #introsmileyspin {
       scale: 0.75;
   }
-    .introsmiley {
-      top: 330px;
-    }
 
     #progress-bar-container {
       bottom: 50px;
@@ -660,7 +662,7 @@ div {
     .mediacontainer {
       max-width: 768px;
     }
-   #socials {
+   #socials, #socials2 {
     font-size: 4.8px;
    }
 
@@ -680,8 +682,6 @@ div {
   font-size: 13.5px;
   width: 40%;
   }
-
-  #beat
 }
 
   /* md */
@@ -698,7 +698,7 @@ div {
     #smileyface {
       scale: 0.;
     }
-    #socials {
+    #socials, #socials2 {
       font-size: 4.1px;
      }
      #beatsyncchallengeimages {
@@ -722,7 +722,7 @@ div {
       margin-left: auto;
       margin-right: auto;
       width: 300px;
-      scale: 0.9;
+      
     }
     #title {
       scale: 1.5;
@@ -732,8 +732,8 @@ div {
       width: 100px;
       font-size: 20px;
     }
-    #socials {
-      font-size: 4.0px;
+    #socials, #socials2 {
+      font-size: 8.0px;
       width: 150px;
      }
      #smileyface {
@@ -791,65 +791,92 @@ div {
   }
 
   .challenge-image {
-    right: 150px;
+    right: 110px;
+    scale: 0.75;
   }
 
   .beat-image {
-    left: 50px;
+    scale: 0.75;
   }
 
   .sync-image {
-    left: 50px;
+    scale: 0.75;
   }
 
 }
 
 @media (max-width: 514px) {
   .mediacontainer {
-    max-width: 375px;
+    max-width: 414px;
   }
   .challenge-image {
-    right: 60%;
+    right: 25%;
     scale: 0.85;
   }
 
   .beat-image {
-   left: 40%;
+   left: 13%;
     scale: 0.85;
   }
 
   .sync-image {
-    left: 60%;
+    left: 20%;
     scale: 0.85;
   }
 
-  #introsmiley {
-    left: 1000px;
-  }
+  #playnowbutton, #howtoplaybutton {
+    font-size: 13.5px;
+    }
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .mediacontainer {
     max-width: 200px;
   }
 
   .challenge-image {
-    right: 60%;
-    scale: 0.85;
+    left: -60%;
   }
 
   .beat-image {
    left: 40%;
-    scale: 0.85;
+   
   }
-
   .sync-image {
     left: 60%;
-    scale: 0.85;
   }
 
-  #introsmiley {
-    left: 1000px;
+  #introsmileyspin {
+    left: 23%;
   }
+
+  #playnowbutton, #howtoplaybutton {
+    font-size: 16.5px;  
+    left: 50%;
+    display: flex;
+  }
+
+  #buttoncontainer3 {
+      width: 200px;
+      left: 50px;;
+  }
+
+  #socials {
+    left: 95%;
+  }
+
+  #title {
+    scale: 300%;
+  }
+  
+  #scoretitle {
+    scale: 75%;
+  }
+
+  #leaderboards, #howtoplay2 {
+    right: 20%;
+  }
+
+  
 }
