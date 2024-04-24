@@ -402,6 +402,10 @@ div {
    flex-direction: column;
    /*transform:scale(80%);*/
 }
+
+.sociallink {
+  text-decoration: none;
+}
   
 #howtoplayheading {
   font-size: 5vh;
@@ -738,10 +742,6 @@ div {
 
   .highscoreitem {
     margin-bottom: 5px;
-  }
-
-  .sociallink {
-    text-decoration: none;
   }
 
   #progress-bar-container {
