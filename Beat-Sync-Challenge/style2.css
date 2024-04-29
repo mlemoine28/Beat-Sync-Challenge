@@ -1022,7 +1022,7 @@ div {
 
   #buttoncontainer3 {
       width: 200px;
-      left: 50px;;
+      left: 50px;
   }
 
   #socials {
@@ -1031,10 +1031,12 @@ div {
 
   #title {
     scale: 300%;
+    margin-left: -10px;
   }
   
   #scoretitle {
     scale: 75%;
+    margin-left: 210px;
   }
 
   #leaderboards, #howtoplay2 {
@@ -1065,7 +1067,29 @@ div {
 
   #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
     font-size: 50px;
+}
+#buttoncontainer {
+  margin-left: -30px;
+}
+
+#buttoncontainer2 {
+  margin-left: 5px;
+}
+}
+
+@media (max-width: 375px) {
+  .mediacontainer {
+    max-width: 200px;
+  }
+
+  #title {
+    margin-left: -5px;
+    margin-top: 15px;
+  }
+
+  #buttoncontainer {
+    margin-bottom: -30px;
+  }
 
   
-}
 }
