@@ -325,7 +325,7 @@ div {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    position: relative;
+    position: absolute;
 }
   
 .introsmiley { /* I want to make it so this image pulsates after the initial warp-in animation*/
@@ -466,9 +466,10 @@ div {
 
 #back {
     width: 15%;
-    bottom: 500px;
-    right: 150px;
-    scale: 0.9;
+    bottom: 100px;
+    margin: auto;
+    margin-top: 30px;
+    scale: 0.8;
 }
 
 #smileydiv {
@@ -578,6 +579,28 @@ div {
       bottom: 80px;
     }
 
+    #leaderboardlist {
+      scale: 0.6;
+    }
+
+    #leaderboardlist > div {
+      margin-bottom: 70px;
+
+    }
+
+    #highscoretitle {
+      padding-bottom: 0px;
+      margin-left: 250px;
+    }
+
+    #back {
+      bottom: 100px;
+      margin-left: 550px;
+    }
+
+
+
+
   }
   
   /* xl */
@@ -616,6 +639,18 @@ div {
 
   #progress-bar-container {
     bottom: 50px;
+  }
+
+  #leaderboardlist {
+    scale: 0.55;
+  }
+
+  #highscoretitle {
+    margin-left: 130px;
+  }
+
+  #back {
+    margin-left: 445px;
   }
 }
   
@@ -656,6 +691,18 @@ div {
     #progress-bar-container {
       bottom: 50px;
     }
+
+    #leaderboardlist {
+      scale: 0.47;
+    }
+
+    #highscoretitle {
+      margin-left: 65px;
+    }
+
+    #back {
+      margin-left: 385px;
+    }
   }
   /*for social container */
   @media (max-width: 880px) {
@@ -682,6 +729,34 @@ div {
   font-size: 13.5px;
   width: 40%;
   }
+
+  #leaderboardlist {
+    scale: 0.36;
+  }
+
+  #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
+    height:600px;
+    font-size: x-large;
+
+} 
+
+#leaderboardcontainer {
+  margin-left: 30px;
+}
+
+#highscoretitle {
+  padding-bottom: 0;
+}
+
+#back {
+  bottom: 900px;
+  width: 35%;
+  margin-left: 260px;
+}
+
+#highscoretitle {
+  margin-left: 0px;
+}
 }
 
   /* md */
@@ -707,7 +782,33 @@ div {
     .challenge-image {
       right: 50px;
     }
+
+    #leaderboardlist {
+      scale: 0.34;
+    }
+
+    #highscoretitle {
+      scale: 1.0;
+      position: relative;
+      margin-left: -35px;
+    }
+
+    #back {
+      scale: 0.8;
+      bottom: 850px;
+      width: 30%;
+      margin-left: 265px
+    }
+
+    #leaderboardlist > div {
+      margin-right: 0px;
+      margin-left: 175px;
+
   }
+
+  #leaderboardcontainer {
+  }
+}
   
   /* sm */
   @media (max-width: 640px) {
@@ -716,6 +817,10 @@ div {
     }
     #leaderboards, #howtoplay2 {
       font-size: 14px;
+    }
+
+    #leaderboardcontainer {
+      margin-left: 0px;
     }
 
     #buttoncontainer2 {
@@ -765,8 +870,13 @@ div {
   #introsmileyspin {
     scale: 0.65;
   }
+
+  #leaderboardlist > div {
+    scale: 1.4;
+    margin-left: 320px;
+
 }
-  
+}
   /* xs */
   @media (max-width: 575px) {
     .mediacontainer {
@@ -803,7 +913,20 @@ div {
     scale: 0.75;
   }
 
+  #leaderboardlist > div {
+    scale: 1.7;
+    height: 800px;
+   
 }
+
+#back {
+  margin-left: 250px;
+}
+
+#leaderboardcontainer {
+  margin-left: 55px;
+}
+  }
 
 @media (max-width: 514px) {
   .mediacontainer {
@@ -827,6 +950,18 @@ div {
   #playnowbutton, #howtoplaybutton {
     font-size: 13.5px;
     }
+#leaderboardcontainer {
+  margin-left: 100px;
+}
+
+#back {
+  margin-left: 215px;
+}
+
+#highscoretitle {
+  margin-left: -50px;
+}
+   
 
 }
 
@@ -876,6 +1011,19 @@ div {
 
   #leaderboards, #howtoplay2 {
     right: 20%;
+  }
+
+  #back {
+    width: 75%;
+    margin-left: 50%;
+  }
+
+  #leaderboardcontainer {
+    margin-left: 52%;
+  }
+
+  #highscoretitle {
+    margin-left: -80%;
   }
 
   
