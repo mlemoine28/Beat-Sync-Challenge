@@ -569,7 +569,6 @@ div {
     }
     #socials, #socials2 {
       font-size: 6.5px;
-      scale: 0.9;
     }
 
     #beat
@@ -658,6 +657,10 @@ div {
   #back {
     margin-left: 445px;
   }
+
+  #beatCircleModal {
+    margin-top: 650px;
+  }
 }
   
   /* lg */
@@ -724,7 +727,8 @@ div {
       max-width: 768px;
     }
    #socials, #socials2 {
-    font-size: 4.8px;
+    font-size: 9px;
+    width: 100%;
    }
 
    #scoretitle {
@@ -798,7 +802,7 @@ div {
       scale: 0.;
     }
     #socials, #socials2 {
-      font-size: 4.1px;
+      font-size: 6.5px;
      }
      #beatsyncchallengeimages {
       scale: 0.80;
@@ -832,6 +836,10 @@ div {
   #leaderboardcontainer {
     margin-left: 95px;
   }
+
+  #beatCircleModal {
+    margin-top: 680px;
+  }
 }
   
   /* sm */
@@ -846,8 +854,6 @@ div {
     #howtoplaymodal {
       scale: 0.8;
     }
-
-    #beatCircle, #beatCircle2, #beatCircle3 {
 
     #beatCircleModal {
       margin-top: 150px;
@@ -943,7 +949,7 @@ div {
   margin-left: -60px;
 }
     }
-}
+
   /* xs */
   @media (max-width: 575px) {
     .mediacontainer {
@@ -1086,6 +1092,14 @@ div {
 #leaderboards, #howtoplay2 {
   font-size: large;
 }
+
+#socials2 {
+  top: 50px;
+}
+
+#beatCircleModal {
+  margin-top: 225px;
+}
 }
 
 @media (max-width: 414px) {
@@ -1114,34 +1128,38 @@ div {
   }
 
   #smileydiv {
-    margin-left: 200px;
+    margin-left: 240px;
   }
   #playnowbutton, #howtoplaybutton {
     font-size: 25.5px;  
     margin-left: -10px;
     display: flex;
     justify-content: center;
-    padding-top: 18px;
+    padding-top: 30px;
+    height: 100px;
   }
 
   #buttoncontainer3 {
-      width: 400px;
-      left: 50px;
+      width: 500px;
       text-align: center;
   }
 
   #socials {
-    left: 95%;
+    margin-top: 55%;
+    margin-left: 100%;
+    scale: 2;
+    width: 100%;
   }
 
   #title {
-    scale: 1800%;
-    margin-left: 165px;
+    scale: 4;
+    left: 135px;
   }
   
   #scoretitle {
     scale: 75%;
-    margin-left: 210px;
+    margin-left: 470px;
+    width: 100%;
   }
 
   #leaderboards, #howtoplay2 {
@@ -1159,6 +1177,7 @@ div {
   #leaderboardcontainer {
     margin-left: 375px;
     font-size: xx-large;
+    margin-left: 400px;
 
   }
 
@@ -1174,15 +1193,17 @@ div {
 
   #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
     font-size: 50px;
+    height: 100%;
 }
 #buttoncontainer {
-  margin-left: 110px;
+  margin-left: 140px;
   scale: 0.7;
   padding-top: 50px;
 }
 
 #buttoncontainer2 {
   width: 325%;
+  margin-left: 40px;
 
 }
 
@@ -1213,6 +1234,20 @@ div {
 #howtoplayheading {
   scale: 0.8;
 }
+
+#progress-bar-container {
+  margin-left: 39px;
+  width: 400px;
+}
+#socials2 {
+  scale: 1.4;
+  margin-left: -65px;
+}
 }
 
+@media (max-width: 375px) {
+  .mediacontainer {
+    max-width: 200px;
+  }
+}
 
