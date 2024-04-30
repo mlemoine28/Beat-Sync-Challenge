@@ -703,6 +703,11 @@ div {
     #back {
       margin-left: 385px;
     }
+
+    #beatCircleModal {
+      scale: 0.7;
+      margin-left: -20px;
+    }
   }
   /*for social container */
   @media (max-width: 880px) {
@@ -756,6 +761,11 @@ div {
 
 #highscoretitle {
   margin-left: 0px;
+}
+
+#beatCircleModal {
+  scale: 0.5;
+  margin-top: 650px;
 }
 }
 
@@ -819,6 +829,19 @@ div {
       font-size: 14px;
     }
 
+    #howtoplaymodal {
+      scale: 0.8;
+    }
+
+    #beatCircleModal {
+      margin-top: 150px;
+    }
+
+    #howtoplayinfo {
+      scale: 0.9;
+      margin-top: -30px;
+    }
+
     #leaderboardcontainer {
       margin-left: 0px;
     }
@@ -828,6 +851,11 @@ div {
       margin-right: auto;
       width: 300px;
       
+    }
+
+    #got-it-button {
+      scale: 0.8;
+      margin-top: -18px;
     }
     #title {
       scale: 1.5;
@@ -923,6 +951,19 @@ div {
     
   }
 
+  #got-it-button {
+    width: 30%;
+    margin-top: -30px;
+  }
+
+  #beatCircleModal {
+    margin-top: 200px;
+  }
+
+  #howtoplayinfo {
+    scale: 0.8;;
+  }
+
   .challenge-image {
     right: 110px;
     scale: 0.75;
@@ -990,6 +1031,17 @@ div {
 #highscoretitle {
   margin-left: -135px;
 }
+
+#howtoplayinfo {
+  scale: 0.7;
+  margin-top: -55px;
+}
+
+#got-it-button {
+  margin-top: -87px;
+  scale: 0.6;
+  width: 40%;
+}
    
 }
 
@@ -1052,7 +1104,7 @@ div {
 
   #leaderboardcontainer {
     margin-left: 375px;
-    font-size: xx-large;;
+    font-size: xx-large;
 
   }
 
@@ -1062,6 +1114,7 @@ div {
 
   #highscoretitle {
     margin-left: -230px;
+    margin-top: 500px;
     scale: 1.5;
   }
 
@@ -1075,21 +1128,34 @@ div {
 #buttoncontainer2 {
   margin-left: 5px;
 }
+
+#howtoplaymodal {
+  scale: 1.2;
+ max-width: 350px;
+ height: 850px;
+ margin-top: 100px;
+ margin-left: 95px;
 }
 
-@media (max-width: 375px) {
-  .mediacontainer {
-    max-width: 200px;
-  }
-
-  #title {
-    margin-left: -5px;
-    margin-top: 15px;
-  }
-
-  #buttoncontainer {
-    margin-bottom: -30px;
-  }
-
-  
+#howtoplayinfo {
+  margin-top: -75px;
+  max-width: 300px;
 }
+
+#got-it-button {
+  margin-top: -85px;
+  width: 65%;
+}
+
+#beatCircleModal {
+  scale: 0.4;
+  margin-top: 130px;
+  margin-left: -50px;
+}
+
+#howtoplayheading {
+  scale: 0.8;
+}
+}
+
+
