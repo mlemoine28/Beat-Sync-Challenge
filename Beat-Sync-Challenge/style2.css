@@ -852,8 +852,8 @@ div {
     }
 
     #beatCircle, #beatCircle2, #beatCircle3 {
-      scale: 0.75;
-
+      scale: 0.59;
+    }
     #howtoplaymodal {
       scale: 0.8;
     }
@@ -952,7 +952,7 @@ div {
   margin-left: -60px;
 }
 }
-}
+
 
   /* xs */
   @media (max-width: 575px) {
@@ -1146,6 +1146,7 @@ div {
   #buttoncontainer3 {
       width: 500px;
       text-align: center;
+      margin-left: -35px;
   }
 
   #socials {
@@ -1162,7 +1163,7 @@ div {
   
   #scoretitle {
     scale: 75%;
-    margin-left: 470px;
+    margin-left: 430px;
     width: 100%;
   }
 
