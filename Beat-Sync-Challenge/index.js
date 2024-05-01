@@ -365,7 +365,7 @@ function stopAllSongs() {
     });
 
     document.querySelectorAll('#beatCircle, #beatCircle2, #beatCircle3').forEach(circle => {
-        circle.style.display='none';
+        //circle.style.display='none';
     });
 }
 
@@ -388,18 +388,4 @@ song2.addEventListener('timeupdate', () => {
 song3.addEventListener('timeupdate', () => {
     timeline(song3);
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    const beatCircle = document.querySelector('#beatCircle');
-
-    function animateCircle() {
-        beatCircle.classList.add('smileyimage');
-        setTimeout(() => {
-            beatCircle.classList.remove('smileyimage');
-        }, 200);
-    }    
-    setInterval(animateCircle, beatInterval);
-});
-
-
 
