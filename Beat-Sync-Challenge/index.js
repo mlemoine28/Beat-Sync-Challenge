@@ -56,8 +56,6 @@ gotIt.addEventListener('click', () => {
 
 howtoplay2.addEventListener('click', onHowToPlayClick)
 
-
-
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         if (song && !song.paused) {
@@ -93,11 +91,9 @@ smileyfacemain.addEventListener('click', () => {
     }
 });
 
-
 smileyfacemain.addEventListener('animationend', (e) => {
     smileyfacemain.classList.remove('smileyimage', 'smileyimage2', 'smileyimage3');
 });
-
 
 function setScore(newScore) {
     score = newScore;
@@ -145,7 +141,6 @@ function handleCountDown(song, countdownDuration, beatInterval) {
     }, beatInterval)
 }
 
-
 songButton.addEventListener('click', () => {
     handleCountDown(song, 15, beatInterval);  
     document.querySelector('#beatCircle').style.display='block';
@@ -172,9 +167,6 @@ const beatInterval2 = 60000 / bpm2;
 const bpm3 = 125;
 const beatInterval3 = 60000 / bpm3;
 
-
-
-// 55000
 function clickTiming(clickTimestamp, interval, maximum) {
     let wasCloseToBeat = false;
     let judgment = "Oh no!";

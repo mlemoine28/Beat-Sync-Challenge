@@ -31,7 +31,6 @@ div {
   'opsz' 24
 }
 
-
 #title, #highscoretitle {
     margin-bottom: 5%;
     border-color: transparent;
@@ -47,7 +46,6 @@ div {
    margin: auto;
    padding-bottom: 50px;
 }
-
 
 @keyframes titlemove {
     from {right:800px; top:0px;}
@@ -101,8 +99,7 @@ div {
     transform: scale(0.70);
     position: relative;
     height: 100vh;
-    bottom: 100px;
-    
+    bottom: 100px;  
 }
 
 .intropage {
@@ -116,9 +113,9 @@ div {
 .center {
       display: block;
       margin-left: auto;
-      margin-right: auto;
-      
+      margin-right: auto;     
 }
+
 #judgmentdiv {
     width: 100%;
     height: 500px;
@@ -131,7 +128,6 @@ div {
     left: 0;
     right: 0;
     pointer-events: none;
-    
 }
 
 .game-container {
@@ -171,7 +167,6 @@ div {
     padding-top: 25px;
     z-index: 1;
     margin-top: 140px;
-
 }
 
 #enterhighscore {
@@ -247,7 +242,7 @@ div {
     left: 50px;
 }
 
-#songButton, #songButton2, #songButton3 { /* Combine song buttons under one style */
+#songButton, #songButton2, #songButton3 {
   height: 70px;
   width: 245px;
   position: relative;
@@ -265,18 +260,17 @@ div {
 
 #songButton2 {
     background-color: yellow;
-  }
+}
 
-  #songButton3 {
+#songButton3 {
     background-color: red;
-  }
+}
 
 #leaderboardlist {
     display: flex;
     justify-content: center;
     color: black;
     scale: 0.70;
-
 }
 
 #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
@@ -284,7 +278,6 @@ div {
     color: greenyellow;
     margin-bottom: 30px;
     margin-right: 50px;
-
 }
 
 .orbitron-matrix {
@@ -310,17 +303,13 @@ div {
     border-color: #071233;
     border-width: 15px;
     padding: 15px;
-    padding-right: 70px;
-    
+    padding-right: 70px;  
 }
 
 #leaderboardcontainer {
     width: 100%;
     flex-direction: column;  
-    
 }
-
-
 
 #back_2 {
     margin-left: auto;
@@ -329,14 +318,13 @@ div {
     position: absolute;
 }
   
-.introsmiley { /* I want to make it so this image pulsates after the initial warp-in animation*/
+.introsmiley {
     position: relative;
     animation: smileyrotate 4s ease-in-out, smileybounce2 1s ease-in-out alternate infinite;
     border-color: transparent;
     animation-delay: 0s, 3s;  
     top: 280px;
-    width: 100%;
-            /* Why can't i do left: 1px without messing up the whole thing???!!! */
+    width: 100%;          
 }
 
 @keyframes smileyrotate {
@@ -439,19 +427,14 @@ div {
 .judgephotos {
   position: relative;
   margin: auto; 
-  
 }
-
-
-
-
 
 #got-it-button, #back {
     width: 20%;
     position: relative;
     background-color: #f2c12e;
     font-size: xx-large;
-    color: #071233; /*Not sure why I have to use very different percent values here. MOBILE FRIENDLY PLZZZ */
+    color: #071233;
     cursor:pointer;
     bottom: 30%;   
     border-radius: 500px;
@@ -490,12 +473,9 @@ div {
     width: 0%;
     height: 20px;
     background-color: #f2c12e;
-    
-    
 }
 
 #beatCircle, #beatCircle2, #beatCircle3 {
-    
     border-radius: 50%;
     width: 509px;
     height: 509px;
@@ -522,8 +502,7 @@ div {
     position: absolute;
     margin: auto;
     font-size: large;
-    text-align: center;
-   
+    text-align: center; 
 }
 
 #beatCircle, #beatCircleModal {
@@ -538,41 +517,41 @@ div {
     animation: smileybounce 480ms infinite;
 }
 
- .mediacontainer {
+.mediacontainer {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-  }
+}
 
-  #buttoncontainer  {
+#buttoncontainer {
     display: flex;
     margin-bottom: 3%;
-  }
-  #buttoncontainer2 {
+}
+
+#buttoncontainer2 {
     display: flex;
     width: 50%;
     margin: auto;
     bottom: 50px;
-  }
+}
 
-  #buttoncontainer3 {
+#buttoncontainer3 {
     display: flex;
     margin: auto;
     width: 50%;
-  }
+}
   
   /* 2xl */
-  @media (max-width: 1536px) {
+@media (max-width: 1536px) {
     .mediacontainer {
-      max-width: 1280px;
+    max-width: 1280px;
     }
     #socials, #socials2 {
       font-size: 6.5px;
     }
 
-    #beat
     #linked_image, #git_image {
       scale: 0.8;
     }
@@ -599,36 +578,36 @@ div {
       bottom: 100px;
       margin-left: 550px;
     }
-
-
-
-
-  }
+}
   
   /* xl */
-  @media (max-width: 1280px) {
-    .mediacontainer {
+@media (max-width: 1280px) {
+  .mediacontainer {
       max-width: 1024px;
-    }
-    #leaderboards, #howtoplay2 {
+  }
+
+  #leaderboards, #howtoplay2 {
       font-size: x-large;
   }
 
   #beatCircle, #beatCircle2, #beatCircle3 {
     scale: 0.84;
   }
+
   #socials, #socials2 {
     font-size: 6.5px;
   }
+
   #smileyface {
     scale: 0.85;
   }
+
   #title {
     scale: 1.2;
   }
+
   #beatsyncchallengeimages {
     scale: 0.9;
-    
   }
 
   #perfect_image {
@@ -642,9 +621,9 @@ div {
   #playnowbutton, #howtoplaybutton {
     font-size: 20px;
   }
+
   #introsmileyspin {
     scale: 0.8;
-    ;
   }
 
   #scoretitle {
@@ -673,110 +652,112 @@ div {
 }
   
   /* lg */
-  @media (max-width: 1024px) {
-    .mediacontainer {
+@media (max-width: 1024px) {
+  .mediacontainer {
       max-width: 880px;
-    }
-    #scoretitle {
-      left: 50px;
-      font-size: 25px;
-      height: 40px;
-    }
-
-    #highscorediv {
-      font-size: x-large;
-    }
-
-    #enterhighscore {
-      scale: 0.8;
-    }
-
-    #leaderboards, #howtoplay2 {
-      width: 47%;
-    }
-    #smileyface {
-      scale: 0.75;
-    }
-
-    #poor_image {
-      scale: 0.75;
-    }
-
-    #beatCircle, #beatCircle2, #beatCircle3 {
-      scale: 0.74;
-    }
-
-    #socials, #socials2 {
-      font-size: 5.5px;
-    }
-
-    #playnowbutton, #howtoplaybutton {
-      font-size: 18px;
-    }
-
-    #beatsyncchallengeimages {
-      scale: 0.85;
-    }
-
-    #introsmileyspin {
-      scale: 0.75;
+  }
+  #scoretitle {
+    left: 50px;
+    font-size: 25px;
+    height: 40px;
   }
 
-    #progress-bar-container {
-      bottom: 50px;
-    }
-
-    #leaderboardlist {
-      scale: 0.47;
-    }
-
-    #highscoretitle {
-      margin-left: 65px;
-    }
-
-    #back {
-      margin-left: 385px;
-    }
-
-    #beatCircleModal {
-      scale: 0.7;
-      margin-left: -20px;
-    }
+  #highscorediv {
+    font-size: x-large;
   }
-  /*for social container */
-  @media (max-width: 880px) {
-    .mediacontainer {
-      max-width: 768px;
-    }
-   #socials, #socials2 {
-    font-size: 9px;
-    width: 100%;
-   }
 
-   #scoretitle {
-    height: 75px;
-   }
+  #enterhighscore {
+    scale: 0.8;
+  }
 
-   #enterhighscore {
-    scale: 0.7;
-    width: 30%;
-   }
+  #leaderboards, #howtoplay2 {
+    width: 47%;
+  }
 
-   #beatCircle, #beatCircle2, #beatCircle3 {
+  #smileyface {
     scale: 0.75;
-   }
+  }
+
+  #poor_image {
+    scale: 0.75;
+  }
+
+  #beatCircle, #beatCircle2, #beatCircle3 {
+    scale: 0.74;
+  }
+
+  #socials, #socials2 {
+    font-size: 5.5px;
+  }
+
+  #playnowbutton, #howtoplaybutton {
+    font-size: 18px;
+  }
+
+  #beatsyncchallengeimages {
+    scale: 0.85;
+  }
+
+  #introsmileyspin {
+    scale: 0.75;
+  }
 
   #progress-bar-container {
-  bottom: 50px;
+    bottom: 50px;
   }
 
-#leaderboards, #howtoplay2 {
-  bottom: 70px;
+  #leaderboardlist {
+    scale: 0.47;
   }
 
-#playnowbutton, #howtoplaybutton {
-  font-size: 13.5px;
-  width: 40%;
+  #highscoretitle {
+    margin-left: 65px;
+  }
+
+  #back {
+    margin-left: 385px;
+  }
+
+  #beatCircleModal {
+    scale: 0.7;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 880px) {
+  .mediacontainer {
+    max-width: 768px;
+  }
+  
+  #socials, #socials2 {
+    font-size: 9px;
+    width: 100%;
+  }
+
+  #scoretitle {
+    height: 75px;
+  }
+
+  #enterhighscore {
+    scale: 0.7;
+    width: 30%;
+  }
+
+  #beatCircle, #beatCircle2, #beatCircle3 {
+    scale: 0.75;
+  }
+
+  #progress-bar-container {
+    bottom: 50px;
+  }
+
+  #leaderboards, #howtoplay2 {
+    bottom: 70px;
+  }
+
+  #playnowbutton, #howtoplaybutton {
+    font-size: 13.5px;
+    width: 40%;
   }
 
   #leaderboardlist {
@@ -786,82 +767,84 @@ div {
   #topscorelisthard, #topscorelistmedium, #topscorelisteasy {
     height:600px;
     font-size: x-large;
+  } 
 
-} 
+  #leaderboardcontainer {
+    margin-left: 30px;
+  }
 
-#leaderboardcontainer {
-  margin-left: 30px;
+  #highscoretitle {
+    padding-bottom: 0;
+  }
+
+  #back {
+    bottom: 900px;
+    width: 35%;
+    margin-left: 260px;
+  }
+
+  #highscoretitle {
+    margin-left: 0px;
+  }
+
+  #beatCircleModal {
+    scale: 0.5;
+    margin-top: 650px;
+  }
 }
-
-#highscoretitle {
-  padding-bottom: 0;
-}
-
-#back {
-  bottom: 900px;
-  width: 35%;
-  margin-left: 260px;
-}
-
-#highscoretitle {
-  margin-left: 0px;
-}
-
-#beatCircleModal {
-  scale: 0.5;
-  margin-top: 650px;
-}
-}
-
-
   /* md */
-  @media (max-width: 768px) {
-    .mediacontainer {
-      max-width: 640px;
-    }
-    #buttoncontainer {
-      flex-direction: column;
-    }
-    #leaderboards, #howtoplay2 {
-      font-size: 20px;
-    }
-    #smileyface {
-      scale: 0.;
-    }
-    #socials, #socials2 {
-      font-size: 6.5px;
-     }
-     #beatsyncchallengeimages {
-      scale: 0.80;
-    }
+@media (max-width: 768px) {
+  .mediacontainer {
+    max-width: 640px;
+  }
 
-    #perfect_image {
-      scale: 2.0;
-    }
-    .challenge-image {
-      right: 50px;
-    }
+  #buttoncontainer {
+    flex-direction: column;
+  }
 
-    #leaderboardlist {
-      scale: 0.34;
-    }
+  #leaderboards, #howtoplay2 {
+    font-size: 20px;
+  }
 
-    #highscoretitle {
-      scale: 1.0;
-      position: relative;
-      margin-left: -50px;
-    }
+  #smileyface {
+    scale: 0.;
+  }
 
-    #back {
-      scale: 0.8;
-      bottom: 850px;
-      width: 30%;
-      margin-left: 240px
-    }
+  #socials, #socials2 {
+    font-size: 6.5px;
+  }
 
-    #leaderboardlist > div {
-      margin-left: 175px;
+  #beatsyncchallengeimages {
+    scale: 0.80;
+  }
 
+  #perfect_image {
+    scale: 2.0;
+  }
+
+  .challenge-image {
+    right: 50px;
+  }
+
+  #leaderboardlist {
+    scale: 0.34;
+  }
+
+  #highscoretitle {
+    scale: 1.0;
+    position: relative;
+    margin-left: -50px;
+  }
+
+  #back {
+    scale: 0.8;
+    bottom: 850px;
+    width: 30%;
+    margin-left: 240px;
+  }
+
+  #leaderboardlist > div {
+    margin-left: 175px;
   }
 
   #leaderboardcontainer {
@@ -872,86 +855,92 @@ div {
     margin-top: 680px;
   }
 }
+
+/* sm */
+@media (max-width: 640px) {
+  .mediacontainer {
+    max-width: 575px;
+  }
+
+  #leaderboards, #howtoplay2 {
+    font-size: 14px;
+  }
+
+  #beatCircle, #beatCircle2, #beatCircle3 {
+    scale: 0.59;
+  }
+
+  #howtoplaymodal {
+    scale: 0.8;
+  }
+
+  #beatCircleModal {
+    margin-top: 150px;
+  }
+
+  #perfect_image {
+    scale: 1.7;
+  }
+
+  #poor_image {
+    scale: 0.6;
+  }
+
+  #howtoplayinfo {
+    scale: 0.9;
+    margin-top: -30px;
+  }
+
+  #leaderboardcontainer {
+    margin-left: 0px;
+  }
+
+  #buttoncontainer2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+
+  #got-it-button {
+    scale: 0.8;
+    margin-top: -18px;
+  }
+
+  #title {
+    scale: 1.5;
+  }
+
+  #scoretitle {
+    margin-right: 80px;
+    width: 100px;
+    font-size: 20px;
+  }
   
-  /* sm */
-  @media (max-width: 640px) {
-    .mediacontainer {
-      max-width: 575px;
-    }
-    #leaderboards, #howtoplay2 {
-      font-size: 14px;
-    }
+  #socials, #socials2 {
+    font-size: 8.0px;
+    width: 150px;
+  }
 
-    #beatCircle, #beatCircle2, #beatCircle3 {
-      scale: 0.59;
-    }
-    #howtoplaymodal {
-      scale: 0.8;
-    }
+  #smileyface {
+    scale: 0.6;
+    margin: auto;
+  }
 
-    #beatCircleModal {
-      margin-top: 150px;
-    }
+  #buttoncontainer {
+    scale: 0.8;
+  }
 
-    #perfect_image {
-      scale: 1.7;
-    }
+  .challenge-image {
+    right: 85px;
+  }
 
-    #poor_image {
-      scale: 0.6;
-    }
+  #progress-bar-container {
+    bottom: 50px;
+  }
 
-    #howtoplayinfo {
-      scale: 0.9;
-      margin-top: -30px;
-    }
-
-    #leaderboardcontainer {
-      margin-left: 0px;
-    }
-
-    #buttoncontainer2 {
-      margin-left: auto;
-      margin-right: auto;
-      width: 300px;
-      
-    }
-
-    #got-it-button {
-      scale: 0.8;
-      margin-top: -18px;
-    }
-    #title {
-      scale: 1.5;
-    }
-    #scoretitle {
-      margin-right: 80px;
-      width: 100px;
-      font-size: 20px;
-    }
-    #socials, #socials2 {
-      font-size: 8.0px;
-      width: 150px;
-     }
-     #smileyface {
-      scale: 0.6;
-      margin: auto;
-    }
-    #buttoncontainer {
-      scale: 0.8;
-    }
-
-    .challenge-image {
-      right: 85px;
-    }
-
-    #progress-bar-container {
-      bottom: 50px;
-    }
-
-    #playnowbutton, #howtoplaybutton {
-  font-size: 13.5px;
-  width: 50%;
+  #playnowbutton, #howtoplaybutton {
+    font-size: 13.5px;
+    width: 50%;
   }
 
   #beatsyncchallengeimages {
@@ -966,46 +955,46 @@ div {
   #leaderboardlist > div {
     scale: 1.4;
     margin-left: 320px;
+  }
 
-}
+  #back {
+    bottom: 1175px;
+  }
 
-#back {
-  bottom: 1175px;
-}
+  #topscorelisteasy, #topscorelistmedium, #topscorelisthard {
+    font-size: 40px;
+    margin: auto;
+    height: 100%;
+  }
 
-#topscorelisteasy, #topscorelistmedium, #topscorelisthard {
-  font-size: 40px;
-  margin: auto;
-  height: 100%;
-}
+  #leaderboardcontainer {
+    margin-left: 100px;
+  }
 
-#leaderboardcontainer {
-  margin-left: 100px;
-}
+  #back {
+    margin-left: 245px;
+  }
 
-#back {
-  margin-left: 245px;
-}
-
-#highscoretitle {
-  margin-left: -60px;
-}
+  #highscoretitle {
+    margin-left: -60px;
+  }
 }
 
 
   /* xs */
-  @media (max-width: 575px) {
-    .mediacontainer {
-      max-width: 514px;
-    }
+@media (max-width: 575px) {
+  .mediacontainer {
+    max-width: 514px;
+  }
 
-    #leaderboards, #howtoplay2 {
-      font-size: 16px;
-    }
+  #leaderboards, #howtoplay2 {
+    font-size: 16px;
+  }
 
-    #beatCircle, #beatCircle2, #beatCircle3 {
-      margin-right: -6px;
-    }
+  #beatCircle, #beatCircle2, #beatCircle3 {
+    margin-right: -6px;
+  }
+
   .highscoreitem {
     margin-bottom: 5px;
   }
@@ -1020,7 +1009,6 @@ div {
 
   #introsmileyspin {
     scale: 0.60;
-    
   }
 
   #got-it-button {
@@ -1052,28 +1040,25 @@ div {
   #leaderboardlist > div {
     scale: 1.7;
     height: 1200px;
-   
-}
-
-#highscoretitle {
-  margin-left: -85px;
-}
-
-#back {
-  margin-left: 225px;
-  bottom: 1275px;
-}
-
-#leaderboardcontainer {
-  margin-left: 135px;
-}
   }
 
+  #highscoretitle {
+    margin-left: -85px;
+  }
+
+  #back {
+    margin-left: 225px;
+    bottom: 1275px;
+  }
+
+  #leaderboardcontainer {
+    margin-left: 135px;
+  }
+  
   #buttoncontainer2 {
     width: 80%;
   }
-
-  
+}
 
 @media (max-width: 514px) {
   .mediacontainer {
@@ -1114,53 +1099,54 @@ div {
 
   #playnowbutton, #howtoplaybutton {
     font-size: 13.5px;
-    }
-#leaderboardcontainer {
-  margin-left: 100px;
-  scale: 0.8;
-}
+  }
 
-#back {
-  margin-left: 190px;
-}
+  #leaderboardcontainer {
+    margin-left: 100px;
+    scale: 0.8;
+  }
 
-#highscoretitle {
-  margin-left: -135px;
-}
+  #back {
+    margin-left: 190px;
+  }
 
-#howtoplayinfo {
-  scale: 0.7;
-  margin-top: -55px;
-}
+  #highscoretitle {
+    margin-left: -135px;
+  }
 
-#got-it-button {
-  margin-top: -87px;
-  scale: 0.6;
-  width: 40%;
-}
+  #howtoplayinfo {
+    scale: 0.7;
+    margin-top: -55px;
+  }
 
-#scoretitle {
-  scale: 0.8;
-  margin-left: 350px;
-  width: 25%;
-}
-   
-#buttoncontainer2 {
-  scale: 1.1;
-  width: 75%;
-}
+  #got-it-button {
+    margin-top: -87px;
+    scale: 0.6;
+    width: 40%;
+  }
 
-#leaderboards, #howtoplay2 {
-  font-size: large;
-}
+  #scoretitle {
+    scale: 0.8;
+    margin-left: 350px;
+    width: 25%;
+  }
+    
+  #buttoncontainer2 {
+    scale: 1.1;
+    width: 75%;
+  }
 
-#socials2 {
-  top: 50px;
-}
+  #leaderboards, #howtoplay2 {
+    font-size: large;
+  }
 
-#beatCircleModal {
-  margin-top: 225px;
-}
+  #socials2 {
+    top: 50px;
+  }
+
+  #beatCircleModal {
+    margin-top: 225px;
+  }
 }
 
 @media (max-width: 414px) {
@@ -1174,8 +1160,8 @@ div {
 
   .beat-image {
    left: 40%;
-   
   }
+
   .sync-image {
     left: 60%;
   }
@@ -1191,6 +1177,7 @@ div {
   #smileydiv {
     margin-left: 240px;
   }
+
   #playnowbutton, #howtoplaybutton {
     font-size: 25.5px;  
     margin-left: -10px;
@@ -1240,7 +1227,6 @@ div {
     margin-left: 375px;
     font-size: xx-large;
     margin-left: 400px;
-
   }
 
   #leaderboardlist > div {
@@ -1257,64 +1243,64 @@ div {
     font-size: 50px;
     height: 100%;
 }
-#buttoncontainer {
-  margin-left: 140px;
-  scale: 0.7;
-  padding-top: 50px;
-}
 
-#buttoncontainer2 {
-  width: 325%;
-  margin-left: 40px;
+  #buttoncontainer {
+    margin-left: 140px;
+    scale: 0.7;
+    padding-top: 50px;
+  }
 
-}
+  #buttoncontainer2 {
+    width: 325%;
+    margin-left: 40px;
+  }
 
-#howtoplaymodal {
-  scale: 1.2;
- max-width: 350px;
- height: 850px;
- margin-top: 100px;
- margin-left: 95px;
-}
+  #howtoplaymodal {
+    scale: 1.2;
+    max-width: 350px;
+    height: 850px;
+    margin-top: 100px;
+    margin-left: 95px;
+  }
 
-#howtoplayinfo {
-  margin-top: -75px;
-  max-width: 300px;
-}
+  #howtoplayinfo {
+    margin-top: -75px;
+    max-width: 300px;
+  }
 
-#got-it-button {
-  margin-top: -85px;
-  width: 65%;
-}
+  #got-it-button {
+    margin-top: -85px;
+    width: 65%;
+  }
 
-#beatCircleModal {
-  scale: 0.4;
-  margin-top: 130px;
-  margin-left: -50px;
-}
+  #beatCircleModal {
+    scale: 0.4;
+    margin-top: 130px;
+    margin-left: -50px;
+  }
 
-#howtoplayheading {
-  scale: 0.8;
-}
+  #howtoplayheading {
+    scale: 0.8;
+  }
 
-#progress-bar-container {
-  margin-left: 39px;
-  width: 400px;
-}
-#socials2 {
-  scale: 1.4;
-  margin-left: -65px;
-}
+  #progress-bar-container {
+    margin-left: 39px;
+    width: 400px;
+  }
 
-#highscorediv {
-  scale: 2;
-  width: 250px;
+  #socials2 {
+    scale: 1.4;
+    margin-left: -65px;
+  }
 
-}
+  #highscorediv {
+    scale: 2;
+    width: 250px;
+  }
 
-#enterhighscore {
-  width: 60%;
-}
+  #enterhighscore {
+    width: 60%;
+  }
 }
 
 @media (max-width: 375px) {
