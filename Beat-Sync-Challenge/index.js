@@ -214,17 +214,28 @@ function clickTiming(clickTimestamp, interval, maximum) {
     return judgment;   
 }
 
-smileyfacemain.addEventListener('click', () => buttonPress(song, beatInterval, 55000));
-smileyfacemain.addEventListener('click', () => buttonPress(song2, beatInterval2, 50000));
-smileyfacemain.addEventListener('click', () => buttonPress(song3, beatInterval3, 94000));
+let mouseButtonDown = false
 
-let spacebarDown = false; //Change this to inputDown and use this also in the mouseclick function. Use 'mousedown' and 'mouseup', specifically, INSTEAD of 'click'.
+smileyfacemain.addEventListener('mousedown', () => {
+    if (!mouseButtonDown && !spacebarDown) {
+        mouseButtonDown = true;
+        buttonPress(song, beatInterval, 55000);
+        buttonPress(song2, beatInterval2, 50000);
+        buttonPress(song3, beatInterval3, 94000);
+    }
+});
+
+smileyfacemain.addEventListener('mouseup', () => {
+    mouseButtonDown = false;
+});
+
+let spacebarDown = false;
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         e.preventDefault();
     }
-    if (e.code === 'Space' && !spacebarDown) {
+    if (e.code === 'Space' && !spacebarDown && !mouseButtonDown) {
         spacebarDown = true;
         buttonPress(song, beatInterval, 55000);
         buttonPress(song2, beatInterval2, 50000);
@@ -365,7 +376,7 @@ function stopAllSongs() {
     });
 
     document.querySelectorAll('#beatCircle, #beatCircle2, #beatCircle3').forEach(circle => {
-        //circle.style.display='none';
+        circle.style.display='none';
     });
 }
 
