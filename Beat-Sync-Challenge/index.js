@@ -258,16 +258,16 @@ document.addEventListener ('keyup', (e) => {
 });
 
 let topscoreseasy = [
-    {username: "Bill", score: 10000},
-    {username: "Joey", score: 9000},
-    {username: "Bob", score: 8000},
-    {username: "George", score: 7000},
-    {username: "Mark", score: 6000},
-    {username: "Reginald", score: 5000},
-    {username: "Fernando", score: 4000},
-    {username: "Rafiki", score: 3000},
+    {username: "Bill", score: 7000},
+    {username: "Joey", score: 6000},
+    {username: "Bob", score: 5000},
+    {username: "George", score: 4500},
+    {username: "Mark", score: 4000},
+    {username: "Reginald", score: 3500},
+    {username: "Fernando", score: 3000},
+    {username: "Rafiki", score: 2500},
     {username: "Simba", score: 2000},
-    {username: "Scar", score: 1000},
+    {username: "Scar", score: 1500},
 ];
 
 let topscoresmedium = [
@@ -284,18 +284,25 @@ let topscoresmedium = [
 ];
 
 let topscoreshard = [
-    {username: "Bill", score: 10000},
-    {username: "Joey", score: 9000},
-    {username: "Zelda", score: 8000},
-    {username: "George", score: 7000},
-    {username: "Mark", score: 6000},
-    {username: "Reginald", score: 5000},
-    {username: "Fernando", score: 4000},
-    {username: "Rafiki", score: 3000},
-    {username: "Simba", score: 2000},
-    {username: "Scar", score: 1000},
+    {username: "Bill", score: 15000},
+    {username: "Joey", score: 14000},
+    {username: "Zelda", score: 13000},
+    {username: "George", score: 12000},
+    {username: "Mark", score: 11000},
+    {username: "Reginald", score: 10000},
+    {username: "Fernando", score: 9000},
+    {username: "Rafiki", score: 8000},
+    {username: "Simba", score: 7000},
+    {username: "Scar", score: 6000},
 ];
 
+let storedLeaderboardsString = localStorage.getItem('leaderboards');
+if (storedLeaderboardsString) {
+    let storedLeaderboards = JSON.parse(storedLeaderboardsString);
+    topscoreseasy = storedLeaderboards.easy;
+    topscoresmedium = storedLeaderboards.medium;
+    topscoreshard = storedLeaderboards.hard;
+}
 
 topscoreseasy.sort((a, b) => b.score - a.score);
 topscoresmedium.sort((a, b) => b.score - a.score);   
@@ -323,6 +330,14 @@ function updateLeaderboard(topscores, list) {
 let currentLeaderboard = null;
 let currentLeaderboardEl = null;
 
+function storeLeaderboards() {
+    localStorage.setItem('leaderboards', JSON.stringify({
+        easy: topscoreseasy,
+        medium: topscoresmedium,
+        hard: topscoreshard
+    }));
+}
+
 document.querySelector("#scoreForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
     let usernameInput = document.querySelector('#username');
@@ -333,12 +348,15 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
                 currentLeaderboard.push({username: username, score: newScore});
                 currentLeaderboard.sort((a, b) => b.score - a.score);
                 currentLeaderboard.splice(10, 1);
+                storeLeaderboards();
                 updateLeaderboard(currentLeaderboard, currentLeaderboardEl);   
                 document.querySelector('#highscorediv').style.display = 'none';   
                 setScore(0); 
         }
     }  
 });   
+
+
 
 function updateScores(leaderboard, leaderboardEl) {
     let newScore = score;
@@ -351,6 +369,7 @@ function updateScores(leaderboard, leaderboardEl) {
     setScore(0);
     };
 }
+
 
 song.addEventListener("ended", (e) => {         
     updateScores(topscoreseasy, topscorelisteasy);
