@@ -175,7 +175,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
     let judgment = "Oh no!";
     for (let keyBeat = interval; keyBeat <= maximum; keyBeat += interval) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
-        if (timeDifference <= 100) {
+        if (timeDifference <= 80) {
             const showperfectimage = document.querySelector('#perfect_image')
             console.log("Perfect");
             judgment = "Perfect +100";
@@ -183,7 +183,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             showperfectimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
-        } else if (timeDifference <= 140) {
+        } else if (timeDifference <= 120) {
             const showgreatimage = document.querySelector('#great_image')
             console.log("Great");
             judgment = "Great +50";
@@ -191,7 +191,7 @@ function clickTiming(clickTimestamp, interval, maximum) {
             showgreatimage.style.display = 'block';
             wasCloseToBeat = true;
             break;
-        } else if (timeDifference <= 160) {
+        } else if (timeDifference <= 150) {
             const showgoodimage = document.querySelector('#good_image')
             console.log("Good");
             judgment = "Good +25";
