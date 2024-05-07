@@ -122,12 +122,17 @@ div {
     font-size: xx-large;
     font-family: 'Brush Script MT', cursive;
     color:#d97e29;
-    align-content: center;
+    justify-content: center;
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     right: 0;
     pointer-events: none;
+}
+
+#perfect_image {
+  scale: 0.6;
 }
 
 .game-container {
@@ -610,10 +615,6 @@ div {
     scale: 0.9;
   }
 
-  #perfect_image {
-    scale: 1.3;
-  }
-
   #poor_image {
     scale: 0.8;
   }
@@ -818,10 +819,6 @@ div {
     scale: 0.80;
   }
 
-  #perfect_image {
-    scale: 2.0;
-  }
-
   .challenge-image {
     right: 50px;
   }
@@ -876,10 +873,6 @@ div {
 
   #beatCircleModal {
     margin-top: 150px;
-  }
-
-  #perfect_image {
-    scale: 1.7;
   }
 
   #poor_image {
@@ -999,10 +992,6 @@ div {
     margin-bottom: 5px;
   }
 
-  #perfect_image {
-    scale: 2.0;
-  }
-
   #progress-bar-container {
     bottom: 120px;
   }
@@ -1077,10 +1066,6 @@ div {
 
   #enterhighscore {
     width: 40%;
-  }
-
-  #perfect_image {
-    scale: 2.4;
   }
 
   .beat-image {
