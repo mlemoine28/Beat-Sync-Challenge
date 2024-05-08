@@ -142,21 +142,21 @@ function handleCountDown(song, countdownDuration, beatInterval) {
 }
 
 songButton.addEventListener('click', () => {
+    resetAnimation('#beatCircle');
     handleCountDown(song, 15, beatInterval);  
     document.querySelector('#beatCircle').style.display='block';
-    resetAnimation('#beatCircle');
 });
 
 songButton2.addEventListener('click', () => {
-   handleCountDown(song2, 7, beatInterval2);
-   document.querySelector('#beatCircle2').style.display='block';
-   resetAnimation('#beatCircle2');
+    resetAnimation('#beatCircle2');
+    handleCountDown(song2, 7, beatInterval2);
+    document.querySelector('#beatCircle2').style.display='block';
 });
 
 songButton3.addEventListener('click', () => {
+    resetAnimation('#beatCircle3');
     handleCountDown(song3, 15, beatInterval3);
     document.querySelector('#beatCircle3').style.display='block';
-    resetAnimation('#beatCircle3');
 });
 
 const bpm = 126;
