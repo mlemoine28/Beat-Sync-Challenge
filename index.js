@@ -110,8 +110,8 @@ function handleCountDown(song, countdownDuration, beatInterval, beatCircle) {
     song.addEventListener('play', (e) => {
         song.currentTime = 0;
         setScore(0);
-        resetAnimation(beatCircle);
         beatCircle.style.display='block';
+        resetAnimation(beatCircle);
         document.querySelector('#warm_up_image').style.display='block';
         countdown = countdownDuration
         let id = setInterval(() => {
