@@ -243,7 +243,6 @@ function buttonPress(song, interval, maximum) {
         const clickTime = song.currentTime * 1000;
         let judgment = clickTiming(clickTime, interval, maximum); 
         document.querySelector('#scoretitle').innerText = "Score: " + score;
-        console.log(judgment);
     }    
 }
 document.addEventListener ('keyup', (e) => {
