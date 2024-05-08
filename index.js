@@ -19,6 +19,9 @@ let progressBar = document.querySelector('#progress-bar')
 let topscorelisteasy = document.querySelector("#topscorelisteasy")
 let topscorelistmedium = document.querySelector("#topscorelistmedium")
 let topscorelisthard = document.querySelector("#topscorelisthard")
+let beatCircle1 = document.querySelector('#beatCircle')
+let beatCircle2 = document.querySelector('#beatCircle2')
+let beatCircle3 = document.querySelector('#beatCircle3')
 
 playnow.addEventListener('click', onPlayNowClick);
 
@@ -102,22 +105,24 @@ function setScore(newScore) {
 
 let countdown = 7
 
-function handleCountDown(song, countdownDuration, beatInterval) {
+function handleCountDown(song, countdownDuration, beatInterval, beatCircle) {
     stopAllSongs();
-    song.play();
-    song.currentTime = 0;
-    setScore(0);
-    document.querySelector('#warm_up_image').style.display='block';
-    countdown = countdownDuration
-    let id = setInterval(() => {
-        countdown--;
-        if (countdown === 0) {
-            clearInterval(id);
-            document.querySelector('#go_image').style.display='block';
+    song.addEventListener('play', (e) => {
+        song.currentTime = 0;
+        setScore(0);
+        resetAnimation(beatCircle);
+        beatCircle.style.display='block';
+        document.querySelector('#warm_up_image').style.display='block';
+        countdown = countdownDuration
+        let id = setInterval(() => {
+            countdown--;
+            if (countdown === 0) {
+                clearInterval(id);
+                document.querySelector('#go_image').style.display='block';
             setTimeout(() => {
             document.querySelector('#go_image').style.display='none';
         }, beatInterval);
-            console.log("Go!");    
+            console.log("Go!");
         } else if (countdown === 3) {
             document.querySelector('#warm_up_image').style.display='none';
             document.querySelector('#three_image').style.display='block';
@@ -137,26 +142,22 @@ function handleCountDown(song, countdownDuration, beatInterval) {
                 document.querySelector('#one_image').style.display='none';
             }, beatInterval);
             console.log("1");
-        }    
+        }
     }, beatInterval)
+    }, {once: true});
+   song.play();
 }
 
 songButton.addEventListener('click', () => {
-    handleCountDown(song, 15, beatInterval);  
-    document.querySelector('#beatCircle').style.display='block';
-    resetAnimation('#beatCircle');
+    handleCountDown(song, 15, beatInterval, beatCircle1);  
 });
 
 songButton2.addEventListener('click', () => {
-   handleCountDown(song2, 7, beatInterval2);
-   document.querySelector('#beatCircle2').style.display='block';
-   resetAnimation('#beatCircle2');
+   handleCountDown(song2, 7, beatInterval2, beatCircle2);
 });
 
 songButton3.addEventListener('click', () => {
-    handleCountDown(song3, 15, beatInterval3);
-    document.querySelector('#beatCircle3').style.display='block';
-    resetAnimation('#beatCircle3');
+    handleCountDown(song3, 15, beatInterval3, beatCircle3);
 });
 
 const bpm = 126;
