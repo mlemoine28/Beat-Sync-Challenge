@@ -122,26 +122,22 @@ function handleCountDown(song, countdownDuration, beatInterval, beatCircle) {
             setTimeout(() => {
             document.querySelector('#go_image').style.display='none';
         }, beatInterval);
-            console.log("Go!");
         } else if (countdown === 3) {
             document.querySelector('#warm_up_image').style.display='none';
             document.querySelector('#three_image').style.display='block';
             setTimeout(() => {
                 document.querySelector('#three_image').style.display='none';
             }, beatInterval);
-            console.log("3");
         } else if (countdown === 2) {
             document.querySelector('#two_image').style.display='block';
             setTimeout(() => {
                 document.querySelector('#two_image').style.display='none';
             }, beatInterval);
-            console.log("2");
         } else if (countdown === 1) {
             document.querySelector('#one_image').style.display='block';
             setTimeout(() => {
                 document.querySelector('#one_image').style.display='none';
             }, beatInterval);
-            console.log("1");
         }
     }, beatInterval)
     }, {once: true});
@@ -178,7 +174,6 @@ function clickTiming(clickTimestamp, interval, maximum) {
         const timeDifference = Math.abs(clickTimestamp - keyBeat);
         if (timeDifference <= 80) {
             const showperfectimage = document.querySelector('#perfect_image')
-            console.log("Perfect");
             judgment = "Perfect +100";
             setScore(score + 100);
             showperfectimage.style.display = 'block';
@@ -186,7 +181,6 @@ function clickTiming(clickTimestamp, interval, maximum) {
             break;
         } else if (timeDifference <= 120) {
             const showgreatimage = document.querySelector('#great_image')
-            console.log("Great");
             judgment = "Great +50";
             setScore(score + 50);
             showgreatimage.style.display = 'block';
@@ -194,7 +188,6 @@ function clickTiming(clickTimestamp, interval, maximum) {
             break;
         } else if (timeDifference <= 150) {
             const showgoodimage = document.querySelector('#good_image')
-            console.log("Good");
             judgment = "Good +25";
             setScore(score + 25);
             showgoodimage.style.display = 'block';
@@ -204,7 +197,6 @@ function clickTiming(clickTimestamp, interval, maximum) {
     }
     if (!wasCloseToBeat) {
         const showpoorimage = document.querySelector('#poor_image')
-        console.log("Poor");
         judgment = "Poor -80";
         setScore(score - 80);
         showpoorimage.style.display = 'block';
@@ -252,7 +244,6 @@ function buttonPress(song, interval, maximum) {
         let judgment = clickTiming(clickTime, interval, maximum); 
         document.querySelector('#scoretitle').innerText = "Score: " + score;
         console.log(judgment);
-        console.log(clickTime);
     }    
 }
 document.addEventListener ('keyup', (e) => {
@@ -408,7 +399,6 @@ function timeline (audio) {
     const duration = audio.duration;
     const progress = (currentTime / duration) * 100;
     progressBar.style.width = `${progress}%`;
-    console.log(progress);
 }
 
 song.addEventListener('timeupdate', () => {
