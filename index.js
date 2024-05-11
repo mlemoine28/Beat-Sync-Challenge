@@ -145,15 +145,18 @@ function handleCountDown(song, countdownDuration, beatInterval, beatCircle) {
 }
 
 songButton.addEventListener('click', () => {
-    handleCountDown(song, 15, beatInterval, beatCircle1);  
+    handleCountDown(song, 15, beatInterval, beatCircle1);
+    document.querySelector('#highscorediv').style.display = 'none';   
 });
 
 songButton2.addEventListener('click', () => {
    handleCountDown(song2, 7, beatInterval2, beatCircle2);
+   document.querySelector('#highscorediv').style.display = 'none';   
 });
 
 songButton3.addEventListener('click', () => {
     handleCountDown(song3, 15, beatInterval3, beatCircle3);
+    document.querySelector('#highscorediv').style.display = 'none';   
 });
 
 const bpm = 126;
@@ -351,8 +354,6 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
     }  
 });   
 
-
-
 function updateScores(leaderboard, leaderboardEl) {
     let newScore = score;
     if (newScore > leaderboard[9].score) {
@@ -364,7 +365,6 @@ function updateScores(leaderboard, leaderboardEl) {
     setScore(0);
     };
 }
-
 
 song.addEventListener("ended", (e) => {         
     updateScores(topscoreseasy, topscorelisteasy);
@@ -380,8 +380,6 @@ song3.addEventListener("ended", (e) => {
     updateScores(topscoreshard, topscorelisthard);
     document.querySelector('#beatCircle3').style.display='none';
 });
-
-
 
 function stopAllSongs() {
     document.querySelectorAll('audio').forEach(audiofile => {
