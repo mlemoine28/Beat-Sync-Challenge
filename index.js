@@ -346,6 +346,7 @@ document.querySelector("#scoreForm").addEventListener("submit", function(event) 
                 updateLeaderboard(currentLeaderboard, currentLeaderboardEl);   
                 document.querySelector('#highscorediv').style.display = 'none';   
                 setScore(0); 
+                onLeaderboardsClick(); 
         }
     }  
 });   
