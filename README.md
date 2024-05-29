@@ -8,7 +8,7 @@
 
 ## What is it?
 
-Beat Sync Challenge is a rhythm-based video game. I developed it while training in the first module of the Get Coding program.
+Beat Sync Challenge is a rhythm-based video game. I developed it while training in the first module of the Get Coding program. I've been a gamer my entire life, and have always been into playing and recording music, so I figured: why not combine my passions for my first project? Beat Sync Challenge is the result!
 
 ## 📝How To Play
 
